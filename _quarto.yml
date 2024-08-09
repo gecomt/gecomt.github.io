@@ -1,0 +1,81 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "*.md"
+lang: pt
+website:
+  title: "Alexsandro Prado"
+  site-url: "https://alexsandroprado.github.io/"
+  favicon: "images/favicon.ico"
+  twitter-card: true
+  description: "Desvendando mistérios dos dados como Sherlock Holmes, mas com laptop e café, não lupa e cachimbo!"
+  google-analytics: "GTM-T9KC9QL7"
+  back-to-top-navigation: true
+  reader-mode: false
+  navbar:
+    type: light
+    background: "#000000"
+    left:
+      - href: blog/index.qmd
+        text: Blog
+      # - href: artigos/index.qmd
+      #   text: Artigos
+#      - href: palestras/index.qmd
+#        text: Palestras
+#     - href: Ensino/index.qmd
+#        text: Ensino
+#      - href: software/index.qmd
+#        text: Software
+      - text: Projetos
+        menu:
+          - text: Contabilidados
+            href: https://contabilidados.quarto.pub/
+            target: _blank
+          - text: GECOMT
+            href: https://gecomt.shinyapps.io/dashboard/
+            target: _blank
+          - text: Regulariza
+            href: https://regulariza.shinyapps.io/dashboard/
+            target: _blank
+
+    right:
+      - icon: github
+        href: https://github.com/alexsandroprado
+      - icon: twitter-x
+        href: https://twitter.com/alexsandroprado
+      - icon: youtube
+        href: https://www.youtube.com/@profalexsandroprado
+      - icon: rss
+        href: blog/index.xml
+  page-footer:
+    left: "Alexsando Prado (2024)"
+    right:
+      - icon: github
+        href: https://github.com/alexsandroprado
+      - icon: twitter-x
+        href: https://twitter.com/alexsandroprado
+    background: "#000000"
+
+date-format: "D MMMM YYYY"
+
+format:
+  html:
+    theme:
+      light: united
+      dark: cyborg
+    css: styles.css
+    toc: true
+    html-math-method: katex
+    include-in-header:
+      file: header.html
+
+blog:
+  - folder: blog
+    feed: true
+
+comments:
+  giscus:
+    repo: alexsandroprado/alexsandroprado.github.io
+

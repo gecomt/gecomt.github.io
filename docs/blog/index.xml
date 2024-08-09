@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Alexsandro Prado</title>
+<link>https://alexsandroprado.github.io/blog/</link>
+<atom:link href="https://alexsandroprado.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
+<description>Desvendando mistérios dos dados como Sherlock Holmes, mas com laptop e café, não lupa e cachimbo!</description>
+<generator>quarto-1.4.555</generator>
+<lastBuildDate>Sun, 30 Jun 2024 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>A Importância da Análise de Dados na Contabilidade</title>
+  <dc:creator>Alexsandro Prado</dc:creator>
+  <link>https://alexsandroprado.github.io/blog/posts/contabdata/contabdata.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<style> body {text-align: justify} </style>
+<style>
+  .left-aligned {
+    text-align: left;
+  }
+</style>
+<section id="introdução" class="level3">
+<h3 class="anchored" data-anchor-id="introdução">Introdução</h3>
+<p>A análise de dados tem se tornado uma ferramenta crucial em diversos setores, incluindo a contabilidade. Com a crescente quantidade de dados gerados diariamente, a capacidade de analisar e interpretar essas informações é essencial para tomar decisões informadas e estratégicas. Este artigo explora a importância da análise de dados na contabilidade, destacando como ela transforma a prática contábil e oferece benefícios significativos para as organizações.</p>
+<p>Transformação Digital na Contabilidade A contabilidade tradicional tem evoluído significativamente com a introdução de tecnologias avançadas. A transformação digital permite que contadores acessem grandes volumes de dados e utilizem ferramentas analíticas para extrair insights valiosos. Esta evolução digital é fundamental para a modernização da contabilidade, tornando os processos mais eficientes e precisos.</p>
+</section>
+<section id="benefícios-da-análise-de-dados-na-contabilidade" class="level3">
+<h3 class="anchored" data-anchor-id="benefícios-da-análise-de-dados-na-contabilidade">Benefícios da Análise de Dados na Contabilidade</h3>
+<section id="precisão-e-confiabilidade" class="level4">
+<h4 class="anchored" data-anchor-id="precisão-e-confiabilidade">1. Precisão e Confiabilidade</h4>
+<p>A análise de dados melhora a precisão das informações financeiras. Ao utilizar técnicas analíticas avançadas, os contadores podem detectar erros e inconsistências nos dados, garantindo que os relatórios financeiros sejam mais confiáveis. Isso reduz o risco de fraudes e equívocos, proporcionando uma base sólida para a tomada de decisões.</p>
+</section>
+<section id="tomada-de-decisões-informadas" class="level4">
+<h4 class="anchored" data-anchor-id="tomada-de-decisões-informadas">2. Tomada de Decisões Informadas</h4>
+<p>A capacidade de analisar grandes volumes de dados permite que os contadores forneçam insights estratégicos para a gestão. Com dados precisos e análises detalhadas, as empresas podem tomar decisões informadas que impactam diretamente seu desempenho financeiro e operacional. Isso inclui desde a alocação de recursos até a identificação de oportunidades de crescimento.</p>
+</section>
+<section id="previsão-e-planejamento-financeiro" class="level4">
+<h4 class="anchored" data-anchor-id="previsão-e-planejamento-financeiro">3. Previsão e Planejamento Financeiro</h4>
+<p>Ferramentas de análise de dados possibilitam a criação de modelos preditivos que ajudam na previsão de tendências financeiras. Essas previsões são essenciais para o planejamento financeiro de longo prazo, permitindo que as empresas se preparem para cenários futuros e ajustem suas estratégias conforme necessário.</p>
+</section>
+<section id="eficiência-operacional" class="level4">
+<h4 class="anchored" data-anchor-id="eficiência-operacional">4. Eficiência Operacional</h4>
+<p>Automatizar processos contábeis através da análise de dados aumenta a eficiência operacional. A integração de software de análise de dados reduz o tempo gasto em tarefas repetitivas e permite que os contadores se concentrem em atividades de maior valor agregado, como a análise estratégica e consultoria.</p>
+</section>
+</section>
+<section id="desafios-da-implementação-da-análise-de-dados-na-contabilidade" class="level3">
+<h3 class="anchored" data-anchor-id="desafios-da-implementação-da-análise-de-dados-na-contabilidade">Desafios da Implementação da Análise de Dados na Contabilidade</h3>
+<p>Embora os benefícios sejam significativos, a implementação da análise de dados na contabilidade enfrenta alguns desafios. Estes incluem a necessidade de investimento em tecnologia, a capacitação dos profissionais e a adaptação a novas metodologias. Superar esses desafios é crucial para maximizar o potencial da análise de dados na contabilidade.</p>
+</section>
+<section id="conclusão" class="level3">
+<h3 class="anchored" data-anchor-id="conclusão">Conclusão</h3>
+<p>A análise de dados está revolucionando a contabilidade, oferecendo precisão, insights estratégicos e eficiência operacional. À medida que a tecnologia continua a evoluir, a capacidade de analisar e interpretar dados se tornará ainda mais essencial para a prática contábil. Investir em análise de dados não é apenas uma vantagem competitiva, mas uma necessidade para as empresas que desejam prosperar em um ambiente de negócios cada vez mais complexo e dinâmico.</p>
+</section>
+<section id="referências" class="level3">
+<h3 class="anchored" data-anchor-id="referências">Referências</h3>
+<p>BHARDWAJ, G.; HARVEY, D. Big data in financial statement analysis. <strong>Journal of Financial Reporting</strong>, v. 32, n.&nbsp;2, p.&nbsp;213-230, 2018.</p>
+<p>CHEN, H.; CHIANG, R. H. L.; STOREY, V. C. Business intelligence and analytics: From big data to big impact. <strong>MIS Quarterly</strong>, v. 36, n.&nbsp;4, p.&nbsp;1165-1188, 2012.</p>
+<p>DAVENPORT, T. H.; HARRIS, J. G. Competing on analytics: The new science of winning. <strong>Harvard Business Review</strong>, v. 84, n.&nbsp;1, p.&nbsp;98-107, 2006.</p>
+<p>MOLL, J.; YIGITBEYAZ, D. The role of big data in modern accounting systems. <strong>The British Accounting Review</strong>, v. 52, n.&nbsp;4, p.&nbsp;1-15, 2020.</p>
+<p>WILLIS, J. Data analysis in accounting: A practical approach. <strong>Journal of Accountancy</strong>, v. 21, n.&nbsp;3, p.&nbsp;45-58, 2019.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
+  <category>contabilidade</category>
+  <category>datascience</category>
+  <guid>https://alexsandroprado.github.io/blog/posts/contabdata/contabdata.html</guid>
+  <pubDate>Sun, 30 Jun 2024 03:00:00 GMT</pubDate>
+  <media:content url="https://alexsandroprado.github.io/blog/posts/contabdata/contabdata.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Conflitos entre IFRS/CPC e Normas Fiscais da Receita Federal</title>
+  <dc:creator>Alexsandro Prado</dc:creator>
+  <link>https://alexsandroprado.github.io/blog/posts/cpcVersusReceita/cpcVersusReceita.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<style> body {text-align: justify} </style>
+<style>
+  .left-aligned {
+    text-align: left;
+  }
+</style>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/cpcVersusReceita/cpcVersusReceita.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="330"></p>
+</figure>
+</div>
+<section id="introdução" class="level2">
+<h2 class="anchored" data-anchor-id="introdução">Introdução</h2>
+<p>As Normas Internacionais de Relatórios Financeiros (IFRS) e as Normas Brasileiras de Contabilidade (CPC) visam fornecer uma base transparente e consistente para a preparação das demonstrações financeiras. Em contraste, as Normas Fiscais da Receita Federal do Brasil (RFB) são estabelecidas com o objetivo de regulamentar a arrecadação de impostos. Apesar de ambas serem fundamentais para a prática contábil e fiscal, existem diversas situações onde os princípios das IFRS/CPC conflitam com as normas fiscais. Este documento abordará vinte dessas situações, destacando as divergências entre as práticas contábeis e fiscais, com referências para cada caso.</p>
+</section>
+<section id="principais-divergências" class="level2">
+<h2 class="anchored" data-anchor-id="principais-divergências">Principais divergências</h2>
+<p>Uma das principais divergências entre as normas contábeis e fiscais refere-se ao reconhecimento de receita. A IFRS 15 e CPC 47 determinam que a receita deve ser reconhecida quando o controle do bem ou serviço é transferido para o cliente, enquanto a legislação fiscal brasileira pode exigir o reconhecimento da receita em momentos diferentes, baseando-se em critérios de realização e pagamento. Quanto aos ativos intangíveis, a IAS 38 e CPC 04 estabelecem que devem ser reconhecidos quando é provável que os benefícios econômicos futuros atribuíveis ao ativo irão fluir para a entidade. No entanto, as normas fiscais podem não permitir a amortização de determinados intangíveis para fins fiscais.</p>
+<p>Em relação às provisões, a IAS 37 e CPC 25 exigem o reconhecimento de provisões quando há uma obrigação presente resultante de eventos passados. A dedutibilidade fiscal das provisões pode ser limitada, exigindo critérios específicos para sua dedução. No que tange à depreciação de ativos fixos, a IAS 16 e CPC 27 estabelecem que a depreciação deve ser calculada com base na vida útil econômica dos ativos, enquanto a depreciação fiscal segue as taxas fixadas pela RFB, que podem divergir da vida útil econômica estimada.</p>
+<p>Outra área de conflito é o ajuste a valor justo, conforme estabelecido pela IFRS 13 e CPC 46, que requer a mensuração de certos ativos e passivos ao valor justo. A legislação fiscal brasileira pode não reconhecer esses ajustes para fins de apuração do lucro tributável. Quanto aos benefícios a empregados, a IAS 19 e CPC 33 tratam do reconhecimento e mensuração desses benefícios, incluindo planos de pensão, mas a dedutibilidade fiscal pode ser restrita a valores efetivamente pagos.</p>
+<p>Os contratos de leasing também são uma fonte de divergência. A IFRS 16 e CPC 06 (R2) exigem que sejam reconhecidos no balanço como ativos e passivos, enquanto a legislação fiscal pode tratar esses contratos de forma diferente, afetando a base de cálculo dos tributos. No caso das combinações de negócios, a IFRS 3 e CPC 15 exigem o reconhecimento de ativos e passivos adquiridos a valor justo, mas a legislação fiscal pode requerer ajustes para fins de apuração do lucro real.</p>
+<p>Os instrumentos financeiros são tratados pela IFRS 9 e CPC 48, que abordam o reconhecimento e mensuração desses instrumentos, mas pode haver diferenças na tributação de ganhos e perdas. Sobre o imposto de renda diferido, a IAS 12 e CPC 32 tratam do reconhecimento de ativos e passivos fiscais diferidos, mas as normas fiscais podem ter critérios diferentes para esse reconhecimento.</p>
+<p>A reavaliação de ativos é permitida pela IAS 16, enquanto a legislação fiscal pode não permitir essa reavaliação para fins fiscais. A IAS 20 e CPC 07 tratam do reconhecimento de subvenções governamentais, mas a legislação fiscal pode prever a tributação dessas subvenções de maneira diferente. No caso de investimentos em coligadas, a IAS 28 e CPC 18 tratam do método de equivalência patrimonial, mas pode haver diferenças na tributação dos resultados dessas coligadas.</p>
+<p>Quanto aos estoques, a IAS 2 e CPC 16 estabelecem critérios para sua mensuração, enquanto a legislação fiscal pode adotar critérios diferentes. Os ativos biológicos, conforme a IAS 41 e CPC 29, devem ser mensurados a valor justo, mas pode haver restrições à utilização desse valor para fins fiscais. O reconhecimento de dividendos é tratado pelas IAS 10 e CPC 24, enquanto a tributação segue regras específicas da legislação fiscal.</p>
+<p>As propriedades para investimento são tratadas pela IAS 40 e CPC 28, que abordam a mensuração dessas propriedades, mas a legislação fiscal pode adotar critérios diferentes para depreciação e tributação. As concessões públicas são abordadas pela IFRIC 12 e ICPC 01, mas podem ser tratadas de forma diferente para fins fiscais. Os custos de empréstimos são tratados pela IAS 23 e CPC 20, que exigem a capitalização desses custos, enquanto a legislação fiscal pode não permitir a dedução imediata.</p>
+<p>Finalmente, a IFRS 5 e CPC 31 tratam da classificação de ativos não circulantes mantidos para venda, mas a legislação fiscal pode ter regras específicas para a alienação desses ativos e sua tributação.</p>
+<p>As divergências entre as normas IFRS/CPC e as normas fiscais da Receita Federal do Brasil refletem diferentes objetivos e princípios subjacentes às regulamentações contábeis e fiscais. Enquanto as IFRS/CPC visam fornecer uma visão econômica mais precisa e transparente das demonstrações financeiras, as normas fiscais são focadas na arrecadação de impostos e na conformidade tributária. É crucial para os profissionais contábeis entenderem essas diferenças e gerenciar as implicações práticas e regulatórias de cada situação. A harmonização e a conciliação entre essas normas permanecem um desafio contínuo para assegurar a precisão e a conformidade tanto nas demonstrações financeiras quanto nas apurações fiscais.</p>
+</section>
+<section id="referências" class="level2">
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<div class="left-aligned">
+
+<p>BRASIL. Lei nº 12.973, de 13 de maio de 2014. Disponível em: http://www.planalto.gov.br/ccivil_03/_Ato2011-2014/2014/Lei/L12973.htm. Acesso em: 20 jun. 2024.</p>
+<p>BRASIL. Lei nº 9.249, de 26 de dezembro de 1995. Disponível em: http://www.planalto.gov.br/ccivil_03/leis/L9249.htm. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 04 – Ativo Intangível. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=9. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 06 (R2) – Arrendamentos. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=124. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 07 – Subvenção e Assistência Governamentais. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=10. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 15 – Combinação de Negócios. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=23. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 16 – Estoques. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=20. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 18 – Investimento em Coligada, em Controlada e em Empreendimento Controlado em Conjunto. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=17. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 20 – Custos de Empréstimos. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=19. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 24 – Evento Subsequente. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=27. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 25 – Provisões, Passivos Contingentes e Ativos Contingentes. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=22. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 27 – Ativo Imobilizado. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=24. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 28 – Propriedade para Investimento. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=33. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 29 – Ativo Biológico e Produto Agrícola. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=30. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 31 – Ativo Não Circulante Mantido para Venda e Operação Descontinuada. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=36. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 32 – Tributos sobre o Lucro. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=44. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 33 – Benefícios a Empregados. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=43. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 46 – Mensuração do Valor Justo. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=113. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 47 – Receita. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=117. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. CPC 48 – Instrumentos Financeiros. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Pronunciamentos/Pronunciamento?Id=125. Acesso em: 20 jun. 2024.</p>
+<p>COMITÊ DE PRONUNCIAMENTOS CONTÁBEIS. ICPC 01 – Concessões. Disponível em: http://www.cpc.org.br/CPC/Documentos-Emitidos/Interpretações/Interpretação?Id=6. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 10 – Events after the Reporting Period. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-10-events-after-the-reporting-period/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 12 – Income Taxes. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-12-income-taxes/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 16 – Property, Plant and Equipment. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-16-property-plant-and-equipment/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 19 – Employee Benefits. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-19-employee-benefits/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 2 – Inventories. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 20 – Accounting for Government Grants and Disclosure of Government Assistance. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-20-accounting-for-government-grants-and-disclosure-of-government-assistance/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 23 – Borrowing Costs. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-23-borrowing-costs/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 28 – Investments in Associates and Joint Ventures. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-28-investments-in-associates-and-joint-ventures/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 37 – Provisions, Contingent Liabilities and Contingent Assets. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-37-provisions-contingent-liabilities-and-contingent-assets/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 38 – Intangible Assets. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-38-intangible-assets/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL ACCOUNTING STANDARDS. IAS 41 – Agriculture. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ias-41-agriculture/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING INTERPRETATIONS COMMITTEE. IFRIC 12 – Service Concession Arrangements. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifric-12-service-concession-arrangements/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING STANDARDS. IFRS 13 – Fair Value Measurement. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifrs-13-fair-value-measurement/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING STANDARDS. IFRS 15 – Revenue from Contracts with Customers. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING STANDARDS. IFRS 16 – Leases. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifrs-16-leases/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING STANDARDS. IFRS 3 – Business Combinations. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifrs-3-business-combinations/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING STANDARDS. IFRS 5 – Non-current Assets Held for Sale and Discontinued Operations. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifrs-5-non-current-assets-held-for-sale-and-discontinued-operations/. Acesso em: 20 jun. 2024.</p>
+<p>INTERNATIONAL FINANCIAL REPORTING STANDARDS. IFRS 9 – Financial Instruments. Disponível em: https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/. Acesso em: 20 jun. 2024.</p>
+<p>RECEITA FEDERAL DO BRASIL. Instrução Normativa RFB nº 162/1998. Disponível em: http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=1627&amp;visao=original. Acesso em: 20 jun. 2024.</p>
+<p>RECEITA FEDERAL DO BRASIL. Instrução Normativa RFB nº 1.700/2017. Disponível em: http://normas.receita.fazenda.gov.br/sijut2consulta/link.action?idAto=86725&amp;visao=anotado. Acesso em: 20 jun. 2024.</p>
+<div>
+
+
+
+
+
+
+</div></div></section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
+  <category>contabilidade</category>
+  <category>teoria</category>
+  <guid>https://alexsandroprado.github.io/blog/posts/cpcVersusReceita/cpcVersusReceita.html</guid>
+  <pubDate>Thu, 20 Jun 2024 03:00:00 GMT</pubDate>
+  <media:content url="https://alexsandroprado.github.io/blog/posts/cpcVersusReceita/cpcVersusReceita.webp" medium="image" type="image/webp"/>
+</item>
+<item>
+  <title>Previsão de receita</title>
+  <dc:creator>Alexsandro Prado</dc:creator>
+  <link>https://alexsandroprado.github.io/blog/posts/preditiva/preditiva.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/preditiva/preditiva.jpg" class="centered img-fluid quarto-figure quarto-figure-center figure-img" width="439"></p>
+</figure>
+</div>
+<section id="introdução" class="level1">
+<h1>Introdução</h1>
+<p>A informação contábil é uma ferramenta poderosa para previsão e tomada de decisões estratégicas nas organizações. Segundo o CPC 00 (Estrutura Conceitual para Elaboração e Divulgação de Relatório Contábil-Financeiro), a informação contábil deve possuir características qualitativas fundamentais como relevância e representação fidedigna, e características qualitativas de melhoria como comparabilidade, verificabilidade, tempestividade e compreensibilidade.</p>
+<p>Neste post, vamos explorar como essas características se traduzem no poder preditivo da informação contábil usando dados fictícios e a linguagem R.</p>
+<section id="objetivo" class="level2">
+<h2 class="anchored" data-anchor-id="objetivo">Objetivo</h2>
+<p>Nosso objetivo é demonstrar, por meio de um exemplo prático, como a análise de demonstrações financeiras pode prever o desempenho futuro de uma empresa. Utilizaremos dados fictícios para simplificação.</p>
+</section>
+<section id="passo-a-passo-em-r" class="level2">
+<h2 class="anchored" data-anchor-id="passo-a-passo-em-r">Passo a Passo em R</h2>
+<section id="coleta-e-preparação-dos-dados" class="level3">
+<h3 class="anchored" data-anchor-id="coleta-e-preparação-dos-dados">Coleta e Preparação dos Dados</h3>
+<p>Primeiramente, vamos criar um conjunto de dados fictícios representando as demonstrações financeiras de uma empresa ao longo dos anos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Instalar e carregar pacotes necessários</span></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">options</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">repos =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">CRAN =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://cran.rstudio.com/"</span>))</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dplyr"</span>)</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ggplot2"</span>)</span>
+<span id="cb1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"forecast"</span>)</span>
+<span id="cb1-6"></span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb1-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(forecast)</span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Criar dados fictícios</span></span>
+<span id="cb1-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">set.seed</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">123</span>)</span>
+<span id="cb1-13">anos <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2010</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2023</span></span>
+<span id="cb1-14">receita <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">500</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">550</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">600</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">660</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">720</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">780</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">850</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">920</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1210</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1330</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1460</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1600</span>)</span>
+<span id="cb1-15">lucro_liquido <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> receita <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.08</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.12</span>)</span>
+<span id="cb1-16"></span>
+<span id="cb1-17">dados <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">ano =</span> anos, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">receita =</span> receita, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">lucro_liquido =</span> lucro_liquido)</span>
+<span id="cb1-18"></span>
+<span id="cb1-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Visualizar os dados</span></span>
+<span id="cb1-20"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">print</span>(dados)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    ano receita lucro_liquido
+1  2010     500      45.75155
+2  2011     550      61.34271
+3  2012     600      57.81545
+4  2013     660      76.11166
+5  2014     720      84.68546
+6  2015     780      63.82136
+7  2016     850      85.95559
+8  2017     920     106.44102
+9  2018    1000     102.05740
+10 2019    1100     108.09105
+11 2020    1210     143.11073
+12 2021    1330     130.51738
+13 2022    1460     156.37013
+14 2023    1600     164.64854</code></pre>
+</div>
+</div>
+</section>
+<section id="análise-exploratória-dos-dados" class="level3">
+<h3 class="anchored" data-anchor-id="análise-exploratória-dos-dados">Análise Exploratória dos Dados</h3>
+<p>Vamos analisar graficamente a evolução da receita e do lucro líquido ao longo dos anos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Visualização dos dados</span></span>
+<span id="cb3-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(dados, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> ano)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> receita, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Receita"</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> lucro_liquido, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Lucro Líquido"</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Evolução da Receita e do Lucro Líquido"</span>,</span>
+<span id="cb3-6">       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ano"</span>,</span>
+<span id="cb3-7">       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Valores (em milhares)"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb3-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_color_manual</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">name =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Legenda"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Receita"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"blue"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Lucro Líquido"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"green"</span>))</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/preditiva/preditiva_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-preditivo" class="level3">
+<h3 class="anchored" data-anchor-id="modelo-preditivo">Modelo Preditivo</h3>
+<p>Utilizaremos um modelo de série temporal para prever a receita dos próximos anos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Modelagem de série temporal</span></span>
+<span id="cb4-2">ts_receita <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ts</span>(dados<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>receita, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">start =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2010</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">frequency =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb4-3"></span>
+<span id="cb4-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ajustar um modelo ARIMA</span></span>
+<span id="cb4-5">modelo_arima <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">auto.arima</span>(ts_receita)</span>
+<span id="cb4-6"></span>
+<span id="cb4-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Previsão para os próximos 5 anos</span></span>
+<span id="cb4-8">previsao <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">forecast</span>(modelo_arima, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">h =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>)</span>
+<span id="cb4-9"></span>
+<span id="cb4-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Visualização da previsão</span></span>
+<span id="cb4-11"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">autoplot</span>(previsao) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb4-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Previsão da Receita para os Próximos 5 Anos"</span>,</span>
+<span id="cb4-13">       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ano"</span>,</span>
+<span id="cb4-14">       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Receita (em milhares)"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/preditiva/preditiva_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O gráfico de previsão de receita para os próximos cinco anos mostra uma tendência de crescimento contínuo, com a linha preta indicando a projeção central e áreas sombreadas em azul representando os intervalos de confiança de 80% e 95%. A receita histórica desde 2010 revela um aumento consistente, e a projeção sugere que esse crescimento continuará até 2028, com a incerteza aumentando ao longo do tempo, conforme evidenciado pela ampliação dos intervalos de confiança. Esses intervalos são essenciais para o planejamento estratégico e a análise de risco, fornecendo uma faixa de valores esperados em vez de um único valor fixo.</p>
+<p>A falha na linha do gráfico ocorre na transição entre os dados históricos e as previsões futuras, destacando o ponto onde terminam as observações reais e começam as estimativas geradas pelo modelo. Esta descontinuidade é intencional para diferenciar claramente os dados observados das projeções, ajudando a evitar confusão ao visualizar a tendência histórica e a previsão de crescimento futuro da receita.</p>
+</section>
+<section id="interpretação-dos-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="interpretação-dos-resultados">Interpretação dos Resultados</h3>
+<p>A partir do modelo preditivo, podemos analisar a tendência futura da receita da empresa, possibilitando uma melhor tomada de decisão.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Exibir previsões</span></span>
+<span id="cb5-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">print</span>(previsao)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+2024       1746.438 1736.867 1756.009 1731.801 1761.076
+2025       1897.021 1869.968 1924.075 1855.647 1938.396
+2026       2050.273 1997.764 2102.782 1969.967 2130.579
+2027       2205.243 2119.915 2290.571 2074.745 2335.740
+2028       2361.319 2236.458 2486.180 2170.360 2552.277</code></pre>
+</div>
+</div>
+<p>A previsão de receita para os anos de 2024 a 2028 mostra um crescimento contínuo, começando em R$ 1746.44 em 2024 e alcançando R$ 2361,32 em 2028. Os intervalos de confiança de 80% e 95% indicam as faixas nas quais a receita provavelmente se situará, refletindo diferentes níveis de certeza. Em 2024, por exemplo, a receita deve estar entre R$ 1736,87 e R$ 1756,01 com 80% de confiança e entre R$ 1731,80 e R$ 1761,08 com 95% de confiança. Esses intervalos ajudam a quantificar a incerteza nas previsões, essenciais para o planejamento financeiro e análise de risco.</p>
+</section>
+</section>
+<section id="conclusão" class="level2">
+<h2 class="anchored" data-anchor-id="conclusão">Conclusão</h2>
+<p>Através desse exemplo simples com dados fictícios, observamos como a informação contábil, quando analisada e modelada adequadamente, pode fornecer previsões valiosas para o planejamento estratégico das organizações. As demonstrações financeiras, alinhadas às normas contábeis do CPC 00 R2, são essenciais para garantir que essas previsões sejam baseadas em dados relevantes e fidedignos.</p>
+<p>Utilizar a linguagem R para a análise preditiva permite explorar diversos modelos e técnicas estatísticas, facilitando a extração de <em>insights</em> que podem direcionar o crescimento sustentável da empresa.</p>
+<p>Este post ilustra a importância de uma contabilidade bem estruturada e da análise de dados para antecipar e responder às dinâmicas do mercado, reforçando o poder preditivo da informação contábil conforme as diretrizes do CPC 00 R2.</p>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
+  <category>econometria</category>
+  <category>R</category>
+  <guid>https://alexsandroprado.github.io/blog/posts/preditiva/preditiva.html</guid>
+  <pubDate>Fri, 07 Jun 2024 03:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Modelos de sobrevivência no R</title>
+  <dc:creator>Alexsandro Prado</dc:creator>
+  <link>https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>A Análise de Sobrevivência compreende os estudos em que o interesse principal é avaliar o tempo até a ocorrência de um evento pré-determinado. Esses tempos, chamados de <em>tempos de falha</em>, podem, então, ser explicados por outras variáveis a partir de modelos de regressão paramétricos ou semi-paramétricos. Uma característica fundamental desse tipo de estudo é a presença de censura, definida como a observação parcial do tempo de falha.</p>
+<p>Para ilustrar as funções discutidas aqui, utilizaremos o banco de dados <code>ovarian</code>, do pacote <code>survival</code>. Este banco traz o tempo de sobrevivência (ou censura) de 26 mulheres com câncer de ovário e o objetivo do estudo foi comparar dois tratamentos distintos para essa doença.</p>
+<p>Nesse exemplo, o tempo de falha é o intervalo entre a entrada no estudo e a ocorrência do evento de interesse que, aqui, é a morte da paciente. A censura neste caso é causada pelo abandono do estudo ou pela não ocorrência do evento até o fim do acompanhamento, ou seja, os casos em que a paciente estava viva no fim do estudo.</p>
+<p>Para mais informações sobre o banco de dados, consulte o <code>help(ovarian)</code>.</p>
+<section id="kaplan-meier-e-log-rank" class="level3">
+<h3 class="anchored" data-anchor-id="kaplan-meier-e-log-rank">Kaplan-Meier e Log-rank</h3>
+<p>O Kaplan-Meier é a principal ferramenta para visualizar dados de sobrevivência. Esses gráficos ajustam curvas tipo-escada da proporção de indivíduos <em>em risco</em> — que ainda não falharam e não foram censurados — ao longo do tempo. Para plotar um Kaplan-Meier no R, utilizamos a função <code>survfit()</code> e a função <code>plot()</code>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Também podemos construir um Kaplan-Meier com o <code>ggplot2</code>, mas observe que é necessário fazer algums modificações no objeto <code>fit</code>:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O teste de log-rank para comparação de grupos é realizado pela função <code>survdiff()</code>:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+survdiff(formula = Surv(futime, fustat) ~ rx, data = ovarian)
+
+      N Observed Expected (O-E)^2/E (O-E)^2/V
+rx=1 13        7     5.23     0.596      1.06
+rx=2 13        5     6.77     0.461      1.06
+
+ Chisq= 1.1  on 1 degrees of freedom, p= 0.3 </code></pre>
+</div>
+</div>
+</section>
+<section id="modelos-paramétricos" class="level3">
+<h3 class="anchored" data-anchor-id="modelos-paramétricos">Modelos paramétricos</h3>
+<p>Para ajustar modelos paramétricos, podemos utilizar a função <code>survreg()</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+survreg(formula = Surv(futime, fustat) ~ rx + age, data = ovarian, 
+    dist = "exponential")
+              Value Std. Error     z       p
+(Intercept) 12.1225     2.3966  5.06 4.2e-07
+rx           0.6611     0.6159  1.07 0.28310
+age         -0.1051     0.0319 -3.30 0.00098
+
+Scale fixed at 1 
+
+Exponential distribution
+Loglik(model)= -91.2   Loglik(intercept only)= -98
+    Chisq= 13.65 on 2 degrees of freedom, p= 0.0011 
+Number of Newton-Raphson Iterations: 5 
+n= 26 </code></pre>
+</div>
+</div>
+<p>Observe que no exemplo acima utilizamos a distribuição Exponencial. O argumento <code>dist =</code> pode ser modificado para ajustarmos modelos com outras distribuições:</p>
+<ul>
+<li><code>dist = "weibull"</code> — distribuição Weibull (default)</li>
+<li><code>dist = "gaussian"</code> — distribuição Normal</li>
+<li><code>dist = "logistic"</code> — distribuição Logística</li>
+<li><code>dist = "lognormal"</code> — distribuição Log-normal</li>
+<li><code>dist = "loglogistic"</code> — distribuição Log-logística</li>
+</ul>
+</section>
+<section id="modelo-semi-paramétrico-de-cox" class="level3">
+<h3 class="anchored" data-anchor-id="modelo-semi-paramétrico-de-cox">Modelo semi-paramétrico de Cox</h3>
+<p>No R, a função mais utilizada para ajustar modelos de Cox é a <code>coxph()</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Call:
+coxph(formula = Surv(futime, fustat) ~ age + rx, data = ovarian)
+
+  n= 26, number of events= 12 
+
+        coef exp(coef) se(coef)      z Pr(&gt;|z|)   
+age  0.14733   1.15873  0.04615  3.193  0.00141 **
+rx  -0.80397   0.44755  0.63205 -1.272  0.20337   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+    exp(coef) exp(-coef) lower .95 upper .95
+age    1.1587      0.863    1.0585     1.268
+rx     0.4475      2.234    0.1297     1.545
+
+Concordance= 0.798  (se = 0.076 )
+Likelihood ratio test= 15.89  on 2 df,   p=4e-04
+Wald test            = 13.47  on 2 df,   p=0.001
+Score (logrank) test = 18.56  on 2 df,   p=9e-05</code></pre>
+</div>
+</div>
+</section>
+<section id="generalized-additive-model-gam" class="level2">
+<h2 class="anchored" data-anchor-id="generalized-additive-model-gam">Generalized Additive Model (GAM)</h2>
+<p>Os modelos aditivos generalizados ou GAM são modelos baseados na teoria desenvolvida por Trevor Hastie e Robert Tibshirani, e podem ser vistos como uma generalização de GLM, no sentido de que todos os GLM sãoo casos particulares de GAM.</p>
+<p>Na regressão normal e em GLM assumimos, em geral, que as variáveis aleatórias correspondentes aos indivíduos são independentes, e que existe uma função, denominada função de ligação, que une as médias destas variáveis aleatórias a um certo preditor linear.</p>
+<p>A grande mudança nos modelos aditivos generalizados está na forma do preditor. Para cada variável explicativa, temos associada uma função a ser estimada (ou suavizada), sendo que o preditor fica definido como a soma dessas funções</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Ag(%5Cmu_i)%20=%20f_0%20+%20%5Csum%20f(x_%7Bij%7D)%0A"></p>
+<p>Para evitar o desconforto da interpretação das contribuições marginais (funções), uma alternativa é utilizar as funções de suavização para ajustar variáveis de controle em que não há interesse direto, e manter a parte principal com termos paramétricos. Geralmente isso facilita a interpretação e melhora o ajuste do modelo em relação ao GLM.</p>
+<section id="pacote-mgcv" class="level3">
+<h3 class="anchored" data-anchor-id="pacote-mgcv">Pacote mgcv</h3>
+<p>O pacote <code>mgcv</code> é um dos pacotes mais completos do R e permite simulação, ajuste, visualização e análise de resíduos para <code>gam</code>. O pacote gerou até <a href="http://books.google.co.uk/books?id=hr17lZC-3jQC">um livro</a>.</p>
+<p>Na prática, a utilização do GAM não difere muito de modelos GLM. Uma das únicas diferenças na especificação do modelo é que podemos utilizar a função <code>s</code> para determinar quais termos queremos que sejam ajustados com funções aditivas.</p>
+</section>
+<section id="exemplo-pnud" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-pnud">Exemplo: PNUD</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Family: Gamma 
+Link function: inverse 
+
+Formula:
+espvida ~ ano + s(rdpc) + s(i_escolaridade)
+
+Parametric coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.234e-01  1.545e-03   79.91   &lt;2e-16 ***
+ano         -5.437e-05  7.722e-07  -70.41   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Approximate significance of smooth terms:
+                    edf Ref.df       F p-value    
+s(rdpc)           8.858  8.993 1200.58  &lt;2e-16 ***
+s(i_escolaridade) 5.681  6.817   22.71  &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+R-sq.(adj) =  0.831   Deviance explained = 81.9%
+GCV = 0.0011938  Scale est. = 0.001185  n = 16695</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pacote-gamlss" class="level3">
+<h3 class="anchored" data-anchor-id="pacote-gamlss">Pacote gamlss</h3>
+<p>Se por algum motivo existir algum problema na análise em relação à distribuição, heterocedasticidade, e utilização de preditores lineares, uma possível alternativa é o GAMLSS.</p>
+<p>GAMLSS significa Generalized Additive Models for Location, Scale and Shape. Com GAMLSS é possível modelar não só a média da distribuição <img src="https://latex.codecogs.com/png.latex?%5Cmu_i"> (primeiro momento), mas também a variância <img src="https://latex.codecogs.com/png.latex?%5Csigma_i"> (segundo momento), a assimetria <img src="https://latex.codecogs.com/png.latex?%5Cphi_i"> (terceiro momento) e a curtose <img src="https://latex.codecogs.com/png.latex?%5Crho_i"> (quarto momento), usando preditores.</p>
+<p>Por ser um modelo aditivo, o GAMLSS permite que sejam adicionados termos de suavização na fórmula do modelo, o que o torna uma generalização natural do GAM (em relação à modelagem, não ao método de ajuste).</p>
+<p>Por fim, o modelo GAMLSS possui <strong>mais de 50</strong> famílias de distribuições implementadas, o que nos dá uma enorme gama de opções para criação de modelos.</p>
+<p>Também é possível adicionar efeitos aleatórios utilizando o GAMLSS, mas essa parte ainda é experimental.</p>
+<p>Mas tudo vem com um preço. Por ser um grande canhão, o método de ajuste de modelos GAMLSS geralmente são baseados técnicas de otimização aproximadas. Além disso, o ajuste de modelos pode ser mais lento que os concorrentes. Por fim, a análise de resíduos para GAMLSS é bastante limitada (e provavelmente continuará sendo).</p>
+<p>Recomendamos a utilização do <code>gamlss</code> com muito cuidado, e sempre acompanhando outras modelagens, usando <code>glm</code> ou <code>gam</code>, por exemplo.</p>
+</section>
+<section id="exemplo-pnud-1" class="level3">
+<h3 class="anchored" data-anchor-id="exemplo-pnud-1">Exemplo: PNUD</h3>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>GAMLSS-RS iteration 1: Global Deviance = 78553.62 
+GAMLSS-RS iteration 2: Global Deviance = 77935.35 
+GAMLSS-RS iteration 3: Global Deviance = 77903.36 
+GAMLSS-RS iteration 4: Global Deviance = 77900.75 
+GAMLSS-RS iteration 5: Global Deviance = 77900.38 
+GAMLSS-RS iteration 6: Global Deviance = 77900.32 
+GAMLSS-RS iteration 7: Global Deviance = 77900.31 
+GAMLSS-RS iteration 8: Global Deviance = 77900.31 
+GAMLSS-RS iteration 9: Global Deviance = 77900.31 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>******************************************************************
+Family:  c("NET", "Normal Exponential t") 
+
+Call:  gamlss(formula = espvida ~ cs(rdpc) + cs(i_escolaridade),  
+    sigma.formula = ~ano, family = NET(), data = dados) 
+
+Fitting method: RS() 
+
+------------------------------------------------------------------
+Mu link function:  identity
+Mu Coefficients:
+                    Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)        6.072e+01  4.392e-02 1382.42   &lt;2e-16 ***
+cs(rdpc)           1.150e-02  1.201e-04   95.71   &lt;2e-16 ***
+cs(i_escolaridade) 1.556e+01  1.958e-01   79.46   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+------------------------------------------------------------------
+Sigma link function:  log
+Sigma Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.11223    0.01309   85.00   &lt;2e-16 ***
+ano2000     -0.34429    0.01745  -19.73   &lt;2e-16 ***
+ano2010     -0.76936    0.01808  -42.56   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+------------------------------------------------------------------
+Nu parameter is fixed 
+Nu =  1.5 
+------------------------------------------------------------------
+Tau parameter is fixed 
+Tau =  2 
+------------------------------------------------------------------
+NOTE: Additive smoothing terms exist in the formulas: 
+ i) Std. Error for smoothers are for the linear effect only. 
+ii) Std. Error for the linear terms maybe are not accurate. 
+------------------------------------------------------------------
+No. of observations in the fit:  16695 
+Degrees of Freedom for the fit:  28.32315
+      Residual Deg. of Freedom:  16666.68 
+                      at cycle:  9 
+ 
+Global Deviance:     77900.31 
+            AIC:     77956.95 
+            SBC:     78175.69 
+******************************************************************</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>******************************************************************
+          Summary of the Quantile Residuals
+                           mean   =  -0.08278299 
+                       variance   =  0.8508743 
+               coef. of skewness  =  0.1034363 
+               coef. of kurtosis  =  2.249083 
+Filliben correlation coefficient  =  0.9937856 
+******************************************************************</code></pre>
+</div>
+</div>
+<p>Para mais informações sobre Análise de Sobrevivência, consultar as seguintes referências:</p>
+<ul>
+<li><p>Colosimo, E.A. e Giolo, S.R.. (2005) Análise de Sobrevivência Aplicada. ABE — Projeto fisher. Editora Edgard Blucher</p></li>
+<li><p>Kalbfleisch, J. D.; Prentice, Ross L. (2002). The statistical analysis of failure time data. New York: John Wiley &amp; Sons.</p></li>
+<li><p>Lawless, Jerald F. (2003). Statistical Models and Methods for Lifetime Data (2nd ed.). Hoboken: John Wiley and Sons.</p></li>
+</ul>
+</section>
+</section>
+<section id="referências" class="level2">
+<h2 class="anchored" data-anchor-id="referências">Referências</h2>
+<p>CURSO-R. <strong>curso-r.github.com</strong>. Disponível em: https://github.com/curso-r/curso-r.github.com/. Acesso em: 02 jun. 2024.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
+  <category>econometria</category>
+  <guid>https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia.html</guid>
+  <pubDate>Sat, 01 Jun 2024 03:00:00 GMT</pubDate>
+  <media:content url="https://alexsandroprado.github.io/blog/posts/sobrevivencia/sobrevivencia.png" medium="image" type="image/png" height="101" width="144"/>
+</item>
+</channel>
+</rss>

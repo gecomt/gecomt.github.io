@@ -1,5 +1,8 @@
+_site/*
+_freeze/*
+*_cache/
+
+/.quarto/
 .Rproj.user
 .Rhistory
-.RData
-.Ruserdata
-gecomt.github.io.Rproj
+/_*.local
