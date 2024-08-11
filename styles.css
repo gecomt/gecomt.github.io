@@ -191,11 +191,11 @@ a.badge.badge-green {
 
 .footer {
   background-color: #253e67"; /* Altere para a cor desejada */
-  color: #ffffff; /* Altere para a cor do texto desejada */
-  padding: 20px; /* Espaçamento opcional */
-  text-align: center; /* Centraliza o texto */
+  color: #ffffff; !important
+  padding: 20px; !important
+  text-align: center; !important
 }
 
-.nav-footer-right {
+.page-footer {
   color: #ffffff;!important
 }
