@@ -1,101 +1,85 @@
 ---
-title: Alexsandro Prado
+title: GECOMT
 comments: false
 about:
   template: trestles
-  image: /images/alexsandro.png
+  image: /images/gecomt.png
   links:
     - icon: envelope
       text: E-mail
-      href: mailto:alexsandro.prado@ufersa.edu.br
+      href: mailto:gecomt@ufersa.edu.br
     - icon: person-fill
-      text: Lattes
-      href: http://lattes.cnpq.br/4254857944224293
+      text: CNPQ
+      href: http://dgp.cnpq.br/dgp/espelhogrupo/7930463821700084
       target: _blank
-    - icon: filter-square-fill          
-      text: Orcid
-      href: https://orcid.org/0000-0002-7072-3621
     - icon: person-fill-check
-      text: Sigaa
-      href: https://sigaa.ufersa.edu.br/sigaa/public/docente/portal.jsf?siape=1987186
+      text: SIGAA UFERSA
+      href: https://sigaa.ufersa.edu.br/sigaa/public/departamento/pesquisa.jsf?id=928
       target: _blank    
-    - icon: award-fill
-      text: Web of science
-      href: https://www.webofscience.com/wos/author/record/2370799
-      target: _blank  
-    - icon: google
-      text: Google acadêmico
-      href: https://scholar.google.com.br/citations?hl=pt-BR&authuser=1&user=vMRqbikAAAAJ
-      target: _blank
     - icon: instagram
       text: Instagram
-      href: https://instagram.com/alexsandro_prado  
-    - icon: twitter-x
-      text:  
-      href: https://x.com/alexsandroprado
-      target: _blank
-    - icon: linkedin
-      text: Linkedin
-      href: https://www.linkedin.com/in/alexsandroprado/
-      target: _blank
-    - icon: threads
-      text: Threads
-      href: https://www.threads.net/@alexsandro_prado
-      target: _blank
-    - icon: youtube
-      text: Youtube
-      href: https://www.youtube.com/@profalexsandroprado
+      href: https://instagram.com/gecomt.ufersa
+    - icon: X
+      text: X
+      href: https://x.com/gecomt_ufersa
       target: _blank
     - icon: github
       text: Github
-      href: https://github.com/alexsandroprado
+      href: https://github.com/gecomt
       target: _blank
-    - icon: steam
-      text: Steam
-      href: https://steamcommunity.com/id/lecksan/
-      target: _blank   
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-::: {#hero-heading}
-[Professor do magistério superior há 12 anos, ministrando disciplinas nas áreas de Ciências Contábeis, Administração e Tecnologia da Informação e Comunicação.]{.smallcaps}
+```{=html}
+<style>
+  .justificado {
+    text-align: justify;
+  }
+</style>
+```
+::: {#hero-heading .justificado}
+[O Grupo de Estudos Sobre Contabilidade e Mercado de Trabalho (GECOMT)
+objetiva mapear o mercado de trabalho contábil, compreendendo
+trabalhadores, carteira assassinada (mercado formal), discutindo
+questões relativas à remuneração e discriminação salarial em função de
+gênero, raça, região, setor de atuação, etc.]{.smallcaps}
 
-[Um entusiasta apaixonado por tecnologia que gosta de explorar o vasto mundo dos dados!]{.smallcaps}
+[Os resultados podem potencialmente contribuir para:]{.smallcaps}
 
+-   [Identificar quais são as habilidades e conhecimentos mais
+    valorizados pelos empregadores e quais são as áreas e regiões são
+    mais promissoras dentro da contabilidade, ajudando os profissionais
+    a se prepararem melhor para o mercado de trabalho;]{.smallcaps}
 
+-   [Observar mudanças e tendências no mercado de trabalho contábil,
+    permitindo que os profissionais estejam melhor preparados para lidar
+    com elas e se adaptar às novas demandas;]{.smallcaps}
 
-## Formação
+-   [Gestores e profissionais podem tomar decisões mais informadas e
+    estratégicas em relação ao desenvolvimento de suas carreiras ou
+    negócios;]{.smallcaps}
 
-[Universidade Federal da Paraíba (UFPB)]{.smallcaps}
+-   [Desenvolvimento de políticas públicas voltadas para a formação e
+    qualificação de profissionais contábeis, garantindo que as demandas
+    do mercado sejam atendidas e que haja um equilíbrio entre oferta e
+    demanda de profissionais;]{.smallcaps}
 
-^Doutor em Economia, área de concentração Economia Aplicada^
-
-[Universidade de Brasília (UnB)]{.smallcaps}
-
-^Mestre em Ciências Contábeis^
-
-[Universidade Federal da Paraíba (UFPB)]{.smallcaps}
-
-^Bacharel em Ciências Contábeis^
-
-## Habilidades
-
--   [Experiência em análise e visualização de dados em linguagem R]{.smallcaps}
-
--   [ETL microdados (RAIS, CAGED, PNADc, BGSD, CVM Cias Abertas)]{.smallcaps}
-
--   [SQL (Structured Query Language) para consulta e manipulação de dados]{.smallcaps}
-
--   [Decomposição Oaxaca-Blinder, Modelos de sobrevivência, Estimação em Diff-in-Diff (DID), Propense Score Matching]{.smallcaps}
-
--   [Desenvolvimento de dashboards (Flexdashboard), websites (Posit Quarto) e  mapas interativos (leaflet)]{.smallcaps}
-
--   [Montagem e manutenção de computadores]{.smallcaps}
-
--   [Instalação e configuração de sistemas operacionais Linux e Windows]{.smallcaps}
-
--   [Virtualização (VirtualBox) e gerenciamento de máquinas virtuais]{.smallcaps}
-
--   [Configuração e administração na Amazon Elastic Compute Cloud (AWS EC2) para computação em nuvem.]{.smallcaps}
+-   [Perceber as principais barreiras à entrada de novos profissionais
+    no mercado de trabalho contábil, permitindo que sejam desenvolvidas
+    estratégias para facilitar a integração desses profissionais no
+    mercado.]{.smallcaps}
 :::
 
-------------------------------------------------------------------------
+ 
+ 
+ 
+
++:--------------------------------------------------------------------:+
+| *“Conselhos para os meus três filhos: \[...\] nunca desista do       |
+| trabalho. Trabalho dá significado e propósito, e a vida está vazia   |
+| sem ele.”*                                                           |
+|                                                                      |
+| ^(Stephen\ Hawking)^                                                 |
++----------------------------------------------------------------------+

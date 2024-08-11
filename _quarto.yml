@@ -6,17 +6,17 @@ project:
     - "*.md"
 lang: pt
 website:
-  title: "Alexsandro Prado"
-  site-url: "https://alexsandroprado.github.io/"
+  title: "GECOMT"
+  site-url: "https://gecomt.github.io/"
   favicon: "images/favicon.ico"
   twitter-card: true
-  description: "Desvendando mistérios dos dados como Sherlock Holmes, mas com laptop e café, não lupa e cachimbo!"
+  description: "Grupo de Estudos sobre Contabilidade e Mercado de Trabalho"
   google-analytics: "GTM-T9KC9QL7"
   back-to-top-navigation: true
   reader-mode: false
   navbar:
     type: light
-    background: "#000000"
+    background: "#253e67"
     left:
       - href: blog/index.qmd
         text: Blog
@@ -30,9 +30,6 @@ website:
 #        text: Software
       - text: Projetos
         menu:
-          - text: Contabilidados
-            href: https://contabilidados.quarto.pub/
-            target: _blank
           - text: GECOMT
             href: https://gecomt.shinyapps.io/dashboard/
             target: _blank
@@ -42,20 +39,20 @@ website:
 
     right:
       - icon: github
-        href: https://github.com/alexsandroprado
+        href: https://github.com/gecomt
       - icon: twitter-x
-        href: https://twitter.com/alexsandroprado
+        href: https://twitter.com/gecomt_ufersa
       - icon: youtube
-        href: https://www.youtube.com/@profalexsandroprado
+        href: https://www.youtube.com/@gecomt
       - icon: rss
         href: blog/index.xml
   page-footer:
-    left: "Alexsando Prado (2024)"
+    left: "GECOMT (2024)"
     right:
       - icon: github
-        href: https://github.com/alexsandroprado
+        href: https://github.com/gecomt
       - icon: twitter-x
-        href: https://twitter.com/alexsandroprado
+        href: https://twitter.com/gecomt_ufersa
     background: "#000000"
 
 date-format: "D MMMM YYYY"
@@ -77,5 +74,5 @@ blog:
 
 comments:
   giscus:
-    repo: alexsandroprado/alexsandroprado.github.io
+    repo: gecomt/gecomt.github.io
 

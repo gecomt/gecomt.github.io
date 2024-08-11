@@ -16,7 +16,11 @@ output {
 nav,
 .footer {
   font-family: 'Fira Sans', 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 100%;
+
+.nav-footer {
+    background-color: #253e67; /* Altere para a cor que você deseja */
+    color: white; !important
+    text-align: center; /* Centralizar o texto */
 }
 
 a.nav-link,a.navbar-brand {
@@ -24,7 +28,7 @@ a.nav-link,a.navbar-brand {
 }
 
 a.nav-link:hover,a.navbar-brand:hover {
-  color: #007bff; /* Blue */
+  color: #cfb274; /* Blue */
 }
 
 /* Badges */
@@ -171,10 +175,10 @@ a.badge.badge-green {
 
 /* Ajuste o tamanho do logo na navbar */
 .navbar-brand {
-  background: url('images/logo.png');
+ background: url('images/logo.png');
   background-size: contain;
   padding-right: 5px !important;
-  padding-left: 50px !important;
+  padding-left: 60px !important;
   background-repeat: no-repeat;
   color: #fff;
 }
@@ -183,4 +187,15 @@ a.badge.badge-green {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer {
+  background-color: #253e67"; /* Altere para a cor desejada */
+  color: #ffffff; /* Altere para a cor do texto desejada */
+  padding: 20px; /* Espaçamento opcional */
+  text-align: center; /* Centraliza o texto */
+}
+
+.nav-footer-right {
+  color: #ffffff;!important
 }
