@@ -72,14 +72,12 @@ gênero, raça, região, setor de atuação, etc.]{.smallcaps}
     mercado.]{.smallcaps}
 :::
 
- 
- 
- 
+     
 
 +:--------------------------------------------------------------------:+
 | *“Conselhos para os meus três filhos: \[...\] nunca desista do       |
 | trabalho. Trabalho dá significado e propósito, e a vida está vazia   |
 | sem ele.”*                                                           |
 |                                                                      |
-| ^(Stephen\ Hawking)^                                                 |
+| ^(Stephen Hawking)^                                                  |
 +----------------------------------------------------------------------+
