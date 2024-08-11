@@ -3,8 +3,7 @@ date: "2024-08-11"
 title: "O Contador e o Mercado de Trabalho" 
 author: "Alexsandro Prado"                            
 categories:                                           
-  - contabilidade
-  - datascience
+  - mercado de trabalho
 image: contabdata.webp
 
 format:
