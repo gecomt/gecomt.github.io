@@ -20,23 +20,25 @@ website:
     left:
       - href: blog/index.qmd
         text: Blog
+      - href: https://gecomt.shinyapps.io/dashboard/
+        text: Dashboard
+        target: _blank
       # - href: artigos/index.qmd
       #   text: Artigos
-#      - href: palestras/index.qmd
+#       - href: palestras/index.qmd
 #        text: Palestras
-#     - href: Ensino/index.qmd
+#      - href: Ensino/index.qmd
 #        text: Ensino
 #      - href: software/index.qmd
 #        text: Software
       - text: Projetos
         menu:
-          - text: GECOMT
-            href: https://gecomt.shinyapps.io/dashboard/
+          - text: contabiliDados
+            href: https://contabilidados.com.br/
             target: _blank
           - text: Regulariza
             href: https://regulariza.shinyapps.io/dashboard/
             target: _blank
-
     right:
       - icon: github
         href: https://github.com/gecomt
