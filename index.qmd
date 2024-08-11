@@ -19,7 +19,7 @@ about:
     - icon: instagram
       text: Instagram
       href: https://instagram.com/gecomt.ufersa
-    - icon: X
+    - icon: twitter-x
       text: X
       href: https://x.com/gecomt_ufersa
       target: _blank
