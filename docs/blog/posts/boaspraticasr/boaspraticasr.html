@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexsandro Prado">
 
-<title>index – GECOMT</title>
+<title>Boas práticas no Uso do R - parte I – GECOMT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Procurar"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-T9KC9QL7"></script>
 
 <script type="text/javascript">
@@ -113,53 +83,11 @@ gtag('config', 'GTM-T9KC9QL7', { 'anonymize_ip': true});
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="GECOMT" href="index.xml" data-external="1"><meta name="twitter:title" content="GECOMT">
-<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Boas práticas no Uso do R - parte I – GECOMT">
+<meta name="twitter:image" content="https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.webp">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -169,7 +97,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">GECOMT</span>
     </a>
   </div>
@@ -180,7 +108,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -220,7 +148,7 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -233,150 +161,94 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categorias</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Tudo <span class="quarto-category-count">(3)</span></div><div class="category" data-category="datascience">datascience <span class="quarto-category-count">(2)</span></div><div class="category" data-category="mercado de trabalho">mercado de trabalho <span class="quarto-category-count">(1)</span></div><div class="category" data-category="r">r <span class="quarto-category-count">(2)</span></div></div></div>
-<!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
-       <option value="index" data-direction="asc">Pré-selecionado</option>
-         <option value="listing-title" data-direction="asc">
-          Título
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Data - Mais velho
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Data - O mais novo
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Autor
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filtro">
     </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Boas práticas no Uso do R - parte I</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">r</div>
+    <div class="quarto-category">datascience</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexsandro Prado </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">11 agosto 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+body {
+  line-height: 2.0;
+}
+</style>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="boaspraticasr.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="318"></p>
+</figure>
 </div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="r,datascience" data-listing-date-sort="1723345200000" data-listing-file-modified-sort="1723482260259" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="526">
-<a href="../blog/posts/boaspraticasr/boaspraticasr.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../blog/posts/boaspraticasr/boaspraticasr.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Boas práticas no Uso do R - parte I
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
+<div style="text-align: justify;">
+<section id="introdução" class="level3">
+<h3 class="anchored" data-anchor-id="introdução">Introdução</h3>
+<p>Trabalhar com o R de maneira eficiente e organizada é essencial para garantir a reprodutibilidade e a manutenção do seu código ao longo do tempo. Uma das principais boas práticas é a adoção do conceito de projetos em vez de depender do diretório home padrão ou do uso da função <code>setwd()</code> para definir o diretório de trabalho.</p>
+</section>
+<section id="por-que-usar-projetos-no-r" class="level3">
+<h3 class="anchored" data-anchor-id="por-que-usar-projetos-no-r">Por que usar projetos no R?</h3>
+<p><strong>Organização:</strong> Cada projeto no RStudio, por exemplo, é associado a um diretório específico que contém todos os arquivos relevantes para aquele projeto. Isso facilita a organização, pois todos os scripts, dados, outputs e outros recursos ficam centralizados em um único local.</p>
+<p><strong>Reprodutibilidade:</strong> Usando projetos, você elimina a dependência de caminhos absolutos. Caminhos relativos são utilizados, o que significa que o código pode ser executado em qualquer máquina, desde que o projeto seja transferido junto com sua estrutura de pastas. Isso melhora significativamente a reprodutibilidade e facilita o compartilhamento do código com outras pessoas.</p>
+<p><strong>Evita erros comuns:</strong> O uso da função <code>setwd()</code> para alterar o diretório de trabalho pode causar problemas, especialmente quando o código é compartilhado ou movido para diferentes sistemas. Como o caminho pode não existir em outra máquina, isso pode gerar erros e complicações desnecessárias.</p>
+<p><strong>Ambiente limpo:</strong> Trabalhar com projetos ajuda a manter seu ambiente de trabalho limpo, sem a necessidade de ajustar manualmente o diretório de trabalho para cada sessão de R. O ambiente de trabalho, junto com as configurações e dependências, é armazenado dentro do projeto, tornando o ambiente de desenvolvimento mais controlado e previsível.</p>
+</section>
+<section id="por-que-não-utilizar-o-diretório-home-padrão-no-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="por-que-não-utilizar-o-diretório-home-padrão-no-rstudio">Por que não utilizar o diretório home padrão no RStudio?</h3>
+<p>Utilizar o diretório home padrão no RStudio pode levar a vários problemas de organização e reprodutibilidade. O diretório home é um local genérico e comum para todos os projetos e arquivos do usuário, o que pode resultar em confusão quando múltiplos projetos estão sendo gerenciados simultaneamente. Sem uma estrutura de projeto específica, há um maior risco de sobrescrever arquivos acidentalmente ou de misturar dados e scripts de diferentes projetos. Além disso, ao depender do diretório home padrão, você corre o risco de enfrentar problemas ao compartilhar seu código, pois outros usuários podem ter uma estrutura de diretórios diferente, tornando o código menos portável. Portanto, adotar o uso de projetos no RStudio e evitar o diretório home padrão é uma prática recomendada para garantir um ambiente de trabalho mais controlado e menos propenso a erros.</p>
+</section>
+<section id="como-começar-a-usar-projetos" class="level3">
+<h3 class="anchored" data-anchor-id="como-começar-a-usar-projetos">Como começar a usar projetos?</h3>
+<p>No RStudio, você pode criar um novo projeto facilmente:</p>
+<ol type="1">
+<li>Vá em <code>File &gt; New Project</code>.</li>
+<li>Escolha criar um projeto em um diretório novo ou em um diretório existente.</li>
+</ol>
+<p>A partir daí, RStudio gerencia automaticamente o diretório de trabalho para você, eliminando a necessidade de utilizar <code>setwd()</code>.</p>
+</section>
+<section id="conclusão" class="level3">
+<h3 class="anchored" data-anchor-id="conclusão">Conclusão</h3>
+<p>Adotar projetos no R é uma prática recomendada que promove a organização, reprodutibilidade e eficiência no desenvolvimento de códigos. Evitar o uso do diretório home padrão e da função <code>setwd()</code> previne erros e melhora a portabilidade do seu trabalho. Trabalhar com projetos desde o início de um novo trabalho em R garantirá que você esteja seguindo as melhores práticas e mantendo seu código limpo e bem estruturado.</p>
+</section>
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('datascience'); return false;">
-datascience
-</div>
-</div>
-<div class="card-text listing-description">
-Trabalhar com o R de maneira eficiente e organizada é essencial para garantir a reprodutibilidade e a manutenção do seu código ao longo do tempo. Uma das principais boas…<code></code>
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alexsandro Prado
-</div>
-<div class="listing-date">
-11 agosto 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="mercado de trabalho" data-listing-date-sort="1723345200000" data-listing-file-modified-sort="1723478641965" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="687">
-<a href="../blog/posts/contadortrabalho/contadortrabalho.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../blog/posts/contadortrabalho/contabdata.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-O Contador e o Mercado de Trabalho
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('mercado de trabalho'); return false;">
-mercado de trabalho
-</div>
-</div>
-<div class="card-text listing-description">
-O contador é um profissional fundamental no mundo dos negócios, desempenhando um papel crucial em diversas áreas que vão muito além da simples escrituração contábil. Com a…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alexsandro Prado
-</div>
-<div class="listing-date">
-11 agosto 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-categories="r,datascience" data-listing-date-sort="1723345200000" data-listing-file-modified-sort="1723478645451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="987">
-<a href="../blog/posts/rinstalacao/rinstalacao.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../blog/posts/rinstalacao/rinstalacao.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Instalação do R, RStudio e Rtools no Windows
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('datascience'); return false;">
-datascience
-</div>
-</div>
-<div class="card-text listing-description">
-O R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alexsandro Prado
-</div>
-<div class="listing-date">
-11 agosto 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-Nenhum item correspondente
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -941,6 +813,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gecomt/gecomt.github.io" data-repo-id="R_kgDOLgBDYw" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
