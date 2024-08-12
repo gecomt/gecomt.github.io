@@ -53,7 +53,7 @@
     "href": "blog/index.html",
     "title": "GECOMT",
     "section": "",
-    "text": "Ordenar por\n       Pré-selecionado\n         \n          Título\n        \n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Autor\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nO Contador e o Mercado de Trabalho\n\n\n\nmercado de trabalho\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
+    "text": "Ordenar por\n       Pré-selecionado\n         \n          Título\n        \n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Autor\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nO Contador e o Mercado de Trabalho\n\n\n\nmercado de trabalho\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalação do R, RStudio e Rtools no Windows\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
   },
   {
     "objectID": "palestras/index.html",
@@ -61,5 +61,89 @@
     "title": "Talks I’ve given",
     "section": "",
     "text": "Talks I’ve given\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Ordenar por\n       Pré-selecionado\n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Título\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nData\n\n\nTítulo\n\n\nVenue\n\n\n\n\n\n\n30 jun 1901\n\n\nAdventures with Uranium Rays\n\n\nFrench Academy, Paris\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/r_instalacao.html",
+    "href": "blog/posts/rinstalacao/r_instalacao.html",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "",
+    "text": "Acesse o site do R:\n\nAbra o navegador e vá para https://cran.r-project.org/.\n\nBaixe o R:\n\nNo menu à esquerda, clique em Download R for Windows.\nNa página seguinte, clique em base.\nClique em Download R 4.x.x for Windows (o número da versão pode variar).\n\nInstale o R:\n\nDepois que o download for concluído, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nEscolha o idioma (português está disponível).\nAceite os termos e condições.\nEscolha o local de instalação (o padrão é geralmente recomendado).\nMantenha as configurações padrão durante a instalação.\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/r_instalacao.html#passo-1-instalar-o-r",
+    "href": "blog/posts/rinstalacao/r_instalacao.html#passo-1-instalar-o-r",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "",
+    "text": "Acesse o site do R:\n\nAbra o navegador e vá para https://cran.r-project.org/.\n\nBaixe o R:\n\nNo menu à esquerda, clique em Download R for Windows.\nNa página seguinte, clique em base.\nClique em Download R 4.x.x for Windows (o número da versão pode variar).\n\nInstale o R:\n\nDepois que o download for concluído, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nEscolha o idioma (português está disponível).\nAceite os termos e condições.\nEscolha o local de instalação (o padrão é geralmente recomendado).\nMantenha as configurações padrão durante a instalação.\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/r_instalacao.html#passo-2-instalar-o-rstudio",
+    "href": "blog/posts/rinstalacao/r_instalacao.html#passo-2-instalar-o-rstudio",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 2: Instalar o RStudio",
+    "text": "Passo 2: Instalar o RStudio\n\nAcesse o site do RStudio:\n\nVá para https://posit.co/download/rstudio-desktop/.\n\nBaixe o RStudio:\n\nRole a página para baixo até encontrar a seção de RStudio Desktop.\nClique no botão de download correspondente à versão do Windows.\n\nInstale o RStudio:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação (novamente, o padrão é recomendado).\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/r_instalacao.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
+    "href": "blog/posts/rinstalacao/r_instalacao.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 3: Instalar o Rtools (opcional, mas recomendado)",
+    "text": "Passo 3: Instalar o Rtools (opcional, mas recomendado)\nO Rtools é necessário se você quiser compilar pacotes que contêm código C, C++, ou Fortran. Alguns pacotes do R requerem o Rtools para serem instalados.\n\nAcesse o site do Rtools:\n\nVá para https://cran.r-project.org/bin/windows/Rtools/.\n\nBaixe o Rtools:\n\nClique no link para a versão mais recente do Rtools para o seu sistema.\n\nInstale o Rtools:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação.\nCertifique-se de que a opção “Add Rtools to system PATH” esteja marcada. Isso permite que o Rtools seja usado diretamente no RStudio.\nClique em “Install” para iniciar a instalação.\n\n\nConfigure o Rtools no RStudio:\n\nAbra o RStudio.\nNo console, digite writeLines('PATH=\"${RTOOLS40_HOME}\\\\usr\\\\bin;${PATH}\"', con = \"~/.Renviron\") e pressione Enter.\nReinicie o RStudio."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/r_instalacao.html#passo-4-verificar-as-instalações",
+    "href": "blog/posts/rinstalacao/r_instalacao.html#passo-4-verificar-as-instalações",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 4: Verificar as Instalações",
+    "text": "Passo 4: Verificar as Instalações\n\nVerificar a instalação do R:\n\nAbra o RStudio.\nNo console, digite R.version e pressione Enter. As informações sobre a versão do R instalada serão exibidas.\n\nVerificar a instalação do Rtools:\n\nNo console do RStudio, digite Sys.which(\"make\") e pressione Enter.\nSe o caminho para o make for exibido, o Rtools foi instalado corretamente.\n\n\nAgora você está pronto para usar o R e o RStudio no Windows!"
+  },
+  {
+    "objectID": "blog/posts/contadortrabalho/contadortrabalho.html",
+    "href": "blog/posts/contadortrabalho/contadortrabalho.html",
+    "title": "O Contador e o Mercado de Trabalho",
+    "section": "",
+    "text": "O Contador e o Mercado de Trabalho\nO contador é um profissional fundamental no mundo dos negócios, desempenhando um papel crucial em diversas áreas que vão muito além da simples escrituração contábil. Com a evolução das práticas empresariais e a crescente complexidade das normas regulatórias, o campo de atuação do contador se expandiu, fazendo com que esse profissional seja indispensável em diferentes setores da economia.\n\nPrincipais Funções de um Contador\n\nContabilidade Geral:\n\nEscrituração Contábil: Registro das operações financeiras de uma empresa, garantindo que todos os dados sejam organizados e que os balanços patrimoniais, demonstrações de resultados e fluxos de caixa reflitam a realidade da entidade.\nAnálise de Balanços: Interpretação dos demonstrativos financeiros para entender a situação econômica da empresa e auxiliar na tomada de decisões estratégicas.\n\nPlanejamento Tributário:\n\nGestão Fiscal: Planejamento e execução de estratégias para reduzir a carga tributária da empresa dentro dos limites legais. O contador deve estar atualizado com a legislação tributária e ser capaz de identificar oportunidades de economia fiscal.\nDeclarações de Impostos: Preparação e envio das declarações fiscais, garantindo o cumprimento das obrigações tributárias.\n\nAuditoria Contábil:\n\nAuditoria Interna: Revisão dos processos e registros contábeis para assegurar que as operações financeiras estejam sendo conduzidas de acordo com as políticas internas e normas legais.\nAuditoria Externa: Exame independente das demonstrações financeiras de uma empresa para fornecer uma opinião imparcial sobre sua conformidade e veracidade.\n\nConsultoria Financeira e Empresarial:\n\nAnálise de Viabilidade Econômica: Avaliação de projetos de investimento, analisando os custos, benefícios e riscos envolvidos para orientar a tomada de decisões.\nEstratégia de Negócios: Auxílio na formulação de estratégias empresariais baseadas em análises financeiras e econômicas, ajudando a empresa a alcançar seus objetivos.\n\nPerícia Contábil:\n\nPerícia Judicial: Atuação em processos judiciais como perito contábil, fornecendo laudos técnicos que auxiliam o julgamento de questões que envolvem disputas financeiras e contábeis.\nArbitragem e Mediação: Participação em processos de resolução de conflitos, utilizando seu conhecimento técnico para ajudar a resolver disputas fora do âmbito judicial.\n\nControladoria:\n\nGestão de Custos: Implementação de sistemas de controle de custos e análise da rentabilidade, identificando áreas onde a empresa pode melhorar sua eficiência operacional.\nOrçamento e Planejamento: Desenvolvimento e monitoramento de orçamentos empresariais, assegurando que as metas financeiras sejam alcançadas.\n\nCompliance e Governança Corporativa:\n\nImplementação de Políticas de Compliance: Desenvolvimento de sistemas de controle interno para garantir que a empresa cumpra todas as normas e regulamentações aplicáveis.\nRelatórios de Governança: Elaboração de relatórios para investidores e partes interessadas, demonstrando o compromisso da empresa com as práticas de governança corporativa.\n\nTecnologia e Inovação:\n\nAutomação de Processos Contábeis: Implementação de sistemas de software para automatizar tarefas rotineiras, como a escrituração contábil e a emissão de relatórios financeiros.\nAnálise de Dados: Uso de ferramentas de análise de dados para extrair insights financeiros e identificar tendências que possam impactar a empresa.\n\n\n\n\n\nO Futuro da Contabilidade\nCom a transformação digital, o papel do contador está evoluindo rapidamente. Profissionais que dominam tecnologias emergentes, como inteligência artificial, big data e blockchain, terão uma vantagem competitiva no mercado de trabalho. Além disso, a globalização e a complexidade crescente das normas contábeis internacionais (como as IFRS) estão ampliando o escopo de atuação do contador, que precisa estar preparado para lidar com novos desafios e oportunidades.\nDessa forma, o contador se torna cada vez mais um parceiro estratégico nas organizações, contribuindo não apenas para o cumprimento de obrigações legais, mas também para o sucesso e crescimento sustentável dos negócios. ```\n\n\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/rinstalacao.html",
+    "href": "blog/posts/rinstalacao/rinstalacao.html",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "",
+    "text": "O R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código aberto da linguagem de programação S, criada por John M. Chambers na Stanford University, CA, EUA, durante os anos 1980, no Bell Labs. A linguagem S passou por três versões principais: Old S (1976-1987), New S (1988-1997) e S4 (1998), utilizada na IDE S-PLUS (1988-2008). A popularidade da linguagem S resultou em diversos produtos comerciais, como o SAS, que ainda estão em uso.\nNo final da década de 1990, Robert Gentleman e Ross Ihaka, da Universidade de Auckland, Nova Zelândia, iniciaram o desenvolvimento de uma versão livre da linguagem S, conhecida como R. O R passou pelas seguintes fases: Desenvolvimento (1997-2000), Versão 1 (2000-2004), Versão 2 (2004-2013), Versão 3 (2013-2020) e Versão 4 (desde 2020). Para mais detalhes sobre o desenvolvimento das linguagens S e R, consulte Wickham (2013). Atualmente, a linguagem R é mantida por uma rede de colaboradores chamada R Core Team. A origem do nome R não é totalmente clara, mas acredita-se que tenha sido escolhida por ser a letra que precede o “S”, indicando a sua base na linguagem anterior, ou pelo fato de os nomes dos dois criadores começarem com “R”.\nUm ponto importante é que o R é uma linguagem de programação interpretada, assim como o Python, ao contrário de linguagens compiladas como C e Java. Isso torna o R mais acessível, já que ele processa e executa o código em tempo real, transformando-o diretamente em linguagem de máquina (código binário que o computador lê). No entanto, essa característica pode resultar em uma velocidade de processamento menor em comparação com linguagens compiladas."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/rinstalacao.html#passo-1-instalar-o-r",
+    "href": "blog/posts/rinstalacao/rinstalacao.html#passo-1-instalar-o-r",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 1: Instalar o R",
+    "text": "Passo 1: Instalar o R\n\nAcesse o site do R:\n\nAbra o navegador e vá para https://cran.r-project.org/.\n\nBaixe o R:\n\nNo menu à esquerda, clique em Download R for Windows.\nNa página seguinte, clique em base.\nClique em Download R 4.x.x for Windows (o número da versão pode variar).\n\nInstale o R:\n\nDepois que o download for concluído, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nEscolha o idioma (português está disponível).\nAceite os termos e condições.\nEscolha o local de instalação (o padrão é geralmente recomendado).\nMantenha as configurações padrão durante a instalação.\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/rinstalacao.html#passo-2-instalar-o-rstudio",
+    "href": "blog/posts/rinstalacao/rinstalacao.html#passo-2-instalar-o-rstudio",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 2: Instalar o RStudio",
+    "text": "Passo 2: Instalar o RStudio\n\nAcesse o site do RStudio:\n\nVá para https://posit.co/download/rstudio-desktop/.\n\nBaixe o RStudio:\n\nRole a página para baixo até encontrar a seção de RStudio Desktop.\nClique no botão de download correspondente à versão do Windows.\n\nInstale o RStudio:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação (novamente, o padrão é recomendado).\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/rinstalacao.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
+    "href": "blog/posts/rinstalacao/rinstalacao.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 3: Instalar o Rtools (opcional, mas recomendado)",
+    "text": "Passo 3: Instalar o Rtools (opcional, mas recomendado)\nO Rtools é necessário se você quiser compilar pacotes que contêm código C, C++, ou Fortran. Alguns pacotes do R requerem o Rtools para serem instalados.\n\nAcesse o site do Rtools:\n\nVá para https://cran.r-project.org/bin/windows/Rtools/.\n\nBaixe o Rtools:\n\nClique no link para a versão mais recente do Rtools para o seu sistema.\n\nInstale o Rtools:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação.\nCertifique-se de que a opção “Add Rtools to system PATH” esteja marcada. Isso permite que o Rtools seja usado diretamente no RStudio.\nClique em “Install” para iniciar a instalação.\n\n\nConfigure o Rtools no RStudio:\n\nAbra o RStudio.\nNo console, digite writeLines('PATH=\"${RTOOLS40_HOME}\\\\usr\\\\bin;${PATH}\"', con = \"~/.Renviron\") e pressione Enter.\nReinicie o RStudio."
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/rinstalacao.html#passo-4-verificar-as-instalações",
+    "href": "blog/posts/rinstalacao/rinstalacao.html#passo-4-verificar-as-instalações",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 4: Verificar as Instalações",
+    "text": "Passo 4: Verificar as Instalações\n\nVerificar a instalação do R:\n\nAbra o RStudio.\nNo console, digite R.version e pressione Enter. As informações sobre a versão do R instalada serão exibidas.\n\nVerificar a instalação do Rtools:\n\nNo console do RStudio, digite Sys.which(\"make\") e pressione Enter.\nSe o caminho para o make for exibido, o Rtools foi instalado corretamente.\n\n\nAgora você está pronto para usar o R e o RStudio no Windows!"
+  },
+  {
+    "objectID": "blog/posts/rinstalacao/rinstalacao.html#intodução",
+    "href": "blog/posts/rinstalacao/rinstalacao.html#intodução",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Intodução",
+    "text": "Intodução\n\nO R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código aberto da linguagem de programação S, criada por John M. Chambers na Stanford University, CA, EUA, durante os anos 1980, no Bell Labs. A linguagem S passou por três versões principais: Old S (1976-1987), New S (1988-1997) e S4 (1998), utilizada na IDE S-PLUS (1988-2008). A popularidade da linguagem S resultou em diversos produtos comerciais, como o SAS, que ainda estão em uso.\nNo final da década de 1990, Robert Gentleman e Ross Ihaka, da Universidade de Auckland, Nova Zelândia, iniciaram o desenvolvimento de uma versão livre da linguagem S, conhecida como R. O R passou pelas seguintes fases: Desenvolvimento (1997-2000), Versão 1 (2000-2004), Versão 2 (2004-2013), Versão 3 (2013-2020) e Versão 4 (desde 2020). Para mais detalhes sobre o desenvolvimento das linguagens S e R, consulte Wickham (2013). Atualmente, a linguagem R é mantida por uma rede de colaboradores chamada R Core Team. A origem do nome R não é totalmente clara, mas acredita-se que tenha sido escolhida por ser a letra que precede o “S”, indicando a sua base na linguagem anterior, ou pelo fato de os nomes dos dois criadores começarem com “R”.\nUm ponto importante é que o R é uma linguagem de programação interpretada, assim como o Python, ao contrário de linguagens compiladas como C e Java. Isso torna o R mais acessível, já que ele processa e executa o código em tempo real, transformando-o diretamente em linguagem de máquina (código binário que o computador lê). No entanto, essa característica pode resultar em uma velocidade de processamento menor em comparação com linguagens compiladas."
   }
 ]

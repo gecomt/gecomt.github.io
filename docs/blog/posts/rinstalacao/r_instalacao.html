@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Alexsandro Prado">
 
-<title>index – GECOMT</title>
+<title>Instalação do R, RStudio e Rtools no Windows – GECOMT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +24,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../images/favicon.ico" rel="icon">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/favicon.ico" rel="icon">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Procurar"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=GTM-T9KC9QL7"></script>
 
 <script type="text/javascript">
@@ -113,53 +83,12 @@ gtag('config', 'GTM-T9KC9QL7', { 'anonymize_ip': true});
 <script src="https://kit.fontawesome.com/0fba9333d8.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<link rel="alternate" type="application/rss+xml" title="GECOMT" href="index.xml" data-external="1"><meta name="twitter:title" content="GECOMT">
-<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Instalação do R, RStudio e Rtools no Windows – GECOMT">
+<meta name="twitter:description" content="Grupo de Estudos sobre Contabilidade e Mercado de Trabalho">
+<meta name="twitter:image" content="https://gecomt.github.io/blog/posts/rinstalacao/contabdata.webp">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -169,7 +98,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">GECOMT</span>
     </a>
   </div>
@@ -180,7 +109,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../../blog/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -220,7 +149,7 @@ window.Quarto = {
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../blog/index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../../blog/index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -233,117 +162,174 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categorias</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Tudo <span class="quarto-category-count">(2)</span></div><div class="category" data-category="datascience">datascience <span class="quarto-category-count">(1)</span></div><div class="category" data-category="mercado de trabalho">mercado de trabalho <span class="quarto-category-count">(1)</span></div><div class="category" data-category="r">r <span class="quarto-category-count">(1)</span></div></div></div>
-<!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
-       <option value="index" data-direction="asc">Pré-selecionado</option>
-         <option value="listing-title" data-direction="asc">
-          Título
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Data - Mais velho
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Data - O mais novo
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Autor
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filtro">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Nesta página</h2>
+   
+  <ul>
+  <li><a href="#passo-1-instalar-o-r" id="toc-passo-1-instalar-o-r" class="nav-link active" data-scroll-target="#passo-1-instalar-o-r">Passo 1: Instalar o R</a></li>
+  <li><a href="#passo-2-instalar-o-rstudio" id="toc-passo-2-instalar-o-rstudio" class="nav-link" data-scroll-target="#passo-2-instalar-o-rstudio">Passo 2: Instalar o RStudio</a></li>
+  <li><a href="#passo-3-instalar-o-rtools-opcional-mas-recomendado" id="toc-passo-3-instalar-o-rtools-opcional-mas-recomendado" class="nav-link" data-scroll-target="#passo-3-instalar-o-rtools-opcional-mas-recomendado">Passo 3: Instalar o Rtools (opcional, mas recomendado)</a></li>
+  <li><a href="#passo-4-verificar-as-instalações" id="toc-passo-4-verificar-as-instalações" class="nav-link" data-scroll-target="#passo-4-verificar-as-instalações">Passo 4: Verificar as Instalações</a></li>
+  </ul>
+</nav>
     </div>
-</div>
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="mercado de trabalho" data-listing-date-sort="1723345200000" data-listing-file-modified-sort="1723478641965" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="687">
-<a href="../blog/posts/contadortrabalho/contadortrabalho.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../blog/posts/contadortrabalho/contabdata.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-O Contador e o Mercado de Trabalho
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('mercado de trabalho'); return false;">
-mercado de trabalho
-</div>
-</div>
-<div class="card-text listing-description">
-O contador é um profissional fundamental no mundo dos negócios, desempenhando um papel crucial em diversas áreas que vão muito além da simples escrituração contábil. Com a…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alexsandro Prado
-</div>
-<div class="listing-date">
-11 agosto 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="r,datascience" data-listing-date-sort="1723345200000" data-listing-file-modified-sort="1723478645451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="987">
-<a href="../blog/posts/rinstalacao/rinstalacao.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="../blog/posts/rinstalacao/rinstalacao.webp" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Instalação do R, RStudio e Rtools no Windows
-</h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('r'); return false;">
-r
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('datascience'); return false;">
-datascience
-</div>
-</div>
-<div class="card-text listing-description">
-O R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Alexsandro Prado
-</div>
-<div class="listing-date">
-11 agosto 2024
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-Nenhum item correspondente
-</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Instalação do R, RStudio e Rtools no Windows</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">r</div>
+    <div class="quarto-category">datascience</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexsandro Prado </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">11 agosto 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+body {
+  line-height: 2.0;
+}
+</style>
+<section id="passo-1-instalar-o-r" class="level2">
+<h2 class="anchored" data-anchor-id="passo-1-instalar-o-r">Passo 1: Instalar o R</h2>
+<ol type="1">
+<li><strong>Acesse o site do R:</strong>
+<ul>
+<li>Abra o navegador e vá para <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>.</li>
+</ul></li>
+<li><strong>Baixe o R:</strong>
+<ul>
+<li>No menu à esquerda, clique em <strong>Download R for Windows</strong>.</li>
+<li>Na página seguinte, clique em <strong>base</strong>.</li>
+<li>Clique em <strong>Download R 4.x.x for Windows</strong> (o número da versão pode variar).</li>
+</ul></li>
+<li><strong>Instale o R:</strong>
+<ul>
+<li>Depois que o download for concluído, clique duas vezes no arquivo de instalação.</li>
+<li>Siga as instruções do instalador:
+<ul>
+<li>Escolha o idioma (português está disponível).</li>
+<li>Aceite os termos e condições.</li>
+<li>Escolha o local de instalação (o padrão é geralmente recomendado).</li>
+<li>Mantenha as configurações padrão durante a instalação.</li>
+<li>Clique em “Install” para iniciar a instalação.</li>
+</ul></li>
+</ul></li>
+<li><strong>Finalize a instalação:</strong>
+<ul>
+<li>Quando a instalação terminar, clique em “Finish”.</li>
+</ul></li>
+</ol>
+</section>
+<section id="passo-2-instalar-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="passo-2-instalar-o-rstudio">Passo 2: Instalar o RStudio</h2>
+<ol type="1">
+<li><strong>Acesse o site do RStudio:</strong>
+<ul>
+<li>Vá para <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>.</li>
+</ul></li>
+<li><strong>Baixe o RStudio:</strong>
+<ul>
+<li>Role a página para baixo até encontrar a seção de <strong>RStudio Desktop</strong>.</li>
+<li>Clique no botão de download correspondente à versão do Windows.</li>
+</ul></li>
+<li><strong>Instale o RStudio:</strong>
+<ul>
+<li>Após o download, clique duas vezes no arquivo de instalação.</li>
+<li>Siga as instruções do instalador:
+<ul>
+<li>Aceite os termos e condições.</li>
+<li>Escolha o local de instalação (novamente, o padrão é recomendado).</li>
+<li>Clique em “Install” para iniciar a instalação.</li>
+</ul></li>
+</ul></li>
+<li><strong>Finalize a instalação:</strong>
+<ul>
+<li>Quando a instalação terminar, clique em “Finish”.</li>
+</ul></li>
+</ol>
+</section>
+<section id="passo-3-instalar-o-rtools-opcional-mas-recomendado" class="level2">
+<h2 class="anchored" data-anchor-id="passo-3-instalar-o-rtools-opcional-mas-recomendado">Passo 3: Instalar o Rtools (opcional, mas recomendado)</h2>
+<p>O Rtools é necessário se você quiser compilar pacotes que contêm código C, C++, ou Fortran. Alguns pacotes do R requerem o Rtools para serem instalados.</p>
+<ol type="1">
+<li><strong>Acesse o site do Rtools:</strong>
+<ul>
+<li>Vá para <a href="https://cran.r-project.org/bin/windows/Rtools/">https://cran.r-project.org/bin/windows/Rtools/</a>.</li>
+</ul></li>
+<li><strong>Baixe o Rtools:</strong>
+<ul>
+<li>Clique no link para a versão mais recente do Rtools para o seu sistema.</li>
+</ul></li>
+<li><strong>Instale o Rtools:</strong>
+<ul>
+<li>Após o download, clique duas vezes no arquivo de instalação.</li>
+<li>Siga as instruções do instalador:
+<ul>
+<li>Aceite os termos e condições.</li>
+<li>Escolha o local de instalação.</li>
+<li>Certifique-se de que a opção <strong>“Add Rtools to system PATH”</strong> esteja marcada. Isso permite que o Rtools seja usado diretamente no RStudio.</li>
+<li>Clique em “Install” para iniciar a instalação.</li>
+</ul></li>
+</ul></li>
+<li><strong>Configure o Rtools no RStudio:</strong>
+<ul>
+<li>Abra o RStudio.</li>
+<li>No console, digite <code>writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")</code> e pressione Enter.</li>
+<li>Reinicie o RStudio.</li>
+</ul></li>
+</ol>
+</section>
+<section id="passo-4-verificar-as-instalações" class="level2">
+<h2 class="anchored" data-anchor-id="passo-4-verificar-as-instalações">Passo 4: Verificar as Instalações</h2>
+<ol type="1">
+<li><strong>Verificar a instalação do R:</strong>
+<ul>
+<li>Abra o RStudio.</li>
+<li>No console, digite <code>R.version</code> e pressione Enter. As informações sobre a versão do R instalada serão exibidas.</li>
+</ul></li>
+<li><strong>Verificar a instalação do Rtools:</strong>
+<ul>
+<li>No console do RStudio, digite <code>Sys.which("make")</code> e pressione Enter.</li>
+<li>Se o caminho para o <code>make</code> for exibido, o Rtools foi instalado corretamente.</li>
+</ul></li>
+</ol>
+<p>Agora você está pronto para usar o R e o RStudio no Windows!</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -908,6 +894,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<script src="https://giscus.app/client.js" data-repo="gecomt/gecomt.github.io" data-repo-id="R_kgDOLgBDYw" data-category="General" data-category-id="" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+</script>
+<input type="hidden" id="giscus-base-theme" value="light">
+<input type="hidden" id="giscus-alt-theme" value="dark">
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -1,0 +1,109 @@
+---
+date: "2024-08-11"                                    
+title: "Instalação do R, RStudio e Rtools no Windows" 
+author: "Alexsandro Prado"                            
+categories:                                           
+  - r
+  - datascience
+image: rinstalacao.webp
+
+format:
+  html:
+    embed-resources: false
+    
+execute:
+  echo: false
+  warning: false
+  error: false
+  cache: true
+  freeze: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{=html}
+<style>
+body {
+  line-height: 2.0;
+}
+</style>
+```
+![](rinstalacao.webp){fig-align="center" width="355"}
+
+## Intodução
+
+::: {style="text-align: justify;"}
+O R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código aberto da linguagem de programação S, criada por John M. Chambers na Stanford University, CA, EUA, durante os anos 1980, no Bell Labs. A linguagem S passou por três versões principais: Old S (1976-1987), New S (1988-1997) e S4 (1998), utilizada na IDE S-PLUS (1988-2008). A popularidade da linguagem S resultou em diversos produtos comerciais, como o SAS, que ainda estão em uso.
+
+No final da década de 1990, Robert Gentleman e Ross Ihaka, da Universidade de Auckland, Nova Zelândia, iniciaram o desenvolvimento de uma versão livre da linguagem S, conhecida como R. O R passou pelas seguintes fases: Desenvolvimento (1997-2000), Versão 1 (2000-2004), Versão 2 (2004-2013), Versão 3 (2013-2020) e Versão 4 (desde 2020). Para mais detalhes sobre o desenvolvimento das linguagens S e R, consulte Wickham (2013). Atualmente, a linguagem R é mantida por uma rede de colaboradores chamada R Core Team. A origem do nome R não é totalmente clara, mas acredita-se que tenha sido escolhida por ser a letra que precede o "S", indicando a sua base na linguagem anterior, ou pelo fato de os nomes dos dois criadores começarem com "R".
+
+Um ponto importante é que o R é uma linguagem de programação interpretada, assim como o Python, ao contrário de linguagens compiladas como C e Java. Isso torna o R mais acessível, já que ele processa e executa o código em tempo real, transformando-o diretamente em linguagem de máquina (código binário que o computador lê). No entanto, essa característica pode resultar em uma velocidade de processamento menor em comparação com linguagens compiladas.
+:::
+
+## Passo 1: Instalar o R
+
+1.  **Acesse o site do R:**
+    -   Abra o navegador e vá para <https://cran.r-project.org/>.
+2.  **Baixe o R:**
+    -   No menu à esquerda, clique em **Download R for Windows**.
+    -   Na página seguinte, clique em **base**.
+    -   Clique em **Download R 4.x.x for Windows** (o número da versão pode variar).
+3.  **Instale o R:**
+    -   Depois que o download for concluído, clique duas vezes no arquivo de instalação.
+    -   Siga as instruções do instalador:
+        -   Escolha o idioma (português está disponível).
+        -   Aceite os termos e condições.
+        -   Escolha o local de instalação (o padrão é geralmente recomendado).
+        -   Mantenha as configurações padrão durante a instalação.
+        -   Clique em "Install" para iniciar a instalação.
+4.  **Finalize a instalação:**
+    -   Quando a instalação terminar, clique em "Finish".
+
+## Passo 2: Instalar o RStudio
+
+1.  **Acesse o site do RStudio:**
+    -   Vá para <https://posit.co/download/rstudio-desktop/>.
+2.  **Baixe o RStudio:**
+    -   Role a página para baixo até encontrar a seção de **RStudio Desktop**.
+    -   Clique no botão de download correspondente à versão do Windows.
+3.  **Instale o RStudio:**
+    -   Após o download, clique duas vezes no arquivo de instalação.
+    -   Siga as instruções do instalador:
+        -   Aceite os termos e condições.
+        -   Escolha o local de instalação (novamente, o padrão é recomendado).
+        -   Clique em "Install" para iniciar a instalação.
+4.  **Finalize a instalação:**
+    -   Quando a instalação terminar, clique em "Finish".
+
+## Passo 3: Instalar o Rtools (opcional, mas recomendado)
+
+O Rtools é necessário se você quiser compilar pacotes que contêm código C, C++, ou Fortran. Alguns pacotes do R requerem o Rtools para serem instalados.
+
+1.  **Acesse o site do Rtools:**
+    -   Vá para <https://cran.r-project.org/bin/windows/Rtools/>.
+2.  **Baixe o Rtools:**
+    -   Clique no link para a versão mais recente do Rtools para o seu sistema.
+3.  **Instale o Rtools:**
+    -   Após o download, clique duas vezes no arquivo de instalação.
+    -   Siga as instruções do instalador:
+        -   Aceite os termos e condições.
+        -   Escolha o local de instalação.
+        -   Certifique-se de que a opção **"Add Rtools to system PATH"** esteja marcada. Isso permite que o Rtools seja usado diretamente no RStudio.
+        -   Clique em "Install" para iniciar a instalação.
+4.  **Configure o Rtools no RStudio:**
+    -   Abra o RStudio.
+    -   No console, digite `writeLines('PATH="${RTOOLS40_HOME}\\usr\\bin;${PATH}"', con = "~/.Renviron")` e pressione Enter.
+    -   Reinicie o RStudio.
+
+## Passo 4: Verificar as Instalações
+
+1.  **Verificar a instalação do R:**
+    -   Abra o RStudio.
+    -   No console, digite `R.version` e pressione Enter. As informações sobre a versão do R instalada serão exibidas.
+2.  **Verificar a instalação do Rtools:**
+    -   No console do RStudio, digite `Sys.which("make")` e pressione Enter.
+    -   Se o caminho para o `make` for exibido, o Rtools foi instalado corretamente.
+
+Agora você está pronto para usar o R e o RStudio no Windows!
