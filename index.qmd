@@ -10,7 +10,7 @@ about:
       href: mailto:gecomt@ufersa.edu.br
     - icon: person-fill
       text: CNPQ
-      href: http://dgp.cnpq.br/dgp/espelhogrupo/7930463821700084
+      href: http://dgp.cnpq.br/dgp/espelhogrupo/79304638 21700084
       target: _blank
     - icon: person-fill-check
       text: SIGAA UFERSA

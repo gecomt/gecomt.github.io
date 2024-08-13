@@ -49,13 +49,16 @@ website:
       - icon: rss
         href: blog/index.xml
   page-footer:
-    left: "GECOMT (2024)"
+    left: |
+      
+      [![](images/ufersa.jpg){fig-alt="UFERSA" width=65px}](https://ufersa.edu.br)
+    center: "GECOMT (2024)"
     right:
       - icon: github
         href: https://github.com/gecomt
       - icon: twitter-x
         href: https://twitter.com/gecomt_ufersa
-    background: "#000000"
+    #background: "#ffffff"
 
 date-format: "D MMMM YYYY"
 
@@ -69,6 +72,8 @@ format:
     html-math-method: katex
     include-in-header:
       file: header.html
+mainfont: roboto
+monofont: corrier new
 
 blog:
   - folder: blog
