@@ -1,22 +1,23 @@
 [
   {
-    "listing": "/artigos/index.html",
+    "listing": "/palestras/index.html",
     "items": [
-      "/artigos/uranium.html"
+      "/palestras/french_academy_1901.html"
     ]
   },
   {
     "listing": "/blog/index.html",
     "items": [
+      "/blog/posts/treinamento/treinamento.html",
       "/blog/posts/boaspraticasr/boaspraticasr.html",
       "/blog/posts/contadortrabalho/contadortrabalho.html",
       "/blog/posts/rinstalacao/rinstalacao.html"
     ]
   },
   {
-    "listing": "/palestras/index.html",
+    "listing": "/artigos/index.html",
     "items": [
-      "/palestras/french_academy_1901.html"
+      "/artigos/uranium.html"
     ]
   }
 ]

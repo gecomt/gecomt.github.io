@@ -4,5 +4,6 @@ _freeze/*
 
 /.quarto/
 .Rproj.user
+desktop.ini
 .Rhistory
 /_*.local

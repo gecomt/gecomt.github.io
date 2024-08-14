@@ -4,7 +4,7 @@ title: "O Contador e o Mercado de Trabalho"
 author: "Alexsandro Prado"                            
 categories:                                           
   - mercado de trabalho
-image: contabdata.webp
+image: contadortrabalho.webp
 
 format:
   html:

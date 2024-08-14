@@ -10,7 +10,40 @@
 <atom:link href="https://gecomt.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
 <description>Grupo de Estudos sobre Contabilidade e Mercado de Trabalho</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Sun, 11 Aug 2024 03:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 14 Aug 2024 03:00:00 GMT</lastBuildDate>
+<item>
+  <title>Treinamento: R e Rstudio</title>
+  <dc:creator>Alexsandro Prado</dc:creator>
+  <link>https://gecomt.github.io/blog/posts/treinamento/treinamento.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<style>
+body {
+  line-height: 2.0;
+}
+</style>
+<section id="intodução" class="level2">
+<h2 class="anchored" data-anchor-id="intodução">Intodução</h2>
+<div style="text-align: justify;">
+<p>Gravação na íntegra do treinamento sobre o uso do R e Rstudio para os integrantes do grupo de pesquisa</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/90SAnkaubvg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Arquivos do treinamento: <a href="https://drive.google.com/file/d/1s52WvCyYpV4heDMWRD7OYTxESZsNc-TE/view?usp=sharing">download</a></p>
+<p>OBS: No vídeo ocorreu problemas de importação de uma base armazenada em csv no Google Drive. É recomendável trabalhar com os arquivos armazenados no próprio computador e depois fazer o upload. O problema de incompatibilidade com o Google Drive já é conhecido pela comunidade R.</p>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
+  <category>r</category>
+  <category>datascience</category>
+  <guid>https://gecomt.github.io/blog/posts/treinamento/treinamento.html</guid>
+  <pubDate>Wed, 14 Aug 2024 03:00:00 GMT</pubDate>
+  <media:content url="https://gecomt.github.io/blog/posts/treinamento/treinamento.webp" medium="image" type="image/webp"/>
+</item>
 <item>
   <title>Boas práticas no Uso do R - parte I</title>
   <dc:creator>Alexsandro Prado</dc:creator>
@@ -143,7 +176,7 @@ body {
 <section id="o-futuro-da-contabilidade" class="level3">
 <h3 class="anchored" data-anchor-id="o-futuro-da-contabilidade">O Futuro da Contabilidade</h3>
 <p>Com a transformação digital, o papel do contador está evoluindo rapidamente. Profissionais que dominam tecnologias emergentes, como inteligência artificial, big data e blockchain, terão uma vantagem competitiva no mercado de trabalho. Além disso, a globalização e a complexidade crescente das normas contábeis internacionais (como as IFRS) estão ampliando o escopo de atuação do contador, que precisa estar preparado para lidar com novos desafios e oportunidades.</p>
-<p>Dessa forma, o contador se torna cada vez mais um parceiro estratégico nas organizações, contribuindo não apenas para o cumprimento de obrigações legais, mas também para o sucesso e crescimento sustentável dos negócios. ```</p>
+<p>Dessa forma, o contador se torna cada vez mais um parceiro estratégico nas organizações, contribuindo não apenas para o cumprimento de obrigações legais, mas também para o sucesso e crescimento sustentável dos negócios.</p>
 </section>
 </div>
 
@@ -153,7 +186,7 @@ body {
   <category>mercado de trabalho</category>
   <guid>https://gecomt.github.io/blog/posts/contadortrabalho/contadortrabalho.html</guid>
   <pubDate>Sun, 11 Aug 2024 03:00:00 GMT</pubDate>
-  <media:content url="https://gecomt.github.io/blog/posts/contadortrabalho/contabdata.webp" medium="image" type="image/webp"/>
+  <media:content url="https://gecomt.github.io/blog/posts/contadortrabalho/contadortrabalho.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Instalação do R, RStudio e Rtools no Windows</title>

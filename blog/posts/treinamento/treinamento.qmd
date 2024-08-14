@@ -1,0 +1,46 @@
+---
+date: "2024-08-14"                                    
+title: "Treinamento: R e Rstudio" 
+location: Online
+author: "Alexsandro Prado"                            
+categories:                                           
+  - r
+  - datascience
+image: treinamento.webp
+
+format:
+  html:
+    embed-resources: false
+    
+execute:
+  echo: false
+  warning: false
+  error: false
+  cache: true
+  freeze: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, fig.align = "center", out.width = "100%")
+```
+
+```{=html}
+<style>
+body {
+  line-height: 2.0;
+}
+</style>
+```
+
+## Intodução
+
+::: {style="text-align: justify;"} 
+
+Gravação na íntegra do treinamento sobre o uso do R e Rstudio para os integrantes do grupo de pesquisa
+
+{{< video https://www.youtube.com/watch?v=90SAnkaubvg>}}
+
+Arquivos do treinamento: [download](https://drive.google.com/file/d/1s52WvCyYpV4heDMWRD7OYTxESZsNc-TE/view?usp=sharing)
+
+OBS: No vídeo ocorreu problemas de importação de uma base armazenada em csv no Google Drive. É recomendável trabalhar com os arquivos armazenados no próprio computador e depois fazer o upload. O problema de incompatibilidade com o Google Drive já é conhecido pela comunidade R.
+:::

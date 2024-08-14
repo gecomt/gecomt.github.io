@@ -23,9 +23,9 @@ website:
       - href: https://gecomt.shinyapps.io/dashboard/
         text: Dashboard
         target: _blank
-      # - href: artigos/index.qmd
-      #   text: Artigos
-#       - href: palestras/index.qmd
+#      - href: artigos/index.qmd
+#        text: Artigos
+#      - href: palestras/index.qmd
 #        text: Palestras
 #      - href: Ensino/index.qmd
 #        text: Ensino
