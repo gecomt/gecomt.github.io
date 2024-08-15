@@ -31,16 +31,19 @@ body {
 }
 </style>
 ```
-
 ## Intodução
 
-::: {style="text-align: justify;"} 
-
-Gravação na íntegra do treinamento sobre o uso do R e Rstudio para os integrantes do grupo de pesquisa
-
+::: {style="text-align: justify;"}
 {{< video https://www.youtube.com/watch?v=90SAnkaubvg>}}
+
+Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.
+
 
 Arquivos do treinamento: [download](https://drive.google.com/file/d/1s52WvCyYpV4heDMWRD7OYTxESZsNc-TE/view?usp=sharing)
 
-OBS: No vídeo ocorreu problemas de importação de uma base armazenada em csv no Google Drive. É recomendável trabalhar com os arquivos armazenados no próprio computador e depois fazer o upload. O problema de incompatibilidade com o Google Drive já é conhecido pela comunidade R.
+Informações adicionais:
+
+-   [Instalação do R, RStudio e Rtools no Windows](https://gecomt.github.io/blog/posts/rinstalacao/rinstalacao.html)
+
+-   [Boas práticas no Uso do R - parte I](https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.html)
 :::

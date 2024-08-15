@@ -109,13 +109,13 @@
     "href": "blog/posts/treinamento/treinamento.html",
     "title": "Treinamento: R e Rstudio",
     "section": "",
-    "text": "Gravação na íntegra do treinamento sobre o uso do R e Rstudio para os integrantes do grupo de pesquisa\n\nArquivos do treinamento: download\nOBS: No vídeo ocorreu problemas de importação de uma base armazenada em csv no Google Drive. É recomendável trabalhar com os arquivos armazenados no próprio computador e depois fazer o upload. O problema de incompatibilidade com o Google Drive já é conhecido pela comunidade R."
+    "text": "Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.\nArquivos do treinamento: download\nInformações adicionais:\n\nInstalação do R, RStudio e Rtools no Windows\nBoas práticas no Uso do R - parte I"
   },
   {
     "objectID": "blog/posts/treinamento/treinamento.html#intodução",
     "href": "blog/posts/treinamento/treinamento.html#intodução",
     "title": "Treinamento: R e Rstudio",
     "section": "",
-    "text": "Gravação na íntegra do treinamento sobre o uso do R e Rstudio para os integrantes do grupo de pesquisa\n\nArquivos do treinamento: download\nOBS: No vídeo ocorreu problemas de importação de uma base armazenada em csv no Google Drive. É recomendável trabalhar com os arquivos armazenados no próprio computador e depois fazer o upload. O problema de incompatibilidade com o Google Drive já é conhecido pela comunidade R."
+    "text": "Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.\nArquivos do treinamento: download\nInformações adicionais:\n\nInstalação do R, RStudio e Rtools no Windows\nBoas práticas no Uso do R - parte I"
   }
 ]
