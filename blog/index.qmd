@@ -7,7 +7,7 @@ listing:
   feed: true 
   sort: "date desc"
   type: grid
-  categories: true
+  categories: cloud
   sort-ui: true
   filter-ui: true
 page-layout: full
