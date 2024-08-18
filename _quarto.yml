@@ -51,13 +51,11 @@ website:
   page-footer:
     left: |
       
-      [![](images/ufersa.jpg){fig-alt="UFERSA" width=65px}](https://ufersa.edu.br)
-    center: "GECOMT (2024)"
-    right:
-      - icon: github
-        href: https://github.com/gecomt
-      - icon: twitter-x
-        href: https://twitter.com/gecomt_ufersa
+      [![](../images/ufersa.jpg){fig-alt="UFERSA" width=65px}](https://ufersa.edu.br)
+    center: "© 2024 GECOMT licenciado sob CC BY-ND 4.0"
+    right: |
+      
+      [![](../images/contabeis.png){fig-alt="contabeis" width=70px}](https://contabeis.ufersa.edu.br)
     #background: "#ffffff"
 
 date-format: "D MMMM YYYY"

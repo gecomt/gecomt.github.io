@@ -1,8 +1,8 @@
 [
   {
-    "listing": "/palestras/index.html",
+    "listing": "/artigos/index.html",
     "items": [
-      "/palestras/french_academy_1901.html"
+      "/artigos/uranium.html"
     ]
   },
   {
@@ -15,9 +15,9 @@
     ]
   },
   {
-    "listing": "/artigos/index.html",
+    "listing": "/palestras/index.html",
     "items": [
-      "/artigos/uranium.html"
+      "/palestras/french_academy_1901.html"
     ]
   }
 ]

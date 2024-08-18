@@ -4,6 +4,8 @@ comments: false
 about:
   template: trestles
   image: /images/gecomt.png
+  image-width: 15em
+  image-shape: round
   links:
     - icon: envelope
       text: E-mail

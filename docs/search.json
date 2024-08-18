@@ -1,12 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "GECOMT",
-    "section": "",
-    "text": "O Grupo de Estudos Sobre Contabilidade e Mercado de Trabalho (GECOMT) objetiva mapear o mercado de trabalho contábil, compreendendo trabalhadores, carteira assassinada (mercado formal), discutindo questões relativas à remuneração e discriminação salarial em função de gênero, raça, região, setor de atuação, etc.\nOs resultados podem potencialmente contribuir para:\n\nIdentificar quais são as habilidades e conhecimentos mais valorizados pelos empregadores e quais são as áreas e regiões são mais promissoras dentro da contabilidade, ajudando os profissionais a se prepararem melhor para o mercado de trabalho;\nObservar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais estejam melhor preparados para lidar com elas e se adaptar às novas demandas;\nGestores e profissionais podem tomar decisões mais informadas e estratégicas em relação ao desenvolvimento de suas carreiras ou negócios;\nDesenvolvimento de políticas públicas voltadas para a formação e qualificação de profissionais contábeis, garantindo que as demandas do mercado sejam atendidas e que haja um equilíbrio entre oferta e demanda de profissionais;\nPerceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil, permitindo que sejam desenvolvidas estratégias para facilitar a integração desses profissionais no mercado.\n\n\n     \n\n\n\n\n\n\n“Conselhos para os meus três filhos: […] nunca desista do trabalho. Trabalho dá significado e propósito, e a vida está vazia sem ele.”\n(Stephen Hawking)\n\n\n\n\n\n De volta ao topo"
-  },
-  {
     "objectID": "blog/posts/contadortrabalho/contadortrabalho.html",
     "href": "blog/posts/contadortrabalho/contadortrabalho.html",
     "title": "O Contador e o Mercado de Trabalho",
@@ -49,39 +42,18 @@
     "text": "Passo 4: Verificar as Instalações\n\nVerificar a instalação do R:\n\nAbra o RStudio.\nNo console, digite R.version e pressione Enter. As informações sobre a versão do R instalada serão exibidas.\n\nVerificar a instalação do Rtools:\n\nNo console do RStudio, digite Sys.which(\"make\") e pressione Enter.\nSe o caminho para o make for exibido, o Rtools foi instalado corretamente.\n\n\nAgora você está pronto para usar o R e o RStudio no Windows!"
   },
   {
-    "objectID": "palestras/index.html",
-    "href": "palestras/index.html",
-    "title": "Talks I’ve given",
-    "section": "",
-    "text": "Talks I’ve given\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Ordenar por\n       Pré-selecionado\n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Título\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nData\n\n\nTítulo\n\n\nVenue\n\n\n\n\n\n\n30 jun 1901\n\n\nAdventures with Uranium Rays\n\n\nFrench Academy, Paris\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "GECOMT",
     "section": "",
-    "text": "Ordenar por\n       Pré-selecionado\n         \n          Título\n        \n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Autor\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nTreinamento: R e Rstudio\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n14 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoas práticas no Uso do R - parte I\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nO Contador e o Mercado de Trabalho\n\n\n\nmercado de trabalho\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalação do R, RStudio e Rtools no Windows\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
+    "text": "O Grupo de Estudos Sobre Contabilidade e Mercado de Trabalho (GECOMT) objetiva mapear o mercado de trabalho contábil, compreendendo trabalhadores, carteira assassinada (mercado formal), discutindo questões relativas à remuneração e discriminação salarial em função de gênero, raça, região, setor de atuação, etc.\nOs resultados podem potencialmente contribuir para:\n\nIdentificar quais são as habilidades e conhecimentos mais valorizados pelos empregadores e quais são as áreas e regiões são mais promissoras dentro da contabilidade, ajudando os profissionais a se prepararem melhor para o mercado de trabalho;\nObservar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais estejam melhor preparados para lidar com elas e se adaptar às novas demandas;\nGestores e profissionais podem tomar decisões mais informadas e estratégicas em relação ao desenvolvimento de suas carreiras ou negócios;\nDesenvolvimento de políticas públicas voltadas para a formação e qualificação de profissionais contábeis, garantindo que as demandas do mercado sejam atendidas e que haja um equilíbrio entre oferta e demanda de profissionais;\nPerceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil, permitindo que sejam desenvolvidas estratégias para facilitar a integração desses profissionais no mercado.\n\n\n     \n\n\n\n\n\n\n“Conselhos para os meus três filhos: […] nunca desista do trabalho. Trabalho dá significado e propósito, e a vida está vazia sem ele.”\n(Stephen Hawking)\n\n\n\n\n\n De volta ao topo"
   },
   {
-    "objectID": "ensino/index.html",
-    "href": "ensino/index.html",
-    "title": "Advanced Chemistry",
+    "objectID": "palestras/french_academy_1901.html",
+    "href": "palestras/french_academy_1901.html",
+    "title": "Adventures with Uranium Rays",
     "section": "",
-    "text": "Advanced Chemistry\nBlah blah\n\n\n\nAdvanced Physics\nDon’t forget to bring your lab coats\n\n\n\n\n De volta ao topo"
-  },
-  {
-    "objectID": "artigos/uranium.html",
-    "href": "artigos/uranium.html",
-    "title": "Sur la pénétration des rayons de Becquerel non déviables par le champ magnétique",
-    "section": "",
-    "text": "Abstract goes here\nPlus any other information such as supplementary materials.\n\n\n\n De volta ao topo"
-  },
-  {
-    "objectID": "software/index.html",
-    "href": "software/index.html",
-    "title": "Selected R packages I’ve coauthored",
-    "section": "",
-    "text": "Selected R packages I’ve coauthored\n\n\n\n\n De volta ao topo"
+    "text": "Abstract here\n\nSlides\nembed html or pdf slides here\n\n\nVideo\n\n\n\n\n\n  \n  \n\n\n\n\n De volta ao topo"
   },
   {
     "objectID": "artigos/index.html",
@@ -91,11 +63,39 @@
     "text": "Publications\n\n\n\n\n\n\n\n   \n     \n     \n       Ordenar por\n       Pré-selecionado\n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Título\n        \n         \n          Autor\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n    Marie Skłodowska-Curie (1900) Sur la pénétration des rayons de Becquerel non déviables par le champ magnétique. CR Acad Sci, 130, 76-79..\n  \n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
   },
   {
-    "objectID": "palestras/french_academy_1901.html",
-    "href": "palestras/french_academy_1901.html",
-    "title": "Adventures with Uranium Rays",
+    "objectID": "software/index.html",
+    "href": "software/index.html",
+    "title": "Selected R packages I’ve coauthored",
     "section": "",
-    "text": "Abstract here\n\nSlides\nembed html or pdf slides here\n\n\nVideo\n\n\n\n\n\n  \n  \n\n\n\n\n De volta ao topo"
+    "text": "Selected R packages I’ve coauthored\n\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "artigos/uranium.html",
+    "href": "artigos/uranium.html",
+    "title": "Sur la pénétration des rayons de Becquerel non déviables par le champ magnétique",
+    "section": "",
+    "text": "Abstract goes here\nPlus any other information such as supplementary materials.\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "ensino/index.html",
+    "href": "ensino/index.html",
+    "title": "Advanced Chemistry",
+    "section": "",
+    "text": "Advanced Chemistry\nBlah blah\n\n\n\nAdvanced Physics\nDon’t forget to bring your lab coats\n\n\n\n\n De volta ao topo"
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "GECOMT",
+    "section": "",
+    "text": "Ordenar por\n       Pré-selecionado\n         \n          Título\n        \n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Autor\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nTreinamento: R e Rstudio\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n14 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBoas práticas no Uso do R - parte I\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nO Contador e o Mercado de Trabalho\n\n\n\nmercado de trabalho\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInstalação do R, RStudio e Rtools no Windows\n\n\n\nr\n\n\ndatascience\n\n\n\n\n\n\n\nAlexsandro Prado\n\n\n11 agosto 2024\n\n\n\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
+  },
+  {
+    "objectID": "palestras/index.html",
+    "href": "palestras/index.html",
+    "title": "Talks I’ve given",
+    "section": "",
+    "text": "Talks I’ve given\n\n\n\n\n\n\n\n\n\n\n   \n     \n     \n       Ordenar por\n       Pré-selecionado\n         \n          Data - Mais velho\n        \n         \n          Data - O mais novo\n        \n         \n          Título\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nData\n\n\nTítulo\n\n\nVenue\n\n\n\n\n\n\n30 jun 1901\n\n\nAdventures with Uranium Rays\n\n\nFrench Academy, Paris\n\n\n\n\n\nNenhum item correspondente\n\n De volta ao topo"
   },
   {
     "objectID": "blog/posts/boaspraticasr/boaspraticasr.html",
