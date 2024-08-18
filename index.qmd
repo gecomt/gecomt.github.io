@@ -1,6 +1,7 @@
 ---
 title: GECOMT
 comments: false
+resources: /images/ufersa.jpg
 about:
   template: trestles
   image: /images/gecomt.png

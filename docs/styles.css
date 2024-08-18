@@ -189,18 +189,11 @@ a.badge.badge-green {
   margin-right: auto;
 }
 
-
-
 .footer {
-  background-color: #253e67; /* Cor de fundo do rodapé */
-  color: #ffffff; /* Cor do texto padrão no rodapé */
-  padding: 20px; /* Espaçamento interno */
-  text-align: center; /* Alinhamento do texto */
-}
-
-.footer a {
-  color: #ffffff; /* Cor dos hiperlinks dentro do rodapé */
-  text-decoration: none; /* Opcional: Remove sublinhado dos links */
+  background-color: #253e67"; /* Altere para a cor desejada */
+  color: #ffffff; !important
+  padding: 20px; !important
+  text-align: center; !important
 }
 
 .page-footer {

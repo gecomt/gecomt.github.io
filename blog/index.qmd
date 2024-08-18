@@ -2,6 +2,7 @@
 # title: "My blog"
 # description: "Thoughts on research"
 comments: false
+resources: /images/ufersa.jpg
 listing:
   contents: ["**/*.qmd"] 
   feed: true 
