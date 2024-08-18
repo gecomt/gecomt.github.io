@@ -23,7 +23,7 @@ about:
       text: Instagram
       href: https://instagram.com/gecomt.ufersa
     - icon: twitter-x
-      text:  
+      text:   
       href: https://x.com/gecomt_ufersa
       target: _blank
     - icon: github
