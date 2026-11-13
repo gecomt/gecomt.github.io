@@ -33,8 +33,8 @@
 <p>Em linhas gerais, os conteúdos do blog organizam-se em três frentes:</p>
 <ol type="1">
 <li><strong>Notas de pesquisa</strong>: sínteses de artigos, dissertações e trabalhos de conclusão de curso desenvolvidos pelos membros do grupo, com destaque para os principais achados e suas implicações;</li>
-<li><strong>Tutoriais com dados abertos</strong>: roteiros reprodutíveis, em R e Python, para o uso de bases como o Cadastro Geral de Empregados e Desempregados (CAGED), a Relação Anual de Informações Sociais (RAIS) e os dados abertos da Comissão de Valores Mobiliários (CVM);</li>
-<li><strong>Comentários técnicos</strong>: análises de mudanças normativas e regulatórias, a exemplo da legislação trabalhista e da regulação do mercado de capitais.</li>
+<li><strong>Tutoriais com dados abertos</strong>: roteiros reprodutíveis, em R e Python, para o uso de bases como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS);</li>
+<li><strong>Comentários técnicos</strong>: análises de mudanças normativas e regulatórias, a exemplo da legislação trabalhista e das políticas de emprego e renda.</li>
 </ol>
 </section>
 <section id="ciência-aberta-como-princípio" class="level2">

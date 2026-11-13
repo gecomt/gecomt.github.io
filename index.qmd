@@ -57,23 +57,33 @@ Os trabalhos do grupo combinam teoria contábil, econometria aplicada e grandes 
 :::
 
 ::: {.grid .gap-4}
-::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
+::: {.g-col-12 .g-col-md-4}
+::: {.gecomt-card}
+[`<i class="bi bi-briefcase-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Mercado de trabalho contábil
+
+Perfil dos profissionais contábeis no mercado formal, demanda por habilidades e tendências da profissão.
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
+::: {.gecomt-card}
+[`<i class="bi bi-cash-coin" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Remuneração e desigualdades
+
+Diferenças salariais por gênero, raça, região e setor de atuação, com métodos de decomposição.
+:::
+:::
+
+::: {.g-col-12 .g-col-md-4}
 ::: {.gecomt-card}
 [`<i class="bi bi-people-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
 
-### Mercado de trabalho
+### Emprego e políticas públicas
 
-Emprego formal, salários, rotatividade e políticas públicas com microdados do CAGED e da RAIS.
-:::
-:::
-
-::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
-::: {.gecomt-card}
-[`<i class="bi bi-graph-up-arrow" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
-
-### Mercado de capitais
-
-Gerenciamento de resultados, inovação e valor de mercado das companhias listadas na B3.
+Emprego formal, rotatividade e avaliação de políticas como o seguro-desemprego, com microdados do CAGED e da RAIS.
 :::
 :::
 :::

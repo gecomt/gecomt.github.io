@@ -21,10 +21,9 @@ Em linhas gerais, os conteúdos do blog organizam-se em três frentes:
 1. **Notas de pesquisa**: sínteses de artigos, dissertações e trabalhos de conclusão de curso
    desenvolvidos pelos membros do grupo, com destaque para os principais achados e suas implicações;
 2. **Tutoriais com dados abertos**: roteiros reprodutíveis, em R e Python, para o uso de bases como o
-   Cadastro Geral de Empregados e Desempregados (CAGED), a Relação Anual de Informações Sociais (RAIS)
-   e os dados abertos da Comissão de Valores Mobiliários (CVM);
+   Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS);
 3. **Comentários técnicos**: análises de mudanças normativas e regulatórias, a exemplo da legislação
-   trabalhista e da regulação do mercado de capitais.
+   trabalhista e das políticas de emprego e renda.
 
 ## Ciência aberta como princípio
 
