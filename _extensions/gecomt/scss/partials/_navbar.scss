@@ -1,0 +1,34 @@
+#quarto-header {
+  border-bottom: 3px solid $gecomt-gold;
+}
+
+.navbar {
+  padding-top: .45rem;
+  padding-bottom: .45rem;
+}
+
+.navbar-brand > img {
+  max-height: 40px;
+}
+
+.navbar-title {
+  font-family: $headings-font-family;
+  font-weight: 700;
+  letter-spacing: .06em;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+}
+
+@media (min-width: 992px) {
+  .navbar .nav-link.active,
+  .navbar .nav-link:hover {
+    border-bottom-color: $gecomt-gold;
+  }
+}
+
+.navbar .dropdown-menu {
+  border-top: 3px solid $gecomt-gold;
+}

@@ -1,0 +1,117 @@
+// Página inicial (page-layout: custom), mesma abordagem do quarto-home
+body.gecomt-home #quarto-content > [role="main"] {
+  padding-top: 0;
+}
+
+body.gecomt-home .content-block {
+  margin-left: 24px;
+  margin-right: 24px;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  body.gecomt-home .content-block { margin-left: 48px; margin-right: 48px; }
+}
+
+@media (min-width: 1200px) {
+  body.gecomt-home .content-block { max-width: 1120px; margin-left: auto; margin-right: auto; }
+}
+
+body.gecomt-home .hero-banner {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(90% 120% at 70% 40%, $gecomt-navy-light 0%, $gecomt-navy 50%, $gecomt-navy-dark 100%);
+  border-bottom: 4px solid $gecomt-gold;
+
+  .content-block {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-text { flex: 1 1 60%; }
+
+  h1 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  h1 .destaque { color: $gecomt-gold; }
+
+  .lead {
+    color: $gecomt-silver;
+    font-size: 1.15rem;
+    max-width: 38rem;
+  }
+
+  .gecomt-kicker { color: $gecomt-gold; }
+
+  .hero-logo {
+    flex: 0 0 300px;
+    text-align: center;
+    img { width: 100%; max-width: 300px; filter: drop-shadow(0 12px 30px rgba(0,0,0,.35)); }
+    p { margin: 0; }
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    margin-top: 1.6rem;
+  }
+
+  // marca d'água do emblema
+  &::after {
+    content: "";
+    position: absolute;
+    left: -140px;
+    bottom: -160px;
+    width: 520px;
+    height: 430px;
+    background: url("/assets/images/gecomt_emblema_mono_branco.svg") no-repeat center / contain;
+    opacity: .05;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 860px) {
+  body.gecomt-home .hero-banner .hero-logo { display: none; }
+}
+
+body.gecomt-home .section-alt {
+  @if $is-dark { background: #0D2239; } @else { background: $gecomt-mist; }
+}
+
+body.gecomt-home .section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  h2 { border: none !important; margin-top: .3rem; font-size: 1.9rem; }
+  p { color: $text-muted; max-width: 42rem; margin: 0 auto; }
+}
+
+body.gecomt-home .numeros {
+  .numero {
+    font-family: $headings-font-family;
+    font-size: 2.2rem;
+    font-weight: 700;
+    @if $is-dark { color: $gecomt-gold; } @else { color: $gecomt-navy; }
+  }
+  .rotulo { color: $text-muted; font-size: .95rem; }
+}
+
+body.gecomt-home .cta {
+  color: #fff;
+  border-radius: 1.1rem;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, $gecomt-navy 0%, $gecomt-navy-light 100%);
+  border-bottom: 4px solid $gecomt-gold;
+  h2 { color: #fff; border: none !important; margin-top: 0; }
+  p { color: $gecomt-silver; }
+}

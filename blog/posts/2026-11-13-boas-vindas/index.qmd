@@ -1,0 +1,41 @@
+---
+title: "Boas-vindas ao blog do GECOMT"
+description: |
+  O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho inaugura um espaço para divulgar
+  pesquisas, tutoriais com dados abertos e reflexões sobre temas contábeis e trabalhistas.
+date: "2026-11-13"
+categories: [Anúncio, GECOMT]
+image: thumbnail.png
+image-alt: "Cartão com o título Boas-vindas ao blog do GECOMT sobre fundo azul institucional."
+---
+
+O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT), vinculado ao curso de
+Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), inaugura este blog com o
+propósito de aproximar a produção acadêmica do grupo de estudantes, profissionais e demais
+interessados nos temas que articulam a informação contábil e o mercado de trabalho.
+
+## O que será publicado
+
+Em linhas gerais, os conteúdos do blog organizam-se em três frentes:
+
+1. **Notas de pesquisa**: sínteses de artigos, dissertações e trabalhos de conclusão de curso
+   desenvolvidos pelos membros do grupo, com destaque para os principais achados e suas implicações;
+2. **Tutoriais com dados abertos**: roteiros reprodutíveis, em R e Python, para o uso de bases como o
+   Cadastro Geral de Empregados e Desempregados (CAGED), a Relação Anual de Informações Sociais (RAIS)
+   e os dados abertos da Comissão de Valores Mobiliários (CVM);
+3. **Comentários técnicos**: análises de mudanças normativas e regulatórias, a exemplo da legislação
+   trabalhista e da regulação do mercado de capitais.
+
+## Ciência aberta como princípio
+
+Ressalta-se que o grupo adota a reprodutibilidade como princípio de trabalho. Dessa forma, sempre que
+possível, os posts serão acompanhados do código utilizado e das referências às bases de dados
+originais, permitindo que os resultados sejam verificados, replicados e ampliados por outros
+pesquisadores.
+
+## Como acompanhar
+
+As novas publicações podem ser acompanhadas pelo [feed RSS](../../index.xml) do blog e pelos
+repositórios do grupo no [GitHub](https://github.com/gecomt). Sugestões de temas e propostas de
+colaboração podem ser encaminhadas à coordenação, conforme indicado na página
+[O grupo](../../../sobre.qmd#contato).

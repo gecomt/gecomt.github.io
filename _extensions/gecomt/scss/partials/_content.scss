@@ -1,0 +1,137 @@
+h1, h2, h3, h4, .h1, .h2, .h3 {
+  font-family: $headings-font-family;
+}
+
+main h2:not(.listing-title):not(.anchored-none) {
+  padding-bottom: .3rem;
+  border-bottom: 2px solid rgba($gecomt-gold-dark, .45);
+}
+
+// Banner de título (posts e páginas internas): gradiente do avatar
+.quarto-title-banner {
+  background: radial-gradient(120% 140% at 15% 0%, $gecomt-navy-light 0%, $gecomt-navy 45%, $gecomt-navy-dark 100%);
+  border-bottom: 3px solid $gecomt-gold;
+  padding-bottom: .5rem;
+
+  .quarto-title .title {
+    font-weight: 700;
+  }
+  .description, .subtitle {
+    color: $gecomt-silver;
+  }
+  .quarto-categories .quarto-category {
+    color: $gecomt-navy;
+    background: $gecomt-gold;
+    border: none;
+    font-weight: 600;
+    opacity: 1;
+  }
+}
+
+.quarto-title-meta-heading {
+  color: $text-muted;
+  font-weight: 600;
+}
+
+blockquote, .blockquote {
+  border-left: 4px solid $gecomt-gold-dark;
+  padding: .4rem 1rem;
+  @if $is-dark {
+    background: rgba(255,255,255,.04);
+  } @else {
+    background: $gecomt-mist;
+  }
+}
+
+::selection {
+  background: rgba($gecomt-gold, .45);
+}
+
+.callout.callout-style-default {
+  border-left-width: 5px;
+}
+
+// Cartões genéricos usados nas páginas institucionais
+.gecomt-card {
+  height: 100%;
+  padding: 1.4rem 1.4rem 1.1rem;
+  border-radius: .9rem;
+  border-top: 4px solid $gecomt-gold-dark;
+  @if $is-dark {
+    background: #10253F;
+    border-left: 1px solid #22395A; border-right: 1px solid #22395A; border-bottom: 1px solid #22395A;
+  } @else {
+    background: #fff;
+    box-shadow: 0 6px 22px rgba($gecomt-navy, .08);
+    border-left: 1px solid #E3E8EF; border-right: 1px solid #E3E8EF; border-bottom: 1px solid #E3E8EF;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin-top: .6rem;
+    border: none;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .gecomt-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    font-size: 1.35rem;
+    color: $gecomt-navy;
+    background: $gecomt-gold;
+  }
+}
+
+.gecomt-kicker {
+  display: inline-block;
+  font-family: $headings-font-family;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  @if $is-dark { color: $gecomt-gold; } @else { color: $gecomt-gold-deep; }
+}
+
+// Pacotes: cartões e cabeçalho das páginas dedicadas
+.pacote-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  column-gap: 1.4rem;
+  align-items: start;
+  p:has(> img.pacote-hex), .quarto-figure { grid-row: 1 / span 3; margin: 0; }
+  > *:not(:first-child) { grid-column: 2; }
+  h3 { margin-top: .2rem; }
+  .btn { justify-self: start; margin-top: .4rem; }
+}
+
+img.pacote-hex {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.25));
+}
+
+.pacote-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  .pacote-header-logo { flex: 0 0 160px; img { width: 160px; } p { margin: 0; } }
+  .pacote-header-texto { flex: 1; p.lead { font-size: 1.15rem; } }
+  .pacote-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+}
+
+@media (max-width: 640px) {
+  .pacote-header { flex-direction: column; align-items: flex-start; }
+  .pacote-card { grid-template-columns: 1fr; > *:not(:first-child) { grid-column: 1; } }
+}
+
+.btn-gecomt.btn-sm { min-width: 0; padding: .4rem 1rem; font-size: .9rem; }
+.btn-gecomt-line {
+  border: 2px solid currentColor;
+  @if $is-dark { color: $gecomt-gold !important; } @else { color: $gecomt-navy !important; }
+  &:hover { @if $is-dark { background: rgba($gecomt-gold, .12); } @else { background: rgba($gecomt-navy, .07); } }
+}

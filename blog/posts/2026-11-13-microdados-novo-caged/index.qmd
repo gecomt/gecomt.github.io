@@ -1,0 +1,82 @@
+---
+title: "Microdados do Novo CAGED: primeiros passos em R"
+description: |
+  Roteiro introdutório para baixar, armazenar e consultar os microdados do Novo CAGED com o pacote
+  dataCAGED, calculando o saldo mensal de empregos formais no Rio Grande do Norte.
+date: "2026-11-13"
+categories: [dataCAGED, Mercado de trabalho, Dados abertos, R]
+image: thumbnail.png
+image-alt: "Cartão com o título Microdados do Novo CAGED: primeiros passos em R."
+---
+
+O Cadastro Geral de Empregados e Desempregados (CAGED) registra, mês a mês, as admissões e os
+desligamentos de trabalhadores celetistas no Brasil. A partir de 2020, com a implantação do
+Novo CAGED, as informações passaram a ser captadas majoritariamente pelo eSocial, o que alterou a
+estrutura dos arquivos e exige cautela na comparação com a série anterior.
+
+Tendo em vista o volume dos microdados, que somam milhões de registros por ano, o GECOMT desenvolveu
+o pacote [dataCAGED](../../../pacotes/datacaged.qmd), que automatiza o fluxo completo: download
+dos arquivos, leitura com descompressão em fluxo e gravação em um banco analítico local (DuckDB).
+
+## Instalação
+
+O pacote está disponível no CRAN:
+
+```r
+install.packages("datacaged")
+```
+
+## Carga dos dados
+
+A função `caged_load()` executa o pipeline completo em uma única chamada. No exemplo a seguir, são
+carregadas as competências de 2023 e 2024:
+
+```r
+library(datacaged)
+
+caged_load(
+  years   = 2023:2024,
+  months  = seq_len(12L),
+  db_path = "dados/caged.duckdb"
+)
+```
+
+As movimentações ficam armazenadas na tabela `caged_mov`, enquanto as declarações fora do prazo e as
+exclusões são gravadas, respectivamente, em `caged_for` e `caged_exc`.
+
+## Saldo mensal no Rio Grande do Norte
+
+Com a conexão aberta, a consulta pode ser escrita com `dplyr`, e o processamento ocorre dentro do
+DuckDB, sem carregar todos os registros na memória. O código da Unidade da Federação do Rio Grande do
+Norte, segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), é 24:
+
+```r
+library(dplyr)
+
+con <- caged_connect("dados/caged.duckdb")
+
+saldo_rn <- tbl(con, "caged_mov") |>
+  filter(uf == 24) |>
+  group_by(competenciamov) |>
+  summarise(saldo = sum(saldomovimentacao, na.rm = TRUE)) |>
+  arrange(competenciamov) |>
+  collect()
+
+DBI::dbDisconnect(con, shutdown = TRUE)
+```
+
+O objeto `saldo_rn` contém o saldo (admissões menos desligamentos) de cada competência e pode ser
+utilizado diretamente na elaboração de gráficos ou de indicadores.
+
+::: {.callout-important}
+## Atenção às declarações fora do prazo
+Os totais calculados apenas com a tabela `caged_mov` não incorporam as declarações entregues fora do
+prazo nem as exclusões. Para reproduzir as estatísticas oficiais divulgadas pelo Ministério do
+Trabalho e Emprego (MTE), essas tabelas também devem ser consideradas.
+:::
+
+## Próximos passos
+
+Em posts futuros, serão apresentados exemplos de cálculo de indicadores de rotatividade, de análise
+salarial por ocupação e de integração do CAGED com a RAIS. Sugestões de análises podem ser enviadas à
+coordenação do grupo.

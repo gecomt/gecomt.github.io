@@ -1,15 +1,19 @@
 ---
-# title: "My blog"
-# description: "Thoughts on research"
-comments: false
-resources: /images/ufersa.jpg
+title: "Blog do GECOMT"
+subtitle: "Notas de pesquisa, tutoriais com dados abertos e comentários sobre contabilidade e mercado de trabalho"
 listing:
-  contents: ["**/*.qmd"] 
-  feed: true 
+  contents: "posts/*/index.qmd"
   sort: "date desc"
-  type: grid
-  categories: cloud
+  type: default
+  categories: true
+  feed: true
   sort-ui: true
   filter-ui: true
+  page-size: 10
+  date-format: "D [de] MMMM [de] YYYY"
+  fields: [image, date, title, description, author, categories]
 page-layout: full
+title-block-banner: true
+search: true
+image: ../assets/images/gecomt-og.png
 ---

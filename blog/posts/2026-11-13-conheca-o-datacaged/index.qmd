@@ -1,0 +1,54 @@
+---
+title: "Conheça o dataCAGED: microdados do CAGED direto no DuckDB"
+description: |
+  O GECOMT apresenta o dataCAGED, pacote R disponível no CRAN que reduz a uma única função o
+  trabalho de baixar, ler e organizar os microdados do CAGED.
+date: "2026-11-13"
+categories: [dataCAGED, Pacotes, R, Dados abertos]
+image: thumbnail.png
+image-alt: "Cartão com o título Conheça o dataCAGED e o logo hexagonal do pacote."
+---
+
+Os microdados do Cadastro Geral de Empregados e Desempregados (CAGED) constituem uma das fontes mais
+ricas para o acompanhamento mensal do emprego formal no Brasil. No entanto, o uso dessas informações
+impõe obstáculos práticos: os arquivos são distribuídos compactados, mudaram de estrutura ao longo do
+tempo e somam volumes que dificilmente cabem na memória de um computador pessoal.
+
+## O que o pacote faz
+
+Nesse sentido, o [dataCAGED](../../../pacotes/datacaged.qmd) foi desenvolvido para automatizar esse
+fluxo de trabalho. A partir da função `caged_load()`, o pacote (i) baixa os arquivos de um espelho dos
+dados do Ministério do Trabalho e Emprego (MTE) no Hugging Face; (ii) realiza a leitura com
+descompressão em fluxo, sem gravar arquivos temporários; e (iii) armazena os registros em um banco
+DuckDB local, no qual as consultas podem ser feitas com `dplyr` ou SQL.
+
+```r
+install.packages("datacaged")
+
+library(datacaged)
+
+caged_load(
+  years   = 2024,
+  months  = seq_len(12L),
+  db_path = "caged.duckdb"
+)
+```
+
+## Bases cobertas
+
+O pacote contempla o Novo CAGED (2020 em diante), com as tabelas de movimentações, declarações fora
+do prazo e exclusões, além do CAGED antigo (2007 a 2019) e dos ajustes históricos. Dessa forma, torna-se
+possível construir séries longas e comparar períodos, observadas as diferenças metodológicas entre as
+bases.
+
+## Manutenção e atualização
+
+Para manter o banco atualizado, a função `caged_update()` baixa apenas as competências ainda ausentes.
+Além disso, `caged_to_parquet()` exporta as tabelas para o formato Parquet, o que facilita o
+compartilhamento dos dados com outras linguagens, como Python.
+
+## Próximos passos
+
+O código-fonte está disponível no [GitHub](https://github.com/gecomt/datacaged), e sugestões ou
+problemas podem ser registrados nas *issues* do repositório. Um roteiro com exemplos de consulta pode
+ser consultado no post [Microdados do Novo CAGED: primeiros passos em R](../2026-11-13-microdados-novo-caged/index.qmd).

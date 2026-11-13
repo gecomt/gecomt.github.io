@@ -1,0 +1,26 @@
+---
+title: "Treinamento: R e Rstudio"
+date: "2024-08-14"
+author: "Alexsandro Prado"
+categories: [R, Ciência de dados]
+image: treinamento.webp
+aliases:
+  - /blog/posts/treinamento/treinamento.html
+---
+
+## Intodução
+
+::: {style="text-align: justify;"}
+{{< video https://www.youtube.com/watch?v=90SAnkaubvg>}}
+
+Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.
+
+
+Arquivos do treinamento: [download](https://drive.google.com/file/d/1s52WvCyYpV4heDMWRD7OYTxESZsNc-TE/view?usp=sharing)
+
+Informações adicionais:
+
+-   [Instalação do R, RStudio e Rtools no Windows](../2024-08-11-instalacao-r-rstudio-rtools/index.qmd)
+
+-   [Boas práticas no Uso do R - parte I](../2024-08-11-boas-praticas-r/index.qmd)
+:::

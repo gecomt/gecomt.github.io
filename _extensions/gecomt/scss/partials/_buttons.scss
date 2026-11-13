@@ -1,0 +1,28 @@
+.btn-gecomt {
+  min-width: 170px;
+  border-radius: 30px;
+  font-weight: 600;
+  padding: .65rem 1.4rem;
+}
+
+.btn-gecomt-gold {
+  color: $gecomt-navy !important;
+  background-color: $gecomt-gold;
+  border: 2px solid $gecomt-gold;
+  &:hover, &:focus {
+    color: $gecomt-navy !important;
+    background-color: darken($gecomt-gold, 8%);
+    border-color: darken($gecomt-gold, 8%);
+  }
+}
+
+.btn-gecomt-outline {
+  color: #fff !important;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,.75);
+  &:hover, &:focus {
+    color: $gecomt-navy !important;
+    background: #fff;
+    border-color: #fff;
+  }
+}

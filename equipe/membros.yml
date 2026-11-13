@@ -1,0 +1,20 @@
+# Cada item vira um cartão na página "Equipe".
+# Para incluir um membro, copie um bloco, ajuste os campos e
+# coloque a foto (quadrada, 600 x 600 px) nesta pasta, informando o caminho
+# a partir da raiz do projeto (ex.: equipe/nome-sobrenome.png).
+- title: "Prof. Dr. Alexsandro Prado"
+  subtitle: "Coordenador"
+  description: >
+    Professor Adjunto do Departamento de Ciências Sociais Aplicadas e Humanas
+    da UFERSA. Doutor em Economia (UFPB) e mestre em Ciências Contábeis (UnB).
+    Pesquisa mercado de trabalho com microdados e mercado de capitais.
+  image: equipe/alexsandro-prado.png
+  path: https://alexsandroprado.github.io
+  categoria: "Coordenação"
+
+# - title: "Nome do(a) pesquisador(a)"
+#   subtitle: "Pesquisador(a)"
+#   description: "Breve descrição da formação e dos temas de pesquisa."
+#   image: equipe/nome-sobrenome.png
+#   path: "http://lattes.cnpq.br/0000000000000000"
+#   categoria: "Pesquisadores"

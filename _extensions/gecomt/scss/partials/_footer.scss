@@ -1,0 +1,9 @@
+.nav-footer {
+  border-top: 3px solid $gecomt-gold;
+  font-size: .9rem;
+  min-height: 4rem;
+
+  a { color: $gecomt-silver; }
+  a:hover { color: $gecomt-gold; }
+  .footer-marca img { height: 34px; margin-right: .5rem; vertical-align: middle; }
+}

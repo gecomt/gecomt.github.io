@@ -1,0 +1,56 @@
+/*-- scss:defaults --*/
+// Paleta extraída dos arquivos de logo do GECOMT
+$gecomt-navy:        #133355; // azul institucional (fundo dos logos)
+$gecomt-navy-light:  #1B4472; // centro do gradiente do avatar
+$gecomt-navy-dark:   #0F2A48; // borda do gradiente do avatar
+$gecomt-navy-deep:   #0A1C31; // fundo do modo escuro
+$gecomt-gold:        #F3C043; // dourado para fundos escuros
+$gecomt-gold-dark:   #E0A82E; // dourado para fundos claros
+$gecomt-gold-deep:   #9A6B00; // dourado legível como texto sobre branco
+$gecomt-slate:       #5A6470; // cinza do subtítulo (fundo claro)
+$gecomt-silver:      #BDC3C8; // cinza do subtítulo (fundo escuro)
+$gecomt-mist:        #EEF2F7; // fundo de seções em modo claro
+
+$primary:   $gecomt-gold;
+$secondary: $gecomt-silver;
+$info:      #8FB3DE;
+$warning:   $gecomt-gold;
+
+$body-bg:    $gecomt-navy-deep;
+$body-color: #E3E8EE;
+$link-color: $gecomt-gold;
+$text-muted: #A9B3BE;
+$body-secondary: #A9B3BE;
+
+$font-family-sans-serif: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$headings-font-family: "Poppins", "Inter", system-ui, sans-serif;
+$headings-font-weight: 600;
+$headings-color: #FFFFFF;
+
+$navbar-bg: $gecomt-navy-dark;
+$navbar-fg: #ffffff;
+$navbar-hl: $gecomt-gold;
+
+$footer-bg: #07152A;
+$footer-fg: $gecomt-silver;
+
+$title-banner-bg: $gecomt-navy-dark;
+$title-banner-color: #ffffff;
+
+$border-color: #3A4D63;
+$pre-color: inherit;
+$code-bg: $body-bg;
+$code-block-bg: #10253F;
+$code-color: #F7CF6E;
+$popover-bg: #12263D;
+$input-bg: #12263D;
+$dropdown-bg: $gecomt-navy-dark;
+$dropdown-color: $body-color;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-bg: $gecomt-navy-light;
+$dropdown-link-hover-color: #fff;
+$border-radius: .5rem;
+
+/*-- scss:rules --*/
+$is-dark: true;
+@import "partials/site";

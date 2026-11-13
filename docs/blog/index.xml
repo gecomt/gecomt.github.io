@@ -8,23 +8,465 @@
 <title>GECOMT</title>
 <link>https://gecomt.github.io/blog/</link>
 <atom:link href="https://gecomt.github.io/blog/index.xml" rel="self" type="application/rss+xml"/>
-<description>Grupo de Estudos sobre Contabilidade e Mercado de Trabalho</description>
-<generator>quarto-1.5.56</generator>
-<lastBuildDate>Wed, 14 Aug 2024 03:00:00 GMT</lastBuildDate>
+<description>Blog do Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT/UFERSA).</description>
+<image>
+<url>https://gecomt.github.io/../assets/images/gecomt-og.png</url>
+<title>GECOMT</title>
+<link>https://gecomt.github.io/blog/</link>
+</image>
+<generator>quarto-1.9.36</generator>
+<lastBuildDate>Fri, 13 Nov 2026 03:00:00 GMT</lastBuildDate>
 <item>
-  <title>Treinamento: R e Rstudio</title>
-  <dc:creator>Alexsandro Prado</dc:creator>
-  <link>https://gecomt.github.io/blog/posts/treinamento/treinamento.html</link>
+  <title>Boas-vindas ao blog do GECOMT</title>
+  <dc:creator>Equipe GECOMT</dc:creator>
+  <link>https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/</link>
   <description><![CDATA[ 
 
 
 
 
-<style>
-body {
-  line-height: 2.0;
-}
-</style>
+
+
+<p>O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT), vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), inaugura este blog com o propósito de aproximar a produção acadêmica do grupo de estudantes, profissionais e demais interessados nos temas que articulam a informação contábil e o mercado de trabalho.</p>
+<section id="o-que-será-publicado" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-será-publicado">O que será publicado</h2>
+<p>Em linhas gerais, os conteúdos do blog organizam-se em três frentes:</p>
+<ol type="1">
+<li><strong>Notas de pesquisa</strong>: sínteses de artigos, dissertações e trabalhos de conclusão de curso desenvolvidos pelos membros do grupo, com destaque para os principais achados e suas implicações;</li>
+<li><strong>Tutoriais com dados abertos</strong>: roteiros reprodutíveis, em R e Python, para o uso de bases como o Cadastro Geral de Empregados e Desempregados (CAGED), a Relação Anual de Informações Sociais (RAIS) e os dados abertos da Comissão de Valores Mobiliários (CVM);</li>
+<li><strong>Comentários técnicos</strong>: análises de mudanças normativas e regulatórias, a exemplo da legislação trabalhista e da regulação do mercado de capitais.</li>
+</ol>
+</section>
+<section id="ciência-aberta-como-princípio" class="level2">
+<h2 class="anchored" data-anchor-id="ciência-aberta-como-princípio">Ciência aberta como princípio</h2>
+<p>Ressalta-se que o grupo adota a reprodutibilidade como princípio de trabalho. Dessa forma, sempre que possível, os posts serão acompanhados do código utilizado e das referências às bases de dados originais, permitindo que os resultados sejam verificados, replicados e ampliados por outros pesquisadores.</p>
+</section>
+<section id="como-acompanhar" class="level2">
+<h2 class="anchored" data-anchor-id="como-acompanhar">Como acompanhar</h2>
+<p>As novas publicações podem ser acompanhadas pelo <a href="../../index.xml">feed RSS</a> do blog e pelos repositórios do grupo no <a href="https://github.com/gecomt">GitHub</a>. Sugestões de temas e propostas de colaboração podem ser encaminhadas à coordenação, conforme indicado na página <a href="../../../sobre.html#contato">O grupo</a>.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-gecomt2026" class="csl-entry quarto-appendix-citeas">
+GECOMT, Equipe. 2026. <span>“Boas-vindas ao blog do GECOMT.”</span>
+November 13. <a href="https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/">https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/</a>.
+</div></div></section></div> ]]></description>
+  <category>Anúncio</category>
+  <category>GECOMT</category>
+  <guid>https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/</guid>
+  <pubDate>Fri, 13 Nov 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/thumbnail.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Conheça o dataCAGED: microdados do CAGED direto no DuckDB</title>
+  <dc:creator>Equipe GECOMT</dc:creator>
+  <link>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>Os microdados do Cadastro Geral de Empregados e Desempregados (CAGED) constituem uma das fontes mais ricas para o acompanhamento mensal do emprego formal no Brasil. No entanto, o uso dessas informações impõe obstáculos práticos: os arquivos são distribuídos compactados, mudaram de estrutura ao longo do tempo e somam volumes que dificilmente cabem na memória de um computador pessoal.</p>
+<section id="o-que-o-pacote-faz" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-o-pacote-faz">O que o pacote faz</h2>
+<p>Nesse sentido, o <a href="../../../pacotes/datacaged.html">dataCAGED</a> foi desenvolvido para automatizar esse fluxo de trabalho. A partir da função <code>caged_load()</code>, o pacote (i) baixa os arquivos de um espelho dos dados do Ministério do Trabalho e Emprego (MTE) no Hugging Face; (ii) realiza a leitura com descompressão em fluxo, sem gravar arquivos temporários; e (iii) armazena os registros em um banco DuckDB local, no qual as consultas podem ser feitas com <code>dplyr</code> ou SQL.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"datacaged"</span>)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(datacaged)</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">caged_load</span>(</span>
+<span id="cb1-6">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">years   =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2024</span>,</span>
+<span id="cb1-7">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">months  =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq_len</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>L),</span>
+<span id="cb1-8">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">db_path =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"caged.duckdb"</span></span>
+<span id="cb1-9">)</span></code></pre></div></div>
+</section>
+<section id="bases-cobertas" class="level2">
+<h2 class="anchored" data-anchor-id="bases-cobertas">Bases cobertas</h2>
+<p>O pacote contempla o Novo CAGED (2020 em diante), com as tabelas de movimentações, declarações fora do prazo e exclusões, além do CAGED antigo (2007 a 2019) e dos ajustes históricos. Dessa forma, torna-se possível construir séries longas e comparar períodos, observadas as diferenças metodológicas entre as bases.</p>
+</section>
+<section id="manutenção-e-atualização" class="level2">
+<h2 class="anchored" data-anchor-id="manutenção-e-atualização">Manutenção e atualização</h2>
+<p>Para manter o banco atualizado, a função <code>caged_update()</code> baixa apenas as competências ainda ausentes. Além disso, <code>caged_to_parquet()</code> exporta as tabelas para o formato Parquet, o que facilita o compartilhamento dos dados com outras linguagens, como Python.</p>
+</section>
+<section id="próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-passos">Próximos passos</h2>
+<p>O código-fonte está disponível no <a href="https://github.com/gecomt/datacaged">GitHub</a>, e sugestões ou problemas podem ser registrados nas <em>issues</em> do repositório. Um roteiro com exemplos de consulta pode ser consultado no post <a href="../../../blog/posts/2026-11-13-microdados-novo-caged/index.html">Microdados do Novo CAGED: primeiros passos em R</a>.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-gecomt2026" class="csl-entry quarto-appendix-citeas">
+GECOMT, Equipe. 2026. <span>“Conheça o dataCAGED: microdados do CAGED
+direto no DuckDB.”</span> November 13. <a href="https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/">https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/</a>.
+</div></div></section></div> ]]></description>
+  <category>dataCAGED</category>
+  <category>Pacotes</category>
+  <category>R</category>
+  <category>Dados abertos</category>
+  <guid>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/</guid>
+  <pubDate>Fri, 13 Nov 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/thumbnail.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Conheça o dataRAIS: quatro décadas de RAIS em R</title>
+  <dc:creator>Equipe GECOMT</dc:creator>
+  <link>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>A Relação Anual de Informações Sociais (RAIS) é o registro administrativo que retrata, ano a ano, o conjunto dos vínculos formais de emprego e dos estabelecimentos do país. Trata-se, portanto, de uma base central para estudos sobre salários, ocupações, rotatividade e estrutura produtiva. Ao mesmo tempo, a RAIS impõe desafios consideráveis ao pesquisador, tendo em vista as sucessivas mudanças de leiaute, de codificação e de forma de distribuição dos arquivos ao longo de quase quarenta anos.</p>
+<section id="o-que-o-pacote-faz" class="level2">
+<h2 class="anchored" data-anchor-id="o-que-o-pacote-faz">O que o pacote faz</h2>
+<p>O <a href="../../../pacotes/datarais.html">dataRAIS</a>, desenvolvido pelo GECOMT a partir da mesma arquitetura do dataCAGED, enfrenta esses desafios em três frentes: (i) o download dos arquivos de um espelho da RAIS no Hugging Face; (ii) a leitura dos diferentes leiautes históricos, com nomes de variáveis normalizados em português; e (iii) o armazenamento em banco DuckDB local, viabilizando consultas rápidas mesmo em volumes de dezenas de gigabytes.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># install.packages("pak")</span></span>
+<span id="cb1-2">pak<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pak</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"gecomt/datarais"</span>)</span></code></pre></div></div>
+</section>
+<section id="exemplo-vínculos-e-remuneração-no-rio-grande-do-norte" class="level2">
+<h2 class="anchored" data-anchor-id="exemplo-vínculos-e-remuneração-no-rio-grande-do-norte">Exemplo: vínculos e remuneração no Rio Grande do Norte</h2>
+<p>No exemplo a seguir, são carregados os vínculos de 2023 e calculados, por município do Rio Grande do Norte (código 24 do IBGE), o número de registros e a remuneração média nominal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(datarais)</span>
+<span id="cb2-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rais_load</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">years =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2023</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"vinculos"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">db_path =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rais.duckdb"</span>)</span>
+<span id="cb2-5"></span>
+<span id="cb2-6">con <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rais_connect</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rais.duckdb"</span>)</span>
+<span id="cb2-7"></span>
+<span id="cb2-8">rn_2023 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tbl</span>(con, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rais_novo"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(ano <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2023</span>, sigla_uf <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24</span>L) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(id_municipio) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(</span>
+<span id="cb2-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">vinculos          =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">n</span>(),</span>
+<span id="cb2-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">remuneracao_media =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(vl_remun_media_nom, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb2-14">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-15">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">arrange</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">desc</span>(vinculos)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb2-16">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">collect</span>()</span>
+<span id="cb2-17"></span>
+<span id="cb2-18">DBI<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dbDisconnect</span>(con, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">shutdown =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span></code></pre></div></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Registros e estoque de empregos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A RAIS registra todos os vínculos ocorridos no ano, inclusive os encerrados antes de 31 de dezembro. Para obter o estoque de empregos, deve-se filtrar os vínculos ativos no fim do ano. A variável correspondente pode ser localizada com <code>rais_col_info(search = "ativo")</code>.</p>
+</div>
+</div>
+</section>
+<section id="arquivos-por-região-a-partir-de-2018" class="level2">
+<h2 class="anchored" data-anchor-id="arquivos-por-região-a-partir-de-2018">Arquivos por região a partir de 2018</h2>
+<p>Ressalta-se que, a partir de 2018, os arquivos passaram a ser distribuídos por região geográfica. Assim, o argumento <code>state</code> de <code>rais_load()</code> funciona apenas para os anos anteriores; nos anos mais recentes, baixa-se o arquivo da região inteira e o filtro por Unidade da Federação é feito após a carga, como no exemplo acima.</p>
+</section>
+<section id="próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-passos">Próximos passos</h2>
+<p>O pacote encontra-se em fase experimental, e as contribuições da comunidade são bem-vindas. O código está disponível no <a href="https://github.com/gecomt/datarais">GitHub</a>, onde também podem ser registrados problemas e sugestões.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-gecomt2026" class="csl-entry quarto-appendix-citeas">
+GECOMT, Equipe. 2026. <span>“Conheça o dataRAIS: quatro décadas de RAIS
+em R.”</span> November 13. <a href="https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/">https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/</a>.
+</div></div></section></div> ]]></description>
+  <category>dataRAIS</category>
+  <category>Pacotes</category>
+  <category>R</category>
+  <category>Dados abertos</category>
+  <category>Mercado de trabalho</category>
+  <guid>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/</guid>
+  <pubDate>Fri, 13 Nov 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/thumbnail.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Microdados do Novo CAGED: primeiros passos em R</title>
+  <dc:creator>Equipe GECOMT</dc:creator>
+  <link>https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+<p>O Cadastro Geral de Empregados e Desempregados (CAGED) registra, mês a mês, as admissões e os desligamentos de trabalhadores celetistas no Brasil. A partir de 2020, com a implantação do Novo CAGED, as informações passaram a ser captadas majoritariamente pelo eSocial, o que alterou a estrutura dos arquivos e exige cautela na comparação com a série anterior.</p>
+<p>Tendo em vista o volume dos microdados, que somam milhões de registros por ano, o GECOMT desenvolveu o pacote <a href="../../../pacotes/datacaged.html">dataCAGED</a>, que automatiza o fluxo completo: download dos arquivos, leitura com descompressão em fluxo e gravação em um banco analítico local (DuckDB).</p>
+<section id="instalação" class="level2">
+<h2 class="anchored" data-anchor-id="instalação">Instalação</h2>
+<p>O pacote está disponível no CRAN:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">install.packages</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"datacaged"</span>)</span></code></pre></div></div>
+</section>
+<section id="carga-dos-dados" class="level2">
+<h2 class="anchored" data-anchor-id="carga-dos-dados">Carga dos dados</h2>
+<p>A função <code>caged_load()</code> executa o pipeline completo em uma única chamada. No exemplo a seguir, são carregadas as competências de 2023 e 2024:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(datacaged)</span>
+<span id="cb2-2"></span>
+<span id="cb2-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">caged_load</span>(</span>
+<span id="cb2-4">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">years   =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2023</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2024</span>,</span>
+<span id="cb2-5">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">months  =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq_len</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>L),</span>
+<span id="cb2-6">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">db_path =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dados/caged.duckdb"</span></span>
+<span id="cb2-7">)</span></code></pre></div></div>
+<p>As movimentações ficam armazenadas na tabela <code>caged_mov</code>, enquanto as declarações fora do prazo e as exclusões são gravadas, respectivamente, em <code>caged_for</code> e <code>caged_exc</code>.</p>
+</section>
+<section id="saldo-mensal-no-rio-grande-do-norte" class="level2">
+<h2 class="anchored" data-anchor-id="saldo-mensal-no-rio-grande-do-norte">Saldo mensal no Rio Grande do Norte</h2>
+<p>Com a conexão aberta, a consulta pode ser escrita com <code>dplyr</code>, e o processamento ocorre dentro do DuckDB, sem carregar todos os registros na memória. O código da Unidade da Federação do Rio Grande do Norte, segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), é 24:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb3-2"></span>
+<span id="cb3-3">con <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">caged_connect</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dados/caged.duckdb"</span>)</span>
+<span id="cb3-4"></span>
+<span id="cb3-5">saldo_rn <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tbl</span>(con, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"caged_mov"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(uf <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(competenciamov) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">saldo =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(saldomovimentacao, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">arrange</span>(competenciamov) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">collect</span>()</span>
+<span id="cb3-11"></span>
+<span id="cb3-12">DBI<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dbDisconnect</span>(con, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">shutdown =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span></code></pre></div></div>
+<p>O objeto <code>saldo_rn</code> contém o saldo (admissões menos desligamentos) de cada competência e pode ser utilizado diretamente na elaboração de gráficos ou de indicadores.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Atenção às declarações fora do prazo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Os totais calculados apenas com a tabela <code>caged_mov</code> não incorporam as declarações entregues fora do prazo nem as exclusões. Para reproduzir as estatísticas oficiais divulgadas pelo Ministério do Trabalho e Emprego (MTE), essas tabelas também devem ser consideradas.</p>
+</div>
+</div>
+</section>
+<section id="próximos-passos" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-passos">Próximos passos</h2>
+<p>Em posts futuros, serão apresentados exemplos de cálculo de indicadores de rotatividade, de análise salarial por ocupação e de integração do CAGED com a RAIS. Sugestões de análises podem ser enviadas à coordenação do grupo.</p>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-gecomt2026" class="csl-entry quarto-appendix-citeas">
+GECOMT, Equipe. 2026. <span>“Microdados do Novo CAGED: primeiros passos
+em R.”</span> November 13. <a href="https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/">https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/</a>.
+</div></div></section></div> ]]></description>
+  <category>dataCAGED</category>
+  <category>Mercado de trabalho</category>
+  <category>Dados abertos</category>
+  <category>R</category>
+  <guid>https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/</guid>
+  <pubDate>Fri, 13 Nov 2026 03:00:00 GMT</pubDate>
+  <media:content url="https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/thumbnail.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Treinamento: R e Rstudio</title>
+  <dc:creator>Alexsandro Prado</dc:creator>
+  <link>https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
 <section id="intodução" class="level2">
 <h2 class="anchored" data-anchor-id="intodução">Intodução</h2>
 <div style="text-align: justify;">
@@ -33,38 +475,38 @@ body {
 <p>Arquivos do treinamento: <a href="https://drive.google.com/file/d/1s52WvCyYpV4heDMWRD7OYTxESZsNc-TE/view?usp=sharing">download</a></p>
 <p>Informações adicionais:</p>
 <ul>
-<li><p><a href="https://gecomt.github.io/blog/posts/rinstalacao/rinstalacao.html">Instalação do R, RStudio e Rtools no Windows</a></p></li>
-<li><p><a href="https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.html">Boas práticas no Uso do R - parte I</a></p></li>
+<li><p><a href="../../../blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html">Instalação do R, RStudio e Rtools no Windows</a></p></li>
+<li><p><a href="../../../blog/posts/2024-08-11-boas-praticas-r/index.html">Boas práticas no Uso do R - parte I</a></p></li>
 </ul>
 </div>
 
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
-  <category>r</category>
-  <category>datascience</category>
-  <guid>https://gecomt.github.io/blog/posts/treinamento/treinamento.html</guid>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-prado2024" class="csl-entry quarto-appendix-citeas">
+Prado, Alexsandro. 2024. <span>“Treinamento: R e Rstudio.”</span> August
+14. <a href="https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/">https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/</a>.
+</div></div></section></div> ]]></description>
+  <category>R</category>
+  <category>Ciência de dados</category>
+  <guid>https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/</guid>
   <pubDate>Wed, 14 Aug 2024 03:00:00 GMT</pubDate>
-  <media:content url="https://gecomt.github.io/blog/posts/treinamento/treinamento.webp" medium="image" type="image/webp"/>
+  <media:content url="https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/treinamento.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Boas práticas no Uso do R - parte I</title>
   <dc:creator>Alexsandro Prado</dc:creator>
-  <link>https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.html</link>
+  <link>https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/</link>
   <description><![CDATA[ 
 
 
 
 
-<style>
-body {
-  line-height: 2.0;
-}
-</style>
+
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="318"></p>
+<p><img src="https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/boaspraticasr.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="318"></p>
 </figure>
 </div>
 <div style="text-align: justify;">
@@ -100,31 +542,30 @@ body {
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
-  <category>r</category>
-  <category>datascience</category>
-  <guid>https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.html</guid>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-prado2024" class="csl-entry quarto-appendix-citeas">
+Prado, Alexsandro. 2024. <span>“Boas práticas no Uso do R - parte
+I.”</span> August 11. <a href="https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/">https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/</a>.
+</div></div></section></div> ]]></description>
+  <category>R</category>
+  <category>Ciência de dados</category>
+  <guid>https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/</guid>
   <pubDate>Sun, 11 Aug 2024 03:00:00 GMT</pubDate>
-  <media:content url="https://gecomt.github.io/blog/posts/boaspraticasr/boaspraticasr.webp" medium="image" type="image/webp"/>
+  <media:content url="https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/boaspraticasr.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>O Contador e o Mercado de Trabalho</title>
   <dc:creator>Alexsandro Prado</dc:creator>
-  <link>https://gecomt.github.io/blog/posts/contadortrabalho/contadortrabalho.html</link>
+  <link>https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/</link>
   <description><![CDATA[ 
 
 
 
 
-<style> body {text-align: justify} </style>
-<style>
-  .left-aligned {
-    text-align: left;
-  }
-</style>
+
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://gecomt.github.io/blog/posts/contadortrabalho/contadortrabalho.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="356"></p>
+<p><img src="https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/contadortrabalho.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="356"></p>
 </figure>
 </div>
 <div style="text-align: justify;">
@@ -186,29 +627,29 @@ body {
 
 
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
-  <category>mercado de trabalho</category>
-  <guid>https://gecomt.github.io/blog/posts/contadortrabalho/contadortrabalho.html</guid>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-prado2024" class="csl-entry quarto-appendix-citeas">
+Prado, Alexsandro. 2024. <span>“O Contador e o Mercado de
+Trabalho.”</span> August 11. <a href="https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/">https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/</a>.
+</div></div></section></div> ]]></description>
+  <category>Mercado de trabalho</category>
+  <guid>https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/</guid>
   <pubDate>Sun, 11 Aug 2024 03:00:00 GMT</pubDate>
-  <media:content url="https://gecomt.github.io/blog/posts/contadortrabalho/contadortrabalho.webp" medium="image" type="image/webp"/>
+  <media:content url="https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/contadortrabalho.webp" medium="image" type="image/webp"/>
 </item>
 <item>
   <title>Instalação do R, RStudio e Rtools no Windows</title>
   <dc:creator>Alexsandro Prado</dc:creator>
-  <link>https://gecomt.github.io/blog/posts/rinstalacao/rinstalacao.html</link>
+  <link>https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/</link>
   <description><![CDATA[ 
 
 
 
 
-<style>
-body {
-  line-height: 2.0;
-}
-</style>
+
+
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://gecomt.github.io/blog/posts/rinstalacao/rinstalacao.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="355"></p>
+<p><img src="https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/rinstalacao.webp" class="img-fluid quarto-figure quarto-figure-center figure-img" width="355"></p>
 </figure>
 </div>
 <section id="intodução" class="level2">
@@ -328,12 +769,15 @@ body {
 
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a> ]]></description>
-  <category>r</category>
-  <category>datascience</category>
-  <guid>https://gecomt.github.io/blog/posts/rinstalacao/rinstalacao.html</guid>
+<a onclick="window.scrollTo(0, 0); return false;" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citação</h2><div><div class="quarto-appendix-secondary-label">Por favor, cite este trabalho como:</div><div id="ref-prado2024" class="csl-entry quarto-appendix-citeas">
+Prado, Alexsandro. 2024. <span>“Instalação do R, RStudio e Rtools no
+Windows.”</span> August 11. <a href="https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/">https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/</a>.
+</div></div></section></div> ]]></description>
+  <category>R</category>
+  <category>Ciência de dados</category>
+  <guid>https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/</guid>
   <pubDate>Sun, 11 Aug 2024 03:00:00 GMT</pubDate>
-  <media:content url="https://gecomt.github.io/blog/posts/rinstalacao/rinstalacao.webp" medium="image" type="image/webp"/>
+  <media:content url="https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/rinstalacao.webp" medium="image" type="image/webp"/>
 </item>
 </channel>
 </rss>

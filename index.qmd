@@ -1,86 +1,153 @@
 ---
-title: GECOMT
-comments: false
-resources: /images/ufersa.jpg
-about:
-  template: trestles
-  image: /images/gecomt.png
-  image-width: 15em
-  image-shape: round
-  links:
-    - icon: envelope
-      text: E-mail
-      href: mailto:gecomt@ufersa.edu.br
-    - icon: person-fill
-      text: CNPQ
-      href: http://dgp.cnpq.br/dgp/espelhogrupo/79304638 21700084
-      target: _blank
-    - icon: person-fill-check
-      text: SIGAA UFERSA
-      href: https://sigaa.ufersa.edu.br/sigaa/public/departamento/pesquisa.jsf?id=928
-      target: _blank    
-    - icon: instagram
-      text: Instagram
-      href: https://instagram.com/gecomt.ufersa
-    - icon: twitter-x
-      text:   
-      href: https://x.com/gecomt_ufersa
-      target: _blank
-    - icon: github
-      text: Github
-      href: https://github.com/gecomt
-      target: _blank
-editor: 
-  markdown: 
-    wrap: 72
+pagetitle: "GECOMT · Grupo de Estudos sobre Contabilidade e Mercado de Trabalho"
+page-layout: custom
+section-divs: false
+toc: false
+body-classes: gecomt-home
+description: |
+  Grupo de pesquisa da UFERSA dedicado à contabilidade e ao mercado de trabalho,
+  com ênfase em dados abertos e ciência reprodutível.
+listing:
+  id: ultimos-posts
+  contents: "blog/posts/*/index.qmd"
+  sort: "date desc"
+  type: grid
+  max-items: 3
+  grid-columns: 3
+  fields: [image, date, title, description, categories]
+  image-height: 190px
+  date-format: "D [de] MMMM [de] YYYY"
 ---
 
 ```{=html}
-<style>
-  .justificado {
-    text-align: justify;
-  }
-</style>
+<div role="main">
 ```
-::: {#hero-heading .justificado}
-[O Grupo de Estudos Sobre Contabilidade e Mercado de Trabalho (GECOMT)
-objetiva mapear o mercado de trabalho contábil, compreendendo
-trabalhadores, carteira assassinada (mercado formal), discutindo
-questões relativas à remuneração e discriminação salarial em função de
-gênero, raça, região, setor de atuação, etc.]{.smallcaps}
 
-[Os resultados podem potencialmente contribuir para:]{.smallcaps}
+::: {.hero-banner}
+::: {.content-block}
+::: {.hero-text}
+[UFERSA · Mossoró/RN]{.gecomt-kicker}
 
--   [Identificar quais são as habilidades e conhecimentos mais
-    valorizados pelos empregadores e quais são as áreas e regiões são
-    mais promissoras dentro da contabilidade, ajudando os profissionais
-    a se prepararem melhor para o mercado de trabalho;]{.smallcaps}
+# Grupo de Estudos sobre [Contabilidade]{.destaque} e [Mercado de Trabalho]{.destaque}
 
--   [Observar mudanças e tendências no mercado de trabalho contábil,
-    permitindo que os profissionais estejam melhor preparados para lidar
-    com elas e se adaptar às novas demandas;]{.smallcaps}
-
--   [Gestores e profissionais podem tomar decisões mais informadas e
-    estratégicas em relação ao desenvolvimento de suas carreiras ou
-    negócios;]{.smallcaps}
-
--   [Desenvolvimento de políticas públicas voltadas para a formação e
-    qualificação de profissionais contábeis, garantindo que as demandas
-    do mercado sejam atendidas e que haja um equilíbrio entre oferta e
-    demanda de profissionais;]{.smallcaps}
-
--   [Perceber as principais barreiras à entrada de novos profissionais
-    no mercado de trabalho contábil, permitindo que sejam desenvolvidas
-    estratégias para facilitar a integração desses profissionais no
-    mercado.]{.smallcaps}
+::: {.lead}
+Pesquisa aplicada em contabilidade e mercado de trabalho,
+com microdados públicos e ferramentas abertas para análise reprodutível.
 :::
 
-     
+::: {.hero-actions}
+[Leia o blog](blog/index.qmd){.btn .btn-gecomt .btn-gecomt-gold role="button"}
+[Conheça o grupo](sobre.qmd){.btn .btn-gecomt .btn-gecomt-outline role="button"}
+:::
+:::
 
-+:--------------------------------------------------------------------:+
-| *“Conselhos para os meus três filhos: \[...\] nunca desista do       |
-| trabalho. Trabalho dá significado e propósito, e a vida está vazia   |
-| sem ele.”*                                                           |
-|                                                                      |
-| ^(Stephen Hawking)^                                                  |
-+----------------------------------------------------------------------+
+::: {.hero-logo}
+![](assets/images/logos/gecomt_sigla_transparente_fundo_escuro.svg){fig-alt="Logo do GECOMT"}
+:::
+:::
+:::
+
+::: {.content-block}
+::: {.section-title}
+[Linhas de pesquisa]{.gecomt-kicker}
+
+## O que estudamos
+
+Os trabalhos do grupo combinam teoria contábil, econometria aplicada e grandes bases de dados públicas.
+:::
+
+::: {.grid .gap-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
+::: {.gecomt-card}
+[`<i class="bi bi-people-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Mercado de trabalho
+
+Emprego formal, salários, rotatividade e políticas públicas com microdados do CAGED e da RAIS.
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-6}
+::: {.gecomt-card}
+[`<i class="bi bi-graph-up-arrow" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Mercado de capitais
+
+Gerenciamento de resultados, inovação e valor de mercado das companhias listadas na B3.
+:::
+:::
+:::
+:::
+
+::: {.content-block}
+::: {.section-title}
+[Ferramentas abertas]{.gecomt-kicker}
+
+## Pacotes do GECOMT
+
+Pacotes R desenvolvidos pelo grupo para acessar, em poucas linhas de código, os principais
+microdados do mercado de trabalho formal brasileiro.
+:::
+
+::: {.grid .gap-4}
+::: {.g-col-12 .g-col-md-6}
+::: {.gecomt-card .pacote-card}
+![](assets/images/pacotes/datacaged.svg){fig-alt="Logo hexagonal do pacote dataCAGED" .pacote-hex}
+
+### dataCAGED
+
+Microdados do CAGED (Novo CAGED, CAGED antigo e ajustes) baixados, lidos e gravados em DuckDB
+com uma única função. Disponível no CRAN.
+
+[Conheça o dataCAGED](pacotes/datacaged.qmd){.btn .btn-gecomt .btn-primary .btn-sm role="button"}
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.gecomt-card .pacote-card}
+![](assets/images/pacotes/datarais.png){fig-alt="Logo hexagonal do pacote dataRAIS" .pacote-hex}
+
+### dataRAIS
+
+Microdados da RAIS de 1985 a 2025 (vínculos e estabelecimentos), com nomes de variáveis
+padronizados entre os diferentes leiautes históricos.
+
+[Conheça o dataRAIS](pacotes/datarais.qmd){.btn .btn-gecomt .btn-primary .btn-sm role="button"}
+:::
+:::
+:::
+:::
+
+::: {.section-alt}
+::: {.content-block}
+::: {.section-title}
+[Blog]{.gecomt-kicker}
+
+## Publicações recentes
+
+Notas de pesquisa, tutoriais com dados abertos e comentários sobre temas contábeis e trabalhistas.
+:::
+
+::: {#ultimos-posts}
+:::
+
+::: {.text-center .mt-4}
+[Ver todas as publicações](blog/index.qmd){.btn .btn-gecomt .btn-primary role="button"}
+:::
+:::
+:::
+
+::: {.content-block}
+::: {.cta}
+## Faça parte do GECOMT
+
+Discentes de graduação e pós-graduação interessados em pesquisa com dados contábeis e do mercado
+de trabalho podem entrar em contato com a coordenação do grupo.
+
+[Saiba como participar](sobre.qmd#contato){.btn .btn-gecomt .btn-gecomt-gold role="button"}
+:::
+:::
+
+```{=html}
+</div>
+```

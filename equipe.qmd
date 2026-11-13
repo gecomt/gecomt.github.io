@@ -1,0 +1,21 @@
+---
+title: "Equipe"
+description: "Docentes, pesquisadores e discentes que integram o GECOMT."
+title-block-banner: true
+toc: false
+listing:
+  contents: equipe/membros.yml
+  type: grid
+  grid-columns: 3
+  image-height: 240px
+  max-description-length: 400
+  image-placeholder: assets/images/gecomt-og.png
+  fields: [image, title, subtitle, description]
+  sort: false
+  filter-ui: false
+  sort-ui: false
+---
+
+O GECOMT reúne docentes, pesquisadores e discentes de graduação e de pós-graduação da
+Universidade Federal Rural do Semi-Árido (UFERSA) interessados em pesquisa empírica nas
+áreas de contabilidade e mercado de trabalho.

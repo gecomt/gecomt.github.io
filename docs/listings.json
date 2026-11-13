@@ -1,23 +1,45 @@
 [
   {
-    "listing": "/artigos/index.html",
+    "listing": "/pacotes/datarais.html",
     "items": [
-      "/artigos/uranium.html"
+      "/blog/posts/2026-11-13-conheca-o-datarais/index.html"
     ]
   },
   {
     "listing": "/blog/index.html",
     "items": [
-      "/blog/posts/treinamento/treinamento.html",
-      "/blog/posts/boaspraticasr/boaspraticasr.html",
-      "/blog/posts/contadortrabalho/contadortrabalho.html",
-      "/blog/posts/rinstalacao/rinstalacao.html"
+      "/blog/posts/2026-11-13-boas-vindas/index.html",
+      "/blog/posts/2026-11-13-conheca-o-datacaged/index.html",
+      "/blog/posts/2026-11-13-conheca-o-datarais/index.html",
+      "/blog/posts/2026-11-13-microdados-novo-caged/index.html",
+      "/blog/posts/2024-08-14-treinamento-r-rstudio/index.html",
+      "/blog/posts/2024-08-11-boas-praticas-r/index.html",
+      "/blog/posts/2024-08-11-contador-mercado-trabalho/index.html",
+      "/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html"
     ]
   },
   {
-    "listing": "/palestras/index.html",
+    "listing": "/equipe.html",
+    "items": []
+  },
+  {
+    "listing": "/pacotes/datacaged.html",
     "items": [
-      "/palestras/french_academy_1901.html"
+      "/blog/posts/2026-11-13-conheca-o-datacaged/index.html",
+      "/blog/posts/2026-11-13-microdados-novo-caged/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/blog/posts/2026-11-13-boas-vindas/index.html",
+      "/blog/posts/2026-11-13-conheca-o-datacaged/index.html",
+      "/blog/posts/2026-11-13-conheca-o-datarais/index.html",
+      "/blog/posts/2026-11-13-microdados-novo-caged/index.html",
+      "/blog/posts/2024-08-14-treinamento-r-rstudio/index.html",
+      "/blog/posts/2024-08-11-boas-praticas-r/index.html",
+      "/blog/posts/2024-08-11-contador-mercado-trabalho/index.html",
+      "/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html"
     ]
   }
 ]

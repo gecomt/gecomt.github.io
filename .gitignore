@@ -1,9 +1,7 @@
-_site/*
-_freeze/*
-*_cache/
-
 /.quarto/
+/_site/
 .Rproj.user
-desktop.ini
 .Rhistory
-/_*.local
+.DS_Store
+
+**/*.quarto_ipynb

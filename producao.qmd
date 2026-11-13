@@ -1,0 +1,70 @@
+---
+title: "Produção"
+description: "Ferramentas, softwares e trabalhos científicos do GECOMT."
+title-block-banner: true
+---
+
+## Pacotes R
+
+::: {.grid .gap-4}
+::: {.g-col-12 .g-col-md-6}
+::: {.gecomt-card .pacote-card}
+![](assets/images/pacotes/datacaged.svg){fig-alt="Logo hexagonal do pacote dataCAGED" .pacote-hex}
+
+### dataCAGED
+
+Microdados do CAGED (Novo CAGED, CAGED antigo e ajustes) em banco DuckDB local. Disponível no CRAN.
+
+[Página do pacote](pacotes/datacaged.qmd) ·
+[GitHub](https://github.com/gecomt/datacaged) ·
+[CRAN](https://CRAN.R-project.org/package=datacaged) ·
+[DOI](https://doi.org/10.5281/zenodo.20058818)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.gecomt-card .pacote-card}
+![](assets/images/pacotes/datarais.png){fig-alt="Logo hexagonal do pacote dataRAIS" .pacote-hex}
+
+### dataRAIS
+
+Microdados da RAIS de 1985 a 2025 (vínculos e estabelecimentos), com variáveis padronizadas entre leiautes.
+
+[Página do pacote](pacotes/datarais.qmd) ·
+[GitHub](https://github.com/gecomt/datarais)
+:::
+:::
+:::
+
+## Dados abertos
+
+::: {.grid .gap-4}
+::: {.g-col-12 .g-col-md-6}
+::: {.gecomt-card}
+[`<i class="bi bi-cloud-arrow-down-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Espelho do CAGED
+
+Microdados do CAGED disponibilizados pelo Ministério do Trabalho e Emprego, organizados no Hugging Face.
+
+[Hugging Face](https://huggingface.co/datasets/alexsandroprado/caged)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.gecomt-card}
+[`<i class="bi bi-cloud-arrow-down-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Espelho da RAIS
+
+Microdados da RAIS (vínculos, estabelecimentos e trabalho doméstico), organizados no Hugging Face.
+
+[Hugging Face](https://huggingface.co/datasets/alexsandroprado/rais)
+:::
+:::
+:::
+
+::: {.callout-note appearance="simple"}
+Esta página é atualizada continuamente. Artigos, capítulos, trabalhos em eventos e trabalhos
+orientados podem ser incluídos em novas seções, no formato de lista.
+:::

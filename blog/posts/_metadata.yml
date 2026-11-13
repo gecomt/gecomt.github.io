@@ -1,5 +1,11 @@
-# options specified here will apply to all posts in this folder
-
-# freeze computational output
-# (see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: true
+# Opções comuns a todos os posts do blog
+title-block-banner: true
+toc-location: right
+author: "Equipe GECOMT"
+date-format: "D [de] MMMM [de] YYYY"
+citation: true
+appendix-cite-as: display
+comments: false
+execute:
+  freeze: true
+  echo: true

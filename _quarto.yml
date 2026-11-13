@@ -1,83 +1,97 @@
 project:
-  type: website
+  type: gecomt
+  # o GitHub Pages do repositório gecomt/gecomt.github.io publica a pasta docs/ da branch main
   output-dir: docs
-  render:
-    - "*.qmd"
-    - "*.md"
-lang: pt
+  resources:
+    - "assets/images/logos/*.svg"
+    - "equipe/*.png"
+    - ".nojekyll"
+
+lang: pt-BR
+
 website:
   title: "GECOMT"
-  site-url: "https://gecomt.github.io/"
-  favicon: "images/favicon.ico"
-  twitter-card: true
-  description: "Grupo de Estudos sobre Contabilidade e Mercado de Trabalho"
+  description: "Blog do Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT/UFERSA)."
+  site-url: https://gecomt.github.io
+  favicon: assets/images/favicon.png
   google-analytics: "GTM-T9KC9QL7"
-  back-to-top-navigation: true
-  reader-mode: false
+  image: assets/images/gecomt-og.png
   navbar:
-    type: light
-    background: "#253e67"
     left:
-      - href: blog/index.qmd
-        text: Blog
-      - href: https://gecomt.shinyapps.io/dashboard/
-        text: Dashboard
-        target: _blank
-#      - href: artigos/index.qmd
-#        text: Artigos
-#      - href: palestras/index.qmd
-#        text: Palestras
-#      - href: Ensino/index.qmd
-#        text: Ensino
-#      - href: software/index.qmd
-#        text: Software
-      - text: Projetos
+      - text: "Início"
+        href: index.qmd
+      - text: "O grupo"
+        href: sobre.qmd
+      - text: "Equipe"
+        href: equipe.qmd
+      - text: "Pacotes"
         menu:
-          - text: contabiliDados
+          - text: "dataCAGED"
+            href: pacotes/datacaged.qmd
+          - text: "dataRAIS"
+            href: pacotes/datarais.qmd
+      - text: "Produção"
+        href: producao.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Projetos"
+        menu:
+          - text: "Dashboard"
+            href: https://gecomt.shinyapps.io/dashboard/
+            target: _blank
+          - text: "contabiliDados"
             href: https://contabilidados.com.br/
             target: _blank
-          - text: Regulariza
+          - text: "Regulariza"
             href: https://regulariza.shinyapps.io/dashboard/
             target: _blank
+    tools:
+      - icon: github
+        href: https://github.com/gecomt
+        aria-label: "GECOMT no GitHub"
+      - icon: instagram
+        href: https://instagram.com/gecomt.ufersa
+        aria-label: "GECOMT no Instagram"
+      - icon: twitter-x
+        href: https://x.com/gecomt_ufersa
+        aria-label: "GECOMT no X"
+      - icon: youtube
+        href: https://www.youtube.com/@gecomt
+        aria-label: "GECOMT no YouTube"
+      - icon: rss
+        href: blog/index.xml
+        aria-label: "Feed RSS do blog"
+  page-footer:
+    left: |
+      [![](/assets/images/gecomt_emblema_transparente_fundo_escuro.svg){fig-alt="Emblema do GECOMT"}]{.footer-marca}
+      © 2026 GECOMT · UFERSA, Mossoró/RN
+    center:
+      - text: "O grupo"
+        href: sobre.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "UFERSA"
+        href: https://ufersa.edu.br
+      - text: "Ciências Contábeis"
+        href: https://contabeis.ufersa.edu.br
+      - text: "Contato"
+        href: sobre.qmd#contato
     right:
       - icon: github
         href: https://github.com/gecomt
-      - icon: twitter-x
-        href: https://twitter.com/gecomt_ufersa
+        aria-label: "GECOMT no GitHub"
+      - icon: instagram
+        href: https://instagram.com/gecomt.ufersa
+        aria-label: "GECOMT no Instagram"
       - icon: youtube
         href: https://www.youtube.com/@gecomt
+        aria-label: "GECOMT no YouTube"
+      - icon: envelope
+        href: mailto:gecomt@ufersa.edu.br
+        aria-label: "E-mail do GECOMT"
       - icon: rss
         href: blog/index.xml
-  page-footer:
-    left: |
-      
-      [![](../images/ufersa.jpg){fig-alt="UFERSA" width=65px}](https://ufersa.edu.br)
-    center: "© 2024 GECOMT licenciado sob CC BY-ND 4.0"
-    right: |
-      
-      [![](../images/contabeis.png){fig-alt="contabeis" width=70px}](https://contabeis.ufersa.edu.br)
-    #background: "#ffffff"
+        aria-label: "Feed RSS do blog"
 
-date-format: "D MMMM YYYY"
-
-format:
-  html:
-    theme:
-      light: united
-      dark: cyborg
-    css: styles.css
-    toc: true
-    html-math-method: katex
-    include-in-header:
-      file: header.html
-mainfont: roboto
-monofont: corrier new
-
-blog:
-  - folder: blog
-    feed: true
-
-comments:
-  giscus:
-    repo: gecomt/gecomt.github.io
-
+execute:
+  freeze: auto

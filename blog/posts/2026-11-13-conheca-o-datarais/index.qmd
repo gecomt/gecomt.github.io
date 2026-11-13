@@ -1,0 +1,75 @@
+---
+title: "Conheça o dataRAIS: quatro décadas de RAIS em R"
+description: |
+  O novo pacote do GECOMT dá acesso aos microdados da RAIS de 1985 a 2025, com variáveis padronizadas
+  entre leiautes e consultas rápidas em DuckDB.
+date: "2026-11-13"
+categories: [dataRAIS, Pacotes, R, Dados abertos, Mercado de trabalho]
+image: thumbnail.png
+image-alt: "Cartão com o título Conheça o dataRAIS e o logo hexagonal do pacote."
+---
+
+A Relação Anual de Informações Sociais (RAIS) é o registro administrativo que retrata, ano a ano, o
+conjunto dos vínculos formais de emprego e dos estabelecimentos do país. Trata-se, portanto, de uma base
+central para estudos sobre salários, ocupações, rotatividade e estrutura produtiva. Ao mesmo tempo, a
+RAIS impõe desafios consideráveis ao pesquisador, tendo em vista as sucessivas mudanças de leiaute, de
+codificação e de forma de distribuição dos arquivos ao longo de quase quarenta anos.
+
+## O que o pacote faz
+
+O [dataRAIS](../../../pacotes/datarais.qmd), desenvolvido pelo GECOMT a partir da mesma arquitetura do
+dataCAGED, enfrenta esses desafios em três frentes: (i) o download dos arquivos de um espelho da RAIS
+no Hugging Face; (ii) a leitura dos diferentes leiautes históricos, com nomes de variáveis
+normalizados em português; e (iii) o armazenamento em banco DuckDB local, viabilizando consultas
+rápidas mesmo em volumes de dezenas de gigabytes.
+
+```r
+# install.packages("pak")
+pak::pak("gecomt/datarais")
+```
+
+## Exemplo: vínculos e remuneração no Rio Grande do Norte
+
+No exemplo a seguir, são carregados os vínculos de 2023 e calculados, por município do Rio Grande do
+Norte (código 24 do IBGE), o número de registros e a remuneração média nominal:
+
+```r
+library(datarais)
+library(dplyr)
+
+rais_load(years = 2023, type = "vinculos", db_path = "rais.duckdb")
+
+con <- rais_connect("rais.duckdb")
+
+rn_2023 <- tbl(con, "rais_novo") |>
+  filter(ano == 2023, sigla_uf == 24L) |>
+  group_by(id_municipio) |>
+  summarise(
+    vinculos          = n(),
+    remuneracao_media = mean(vl_remun_media_nom, na.rm = TRUE)
+  ) |>
+  arrange(desc(vinculos)) |>
+  collect()
+
+DBI::dbDisconnect(con, shutdown = TRUE)
+```
+
+::: {.callout-important}
+## Registros e estoque de empregos
+A RAIS registra todos os vínculos ocorridos no ano, inclusive os encerrados antes de 31 de dezembro.
+Para obter o estoque de empregos, deve-se filtrar os vínculos ativos no fim do ano. A variável
+correspondente pode ser localizada com `rais_col_info(search = "ativo")`.
+:::
+
+## Arquivos por região a partir de 2018
+
+Ressalta-se que, a partir de 2018, os arquivos passaram a ser distribuídos por região geográfica. Assim,
+o argumento `state` de `rais_load()` funciona apenas para os anos anteriores; nos anos mais recentes,
+baixa-se o arquivo da região inteira e o filtro por Unidade da Federação é feito após a carga, como no
+exemplo acima.
+
+## Próximos passos
+
+O pacote encontra-se em fase experimental, e as contribuições da comunidade são bem-vindas. O código
+está disponível no [GitHub](https://github.com/gecomt/datarais), onde também podem ser registrados
+problemas e sugestões.

@@ -1,0 +1,70 @@
+---
+title: "O grupo"
+description: "Missão, linhas de pesquisa e formas de participação no GECOMT."
+title-block-banner: true
+---
+
+## Apresentação
+
+O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT) é um grupo de pesquisa
+vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA),
+em Mossoró/RN. O grupo objetiva mapear o mercado de trabalho contábil, compreendendo os
+trabalhadores do mercado formal e discutindo questões relativas à remuneração e à discriminação
+salarial em função de gênero, raça, região e setor de atuação, entre outros aspectos.
+
+Os resultados podem potencialmente contribuir para:
+
+- Identificar as habilidades e os conhecimentos mais valorizados pelos empregadores, bem como as
+  áreas e as regiões mais promissoras dentro da contabilidade, ajudando os profissionais a se
+  prepararem melhor para o mercado de trabalho;
+- Observar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais
+  estejam mais bem preparados para se adaptar às novas demandas;
+- Subsidiar decisões mais informadas e estratégicas de gestores e profissionais em relação ao
+  desenvolvimento de suas carreiras ou negócios;
+- Orientar políticas públicas voltadas à formação e à qualificação de profissionais contábeis,
+  promovendo o equilíbrio entre oferta e demanda;
+- Perceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil,
+  permitindo o desenvolvimento de estratégias que facilitem a sua integração.
+
+Nesse sentido, os trabalhos desenvolvidos privilegiam (i) o uso de microdados públicos, como o
+Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS);
+(ii) bases de companhias abertas, como as da Comissão de Valores Mobiliários (CVM) e da B3; e
+(iii) práticas de ciência aberta, com código e ferramentas disponibilizados à comunidade.
+
+> *"Conselhos para os meus três filhos: [...] nunca desista do trabalho. Trabalho dá significado
+> e propósito, e a vida está vazia sem ele."*
+>
+> Stephen Hawking
+
+## Linhas de pesquisa
+
+Mercado de trabalho e políticas públicas
+: Emprego formal, rotatividade, salários, desigualdades e avaliação de programas como o seguro-desemprego.
+
+Mercado de capitais
+: Gerenciamento de resultados, inovação e valor de mercado das companhias brasileiras.
+
+## Objetivos
+
+- Produzir pesquisa empírica de qualidade em contabilidade e economia do trabalho;
+- Formar discentes em métodos quantitativos e em análise de dados com R e Python;
+- Desenvolver e manter ferramentas abertas para acesso a dados públicos, como os pacotes
+  [dataCAGED](pacotes/datacaged.qmd) e [dataRAIS](pacotes/datarais.qmd);
+- Divulgar resultados de pesquisa para a sociedade em linguagem acessível.
+
+## Contato {#contato}
+
+O grupo recebe discentes de graduação e de pós-graduação interessados em iniciação científica,
+trabalhos de conclusão de curso, dissertações e projetos de extensão. O contato pode ser feito com a
+coordenação pelo e-mail [gecomt@ufersa.edu.br](mailto:gecomt@ufersa.edu.br).
+
+O grupo também pode ser consultado no
+[Diretório dos Grupos de Pesquisa do CNPq](http://dgp.cnpq.br/dgp/espelhogrupo/7930463821700084) e na
+[página de pesquisa do departamento no SIGAA/UFERSA](https://sigaa.ufersa.edu.br/sigaa/public/departamento/pesquisa.jsf?id=928).
+
+::: {.callout-tip appearance="simple"}
+## Acompanhe o GECOMT
+Os repositórios do grupo estão em [github.com/gecomt](https://github.com/gecomt), e as novidades
+são publicadas no [blog](blog/index.qmd), no [Instagram](https://instagram.com/gecomt.ufersa), no
+[X](https://x.com/gecomt_ufersa) e no [YouTube](https://www.youtube.com/@gecomt).
+:::

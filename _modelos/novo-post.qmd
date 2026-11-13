@@ -1,0 +1,16 @@
+---
+title: "Título do post"
+description: |
+  Resumo de uma ou duas frases que aparece na listagem do blog.
+date: "2026-12-01"
+author: "Nome do(a) autor(a)"
+categories: [Mercado de trabalho]
+image: thumbnail.png
+image-alt: "Descrição da imagem de capa."
+---
+
+Texto de abertura com o contexto do tema.
+
+## Seção
+
+Desenvolvimento do conteúdo.
