@@ -1,4 +1,5 @@
 /* GECOMT: recursos ao final dos posts do blog (adaptado do site do ContabiliDados)
+   - "Leia também": até 3 posts com categorias em comum (índice JSON em /blog/)
    - "Como citar" em ABNT (NBR 6023:2018) e BibTeX, com botão de copiar
    - "Compartilhe": WhatsApp, LinkedIn, X, e-mail e copiar link
    Os dados da citação vêm das metatags citation_* geradas pelo Quarto
@@ -132,8 +133,40 @@
     '<button type="button" class="nv-share" data-copiar-link><i class="bi bi-link-45deg" aria-hidden="true"></i> Copiar link</button></div>';
   share.querySelector("[data-copiar-link]").addEventListener("click", function () { copiar(url, this); });
 
+  /* ---------- Leia também ---------- */
+  var leia = el("section", "nv-extra nv-leia");
+  function montaRelacionados(indice) {
+    var GENERICAS = { "Anúncio": 1, "GECOMT": 1 };
+    var atual = caminho.replace(/index\.html$/, "");
+    var este = indice.filter(function (p) { return p.u === atual; })[0];
+    var minhas = (este ? este.c : []).filter(function (c) { return !GENERICAS[c]; });
+    var outros = indice.filter(function (p) { return p.u !== atual; });
+    var pontuados = outros.map(function (p) {
+      return { p: p, s: p.c.filter(function (c) { return minhas.indexOf(c) >= 0; }).length };
+    });
+    pontuados.sort(function (a, b) { return b.s - a.s || (b.p.d > a.p.d ? 1 : b.p.d < a.p.d ? -1 : 0); });
+    // relacionados primeiro; se faltarem, completa com os mais recentes
+    var top = pontuados.slice(0, 3).map(function (x) { return x.p; });
+    if (!top.length) return false;
+    leia.innerHTML = '<h2 class="nv-extra-tit">Leia também</h2><div class="nv-leia-grade">' + top.map(function (p) {
+      var d = p.d ? dataBR(new Date(p.d + "T12:00:00")) : "";
+      return '<a class="nv-leia-card" href="' + esc(p.u) + '">' +
+        (p.i ? '<img src="' + esc(p.i) + '" alt="" loading="lazy">' : "") +
+        '<span class="nv-leia-txt"><span class="nv-leia-tit">' + esc(p.t) + "</span>" +
+        '<span class="nv-leia-meta">' + esc(d) + "</span></span></a>";
+    }).join("") + "</div>";
+    return true;
+  }
+
   var bloco = el("div", "nv-pos-post");
   bloco.appendChild(citar);
   bloco.appendChild(share);
   antesDoTopo(bloco);
+  fetch("/blog/index.html", { credentials: "same-origin" })
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      var m = html.match(/<script type="application\/json" id="nv-indice-posts">([\s\S]*?)<\/script>/);
+      if (m && montaRelacionados(JSON.parse(m[1]))) bloco.insertBefore(leia, bloco.firstChild);
+    })
+    .catch(function () { /* sem índice, segue sem "Leia também" */ });
 })();

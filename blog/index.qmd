@@ -2,18 +2,31 @@
 title: "Blog do GECOMT"
 subtitle: "Notas de pesquisa, tutoriais com dados abertos e comentários sobre contabilidade e mercado de trabalho"
 listing:
-  contents: "posts/*/index.qmd"
-  sort: "date desc"
-  type: default
-  categories: true
-  feed: true
-  sort-ui: true
-  filter-ui: true
-  page-size: 10
-  date-format: "D [de] MMMM [de] YYYY"
-  fields: [image, date, title, description, author, categories]
+  - id: posts
+    contents: "posts/*/index.qmd"
+    sort: "date desc"
+    type: default
+    categories: true
+    feed: true
+    sort-ui: true
+    filter-ui: true
+    page-size: 10
+    date-format: "D [de] MMMM [de] YYYY"
+    fields: [image, date, title, description, author, categories]
+  # Índice em JSON usado nos posts ("Leia também"); não aparece na página
+  - id: indice
+    contents: "posts/*/index.qmd"
+    template: ../_templates/posts-indice.ejs
+    sort: "date desc"
+    date-format: "YYYY-MM-DD"
 page-layout: full
 title-block-banner: true
 search: true
 image: ../assets/images/gecomt-og.png
 ---
+
+::: {#posts}
+:::
+
+::: {#indice}
+:::

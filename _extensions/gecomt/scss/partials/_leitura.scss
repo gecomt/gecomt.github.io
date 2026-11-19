@@ -98,3 +98,23 @@ body.nv-foco .nv-ler-sair { display: inline-flex; }
 
 @media (max-width: 575.98px) { .nv-ler-painel { width: min(17.5rem, calc(100vw - 2rem)); } }
 @media print { .nv-ler, .nv-ler-sair, .nv-progresso, .nv-compartilhar, .nv-citar-copiar, .nv-citar-abas { display: none !important; } }
+
+// Leia também
+.nv-leia-grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.nv-leia-card {
+  display: flex; flex-direction: column; border-radius: 10px; overflow: hidden;
+  text-decoration: none !important; color: inherit !important; transition: box-shadow .15s, transform .15s;
+  @if $is-dark { border: 1px solid #22395A; background: #10253F; }
+  @else { border: 1px solid #E3E8EF; background: #fff; }
+  &:hover { box-shadow: 0 8px 22px rgba($gecomt-navy, .16); transform: translateY(-2px); }
+  img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 3px solid $gecomt-gold; }
+}
+.nv-leia-txt { display: flex; flex-direction: column; min-width: 0; }
+.nv-leia-tit { font-family: $headings-font-family; font-weight: 600; font-size: .95rem; line-height: 1.3; padding: .7rem .8rem .2rem; }
+.nv-leia-meta { font-size: .78rem; color: $text-muted; padding: 0 .8rem .75rem; }
+@media (max-width: 767.98px) {
+  .nv-leia-grade { grid-template-columns: 1fr; }
+  .nv-leia-card { flex-direction: row; }
+  .nv-leia-card img { width: 96px; aspect-ratio: 1; flex-shrink: 0; border-bottom: 0; border-right: 3px solid $gecomt-gold; }
+  .nv-leia-tit { padding-top: .55rem; }
+}

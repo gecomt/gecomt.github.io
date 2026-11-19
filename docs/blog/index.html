@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-975e726794ce811e14261b5ab5acfd7c.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ca5f421ad907bcb855dfbf1946135e7a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-bd3ba8bb333d3b2fefc469361e96f2d1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-ca5f421ad907bcb855dfbf1946135e7a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-6afa750bc46ac913084aa696afea455f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b00cfc717ee21d418bb566114a12777e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-6afa750bc46ac913084aa696afea455f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-posts .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
@@ -93,7 +93,35 @@ ul.task-list li input[type="checkbox"] {
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-posts'] = new List('listing-posts', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-indice .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-website','listing-syntax-highlighting','listing-respect-user-color-scheme','listing-format','listing-lang','listing-execute','listing-engines','listing-language','listing-title-block-banner','listing-toc-location','listing-author','listing-date-format','listing-citation','listing-google-scholar','listing-appendix-cite-as','listing-comments','listing-title','listing-date','listing-categories','listing-image','listing-aliases','listing-path','listing-outputHref','listing-date-modified','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count','listing-image-alt',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-website","listing-syntax-highlighting","listing-respect-user-color-scheme","listing-format","listing-lang","listing-execute","listing-engines","listing-language","listing-title-block-banner","listing-toc-location","listing-author","listing-date-format","listing-citation","listing-google-scholar","listing-appendix-cite-as","listing-comments","listing-title","listing-date","listing-categories","listing-image","listing-aliases","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count","listing-image-alt"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-indice'] = new List('listing-indice', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -439,7 +467,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categorias</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todos <span class="quarto-category-count">(8)</span></div><div class="category" data-category="QW4lQzMlQkFuY2lv">Anúncio <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q2klQzMlQUFuY2lhJTIwZGUlMjBkYWRvcw==">Ciência de dados <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RGFkb3MlMjBhYmVydG9z">Dados abertos <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZGF0YUNBR0VE">dataCAGED <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGF0YVJBSVM=">dataRAIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R0VDT01U">GECOMT <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWVyY2FkbyUyMGRlJTIwdHJhYmFsaG8=">Mercado de trabalho <span class="quarto-category-count">(3)</span></div><div class="category" data-category="UGFjb3Rlcw==">Pacotes <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(6)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categorias</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Todos <span class="quarto-category-count">(16)</span></div><div class="category" data-category="QW4lQzMlQkFuY2lv">Anúncio <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Q2klQzMlQUFuY2lhJTIwZGUlMjBkYWRvcw==">Ciência de dados <span class="quarto-category-count">(6)</span></div><div class="category" data-category="RGFkb3MlMjBhYmVydG9z">Dados abertos <span class="quarto-category-count">(6)</span></div><div class="category" data-category="ZGF0YUNBR0VE">dataCAGED <span class="quarto-category-count">(4)</span></div><div class="category" data-category="ZGF0YVJBSVM=">dataRAIS <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R0VDT01U">GECOMT <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWVyY2FkbyUyMGRlJTIwdHJhYmFsaG8=">Mercado de trabalho <span class="quarto-category-count">(6)</span></div><div class="category" data-category="UGFjb3Rlcw==">Pacotes <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(12)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -448,15 +476,11 @@ window.Quarto = {
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div id="listing-posts" class="quarto-listing quarto-listing-container-default">
 <div class="listing-actions-group">
    <div class="input-group input-group-sm quarto-listing-sort">
     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-listing-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+    <select id="listing-posts-sort" class="form-select" aria-label="Ordenar por" onchange="window['quarto-listings']['listing-posts'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
       <option value="" disabled="" selected="" hidden="">Ordenar por</option>
       <option value="index" data-direction="asc">Padrão</option>
       <option value="listing-title" data-direction="asc">
@@ -749,7 +773,16 @@ Alexsandro Prado
 </div>
 </div>
 <div class="listing-no-matching d-none">Sem itens correspondentes</div>
-</div><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
+</div>
+<div id="listing-indice" class="quarto-listing quarto-listing-container-custom">
+<script type="application/json" id="nv-indice-posts">[{"t":"Boas-vindas ao blog do GECOMT","u":"/blog/posts/2026-11-13-boas-vindas/","d":"2026-11-13","c":["Anúncio","GECOMT"],"i":"/blog/posts/2026-11-13-boas-vindas/thumbnail.png"},{"t":"Conheça o dataCAGED: microdados do CAGED direto no DuckDB","u":"/blog/posts/2026-11-13-conheca-o-datacaged/","d":"2026-11-13","c":["dataCAGED","Pacotes","R","Dados abertos"],"i":"/blog/posts/2026-11-13-conheca-o-datacaged/thumbnail.png"},{"t":"Conheça o dataRAIS: quatro décadas de RAIS em R","u":"/blog/posts/2026-11-13-conheca-o-datarais/","d":"2026-11-13","c":["dataRAIS","Pacotes","R","Dados abertos","Mercado de trabalho"],"i":"/blog/posts/2026-11-13-conheca-o-datarais/thumbnail.png"},{"t":"Microdados do Novo CAGED: primeiros passos em R","u":"/blog/posts/2026-11-13-microdados-novo-caged/","d":"2026-11-13","c":["dataCAGED","Mercado de trabalho","Dados abertos","R"],"i":"/blog/posts/2026-11-13-microdados-novo-caged/thumbnail.png"},{"t":"Treinamento: R e Rstudio","u":"/blog/posts/2024-08-14-treinamento-r-rstudio/","d":"2024-08-14","c":["R","Ciência de dados"],"i":"/blog/posts/2024-08-14-treinamento-r-rstudio/treinamento.webp"},{"t":"Boas práticas no Uso do R - parte I","u":"/blog/posts/2024-08-11-boas-praticas-r/","d":"2024-08-11","c":["R","Ciência de dados"],"i":"/blog/posts/2024-08-11-boas-praticas-r/boaspraticasr.webp"},{"t":"O Contador e o Mercado de Trabalho","u":"/blog/posts/2024-08-11-contador-mercado-trabalho/","d":"2024-08-11","c":["Mercado de trabalho"],"i":"/blog/posts/2024-08-11-contador-mercado-trabalho/contadortrabalho.webp"},{"t":"Instalação do R, RStudio e Rtools no Windows","u":"/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/","d":"2024-08-11","c":["R","Ciência de dados"],"i":"/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/rinstalacao.webp"}]</script>
+<div class="listing-no-matching d-none">Sem itens correspondentes</div>
+</div>
+
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> De volta ao topo</a></main> <!-- /main -->
 <script src="../assets/js/leitura.js" defer=""></script>
 <script src="../assets/js/posts.js" defer=""></script>
 <script id="quarto-html-after-body" type="application/javascript">

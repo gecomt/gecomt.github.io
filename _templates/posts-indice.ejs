@@ -1,0 +1,15 @@
+<%
+// Índice dos posts em JSON, usado em assets/js/posts.js ("Leia também").
+// Os caminhos dos itens já vêm relativos à raiz do site.
+const abs = (p) => p ? ("/" + String(p).replace(/^\.?\//, "").replace(/\.qmd$/, ".html").replace(/index\.html$/, "")) : "";
+const dados = items.map(it => ({
+  t: it.title || "",
+  u: abs(it.path),
+  d: it.date || "",
+  c: it.categories || [],
+  i: it.image ? abs(it.image) : ""
+}));
+%>
+```{=html}
+<script type="application/json" id="nv-indice-posts"><%= JSON.stringify(dados).replace(/</g, "\\u003c") %></script>
+```
