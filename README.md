@@ -72,9 +72,9 @@ estática (Quarto Dashboard + Observable JS), sem necessidade de servidor. Os da
 
 | Script | Fonte | Saída |
 |---|---|---|
-| `01_caged.R` | Novo CAGED (pacote `datacaged`) | agregados por competência, UF e seção CNAE; recorte CBO 2522/3511 |
+| `01_caged.R` | Novo CAGED (pacote `datacaged`) | agregados por competência, UF e seção CNAE; recorte de 8 ocupações contábeis por setor |
 | `02_pnadc.R` | PNAD Contínua (API SIDRA/IBGE) | indicadores em trimestres móveis |
-| `03_rais.R` | RAIS (pacote `datarais`) | vínculos ativos e remuneração dos profissionais contábeis |
+| `03_rais.R` | RAIS (download com `datarais`, leitura com DuckDB) | vínculos ativos e remuneração das 8 ocupações contábeis, por setor público e privado |
 | `04_exportar.R` | agregados acima | CSV/JSON leves em `dashboard/data/` |
 
 Atualização mensal (na raiz do repositório):
@@ -87,7 +87,10 @@ Rscript dashboard/scripts/04_exportar.R
 quarto render
 ```
 
-O CAGED é processado um ano por vez (DuckDB temporário), o que mantém o uso de disco baixo.
+O CAGED é processado em blocos de seis meses (um DuckDB temporário por bloco, variável
+`CAGED_BLOCO`), o que mantém baixos o uso de disco e de memória. Em máquinas com pouca memória
+(8 GB), convém reprocessar um ano por chamada (`Rscript dashboard/scripts/01_caged.R 2024 2024`),
+pois a sessão do R acumula memória entre os blocos.
 Como as declarações fora do prazo de um ano chegam nos arquivos do ano seguinte, ao reprocessar
 o ano corrente convém reprocessar também o anterior. Os agregados intermediários ficam em
 `dashboard/data-raw/` (fora do controle de versão).
@@ -106,3 +109,12 @@ git push
 
 Os posts antigos (2024) foram migrados e mantêm os endereços originais por meio de
 redirecionamentos (`aliases`).
+
+### Ocupações e setores do recorte contábil
+
+Ocupações (CBO 2002): 2522-05 auditor, 2522-10 contador, 2522-15 perito contábil, 2348-15
+professor de contabilidade, 3511-05 técnico de contabilidade, 3511-10 chefe de contabilidade
+(técnico), 3511-15 consultor contábil (técnico) e 4131-10 auxiliar de contabilidade.
+
+Setor público: na RAIS, natureza jurídica do grupo 1 (administração pública); no Novo CAGED, que
+não informa a natureza jurídica, seção O da CNAE (administração pública, defesa e seguridade social).

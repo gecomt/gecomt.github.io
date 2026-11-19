@@ -5,8 +5,10 @@
 # antigo (.txt, separador ";") e com o leiaute .COMT adotado pelo MTE a
 # partir da RAIS 2024 (separador ",", colunas "<variável> - Código").
 #
-# Recorte: vínculos ativos em 31/12 nas famílias CBO 2522 (contadores e
-# afins) e 3511 (técnicos em contabilidade); remuneração nominal de dezembro.
+# Recorte: vínculos ativos em 31/12 em oito ocupações contábeis da CBO 2002
+# (252205, 252210, 252215, 234815, 351105, 351110, 351115 e 413110); setor
+# público = natureza jurídica do grupo 1 (administração pública); remuneração
+# nominal de dezembro.
 #
 # Uso: Rscript dashboard/scripts/03_rais.R [ano]   (padrão: ano mais recente)
 # ---------------------------------------------------------------------------
@@ -39,6 +41,8 @@ dbExecute(con, sprintf("SET memory_limit = '%s'", Sys.getenv("RAIS_MEM", "3GB"))
 dbExecute(con, "SET preserve_insertion_order = false")
 dbExecute(con, sprintf("SET temp_directory = '%s'", file.path(dir_tmp, "duckdb_tmp")))
 
+cbo_contabil <- c("252205", "252210", "252215", "234815", "351105", "351110", "351115", "413110")
+
 coluna <- function(nomes, padrao) {
   i <- grep(padrao, nomes, ignore.case = TRUE, perl = TRUE)
   if (!length(i)) stop("Coluna não encontrada: ", padrao)
@@ -65,6 +69,7 @@ for (arq in arquivos) {
   c_idade <- coluna(nomes, "^Idade$")
   c_rem   <- coluna(nomes, "^Vl Rem(un)? Dezembro Nom")
   c_mun   <- coluna(nomes, "^Munic.pio( - C.digo)?$")
+  c_nat   <- coluna(nomes, "^Natureza Jur.dica( - C.digo)?$")
 
   fonte <- sprintf(
     "read_csv('%s', header = false, skip = 1, delim = '%s', quote = '\"', all_varchar = true,
@@ -73,7 +78,8 @@ for (arq in arquivos) {
 
   base <- sprintf("
     SELECT TRY_CAST(substr(trim(%s), 1, 2) AS INTEGER) AS uf,
-           trim(%s) AS cbo,
+           CAST(TRY_CAST(trim(%s) AS BIGINT) AS VARCHAR) AS cbo,
+           substr(trim(%s), 1, 1) AS nat,
            TRY_CAST(trim(%s) AS INTEGER) AS ativo,
            TRY_CAST(trim(%s) AS INTEGER) AS sexo,
            TRY_CAST(trim(%s) AS INTEGER) AS raca_cor,
@@ -81,14 +87,13 @@ for (arq in arquivos) {
            TRY_CAST(trim(%s) AS INTEGER) AS idade,
            %s AS rem
     FROM %s",
-    c_mun, c_cbo, c_ativo, c_sexo, c_raca, c_esc, c_idade, num(sprintf("trim(%s)", c_rem)), fonte)
+    c_mun, c_cbo, c_nat, c_ativo, c_sexo, c_raca, c_esc, c_idade, num(sprintf("trim(%s)", c_rem)), fonte)
 
   # Códigos dos microdados da RAIS: sexo 1 = masculino, 2 = feminino;
   # raça/cor 1 = indígena, 2 = branca, 4 = preta, 6 = amarela, 8 = parda, 9 = não identificada
   contabil[[arq]] <- dbGetQuery(con, sprintf("
-    SELECT %d AS ano, uf,
-           CASE WHEN substr(cbo, 1, 4) = '2522' THEN 'Contadores e auditores'
-                ELSE 'Técnicos em contabilidade' END AS grupo,
+    SELECT %d AS ano, uf, cbo,
+           CASE WHEN nat = '1' THEN 'Público' ELSE 'Privado' END AS setor,
            CASE sexo WHEN 1 THEN 'Homens' WHEN 2 THEN 'Mulheres' ELSE 'Não informado' END AS sexo,
            CASE raca_cor WHEN 2 THEN 'Branca' WHEN 8 THEN 'Parda' WHEN 4 THEN 'Preta'
                          WHEN 1 THEN 'Outras' WHEN 6 THEN 'Outras' ELSE 'Não informada' END AS raca,
@@ -102,8 +107,8 @@ for (arq in arquivos) {
            COUNT(*) AS vinculos,
            SUM(CASE WHEN rem > 0 THEN rem END) AS rem_soma,
            COUNT(CASE WHEN rem > 0 THEN 1 END) AS rem_n
-    FROM (%s) WHERE ativo = 1 AND substr(cbo, 1, 4) IN ('2522', '3511')
-    GROUP BY ALL", ano, base))
+    FROM (%s) WHERE ativo = 1 AND cbo IN (%s)
+    GROUP BY ALL", ano, base, paste0("'", cbo_contabil, "'", collapse = ", ")))
 
   geral[[arq]] <- dbGetQuery(con, sprintf("
     SELECT %d AS ano, uf,
@@ -123,7 +128,7 @@ consolida <- function(lista, chaves, medidas) {
     dplyr::summarise(dplyr::across(dplyr::all_of(medidas), ~ sum(.x, na.rm = TRUE)), .groups = "drop") |>
     as.data.frame()
 }
-contabil <- consolida(contabil, c("ano", "uf", "grupo", "sexo", "raca", "escolaridade", "faixa_etaria"),
+contabil <- consolida(contabil, c("ano", "uf", "cbo", "setor", "sexo", "raca", "escolaridade", "faixa_etaria"),
                       c("vinculos", "rem_soma", "rem_n"))
 contabil$rem_soma <- round(contabil$rem_soma)
 geral <- consolida(geral, c("ano", "uf", "sexo"), "vinculos")

@@ -466,21 +466,29 @@ Inputs.table(selPeriodo.slice().reverse().map(d => ({
 ## {.sidebar}
 
 ```{ojs}
-viewof grupoSel = Inputs.select(new Map([["Todos os profissionais contábeis", "*"],
-  ["Contadores e auditores (CBO 2522)", "Contadores e auditores"],
-  ["Técnicos em contabilidade (CBO 3511)", "Técnicos em contabilidade"]]), {label: "Ocupação", value: "*"})
+viewof ocupSel = Inputs.checkbox([...ocupacoes.keys()], {label: "Ocupação (CBO 2002)",
+  value: [...ocupacoes.keys()], format: c => `${cboFmt(c)} · ${ocupacoes.get(c)}`})
+viewof setorCont = Inputs.radio(["Todos", "Público", "Privado"], {label: "Setor", value: "Todos"})
 viewof ufCont = Inputs.select(new Map([["Brasil", 0], ...ufs.map(d => [d.nome_uf, d.uf])]), {label: "Unidade da Federação", value: 0})
 ```
 
 ::: {.painel-nota}
-Ocupações da Classificação Brasileira de Ocupações (CBO 2002): família 2522 (contadores e afins) e
-família 3511 (técnicos em contabilidade). Estoque e remuneração: RAIS ${meta.rais_ano}, vínculos ativos em
-31/12. Fluxos: Novo CAGED.
+Estoque e remuneração: RAIS ${meta.rais_ano}, vínculos ativos em 31/12; setor público =
+natureza jurídica da administração pública (grupo 1). Fluxos: Novo CAGED, empregos celetistas; setor
+público aproximado pela seção O da CNAE (administração pública).
 :::
 
 ```{ojs}
 //| output: false
-fGrupo = d => grupoSel === "*" || d.grupo === grupoSel
+ocupacoes = new Map([
+  ["252205", "Auditor"], ["252210", "Contador"], ["252215", "Perito contábil"],
+  ["234815", "Professor de contabilidade"], ["351105", "Técnico de contabilidade"],
+  ["351110", "Chefe de contabilidade (técnico)"], ["351115", "Consultor contábil (técnico)"],
+  ["413110", "Auxiliar de contabilidade"]
+])
+cboFmt = c => `${c.slice(0, 4)}-${c.slice(4)}`
+ocupAtivas = new Set(ocupSel.length ? ocupSel : [...ocupacoes.keys()])
+fGrupo = d => ocupAtivas.has(String(d.cbo)) && (setorCont === "Todos" || d.setor === setorCont)
 fUF    = d => ufCont === 0 || d.uf === ufCont
 contMes = movel12(d3.rollups(cagedCont.filter(d => fGrupo(d) && fUF(d)),
     v => ({saldo: d3.sum(v, d => d.saldo), admissoes: d3.sum(v, d => d.admissoes),
@@ -494,7 +502,10 @@ contSal12 = {
   const v = cagedCont.filter(d => fGrupo(d) && fUF(d) && d.data >= ult12);
   return d3.sum(v, d => d.sal_soma) / d3.sum(v, d => d.sal_n);
 }
-rotuloCont = (grupoSel === "*" ? "Profissionais contábeis" : grupoSel) + " · " + (ufCont === 0 ? "Brasil" : siglaUF.get(ufCont))
+rotuloCont = (ocupAtivas.size === ocupacoes.size ? "Ocupações contábeis" :
+    ocupAtivas.size === 1 ? ocupacoes.get([...ocupAtivas][0]) : `${ocupAtivas.size} ocupações`) +
+  (setorCont === "Todos" ? "" : ` · setor ${setorCont.toLowerCase()}`) +
+  " · " + (ufCont === 0 ? "Brasil" : siglaUF.get(ufCont))
 vbContVinc    = nf.format(raisVinc)
 vbContVincCap = `RAIS ${meta.rais_ano} · ${rotuloCont}`
 vbContRem     = brl.format(raisRem)
@@ -576,12 +587,62 @@ Plot.plot({...barrasSaldo(contMes, {titulo: "Saldo", altura: 300})})
 }
 ```
 
+### Row {height="520px"}
+
+```{ojs}
+//| title: "Vínculos ativos por ocupação e setor (RAIS)"
+{
+  const dados = d3.rollups(raisCont.filter(d => ocupAtivas.has(String(d.cbo)) && fUF(d) &&
+        (setorCont === "Todos" || d.setor === setorCont)),
+      v => d3.sum(v, d => d.vinculos), d => String(d.cbo), d => d.setor)
+    .flatMap(([cbo, xs]) => xs.map(([setor, n]) => ({cbo, setor, n, nome: `${cboFmt(cbo)} ${ocupacoes.get(cbo)}`})));
+  const ordem = d3.groupSort(dados, v => -d3.sum(v, d => d.n), d => d.nome);
+  const setores = ["Privado", "Público"].filter(x => setorCont === "Todos" || x === setorCont);
+  const totais = d3.rollups(dados, v => d3.sum(v, d => d.n), d => d.nome).map(([nome, n]) => ({nome, n}));
+  return htl.html`${legenda(setores.map(x => [x, x === "Privado" ? cor.s1 : cor.s2]))}
+  ${Plot.plot({style: estilo, height: 420, marginBottom: 34, marginLeft: 250, marginRight: 80,
+    x: {label: null, tickFormat: v => compacto.format(v)}, y: {domain: ordem, label: null},
+    color: {domain: ["Privado", "Público"], range: [cor.s1, cor.s2]},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barX(dados, Plot.stackX({y: "nome", x: "n", fill: "setor", order: ["Privado", "Público"],
+        insetTop: 9, insetBottom: 9, stroke: cor.fundo, strokeWidth: 1})),
+      Plot.text(totais, {y: "nome", x: "n", text: d => nf.format(d.n), dx: 6, textAnchor: "start", fill: cor.tinta, fontSize: 10.5}),
+      Plot.ruleX([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointer(Plot.stackX({y: "nome", x: "n", z: "setor", order: ["Privado", "Público"],
+        title: d => `${d.nome}\nSetor ${d.setor.toLowerCase()}: ${nf.format(d.n)} vínculos`})))]})}`;
+}
+```
+
+```{ojs}
+//| title: "Remuneração média por ocupação e setor (RAIS, R$)"
+{
+  const dados = d3.rollups(raisCont.filter(d => ocupAtivas.has(String(d.cbo)) && fUF(d) &&
+        (setorCont === "Todos" || d.setor === setorCont)),
+      v => ({rem: d3.sum(v, d => d.rem_soma) / d3.sum(v, d => d.rem_n), n: d3.sum(v, d => d.vinculos)}),
+      d => String(d.cbo), d => d.setor)
+    .flatMap(([cbo, xs]) => xs.map(([setor, o]) => ({cbo, setor, ...o, nome: `${cboFmt(cbo)} ${ocupacoes.get(cbo)}`})))
+    .filter(d => d.n >= 30);
+  const ordem = d3.groupSort(dados, v => -d3.max(v, d => d.rem), d => d.nome);
+  const setores = ["Privado", "Público"].filter(x => setorCont === "Todos" || x === setorCont);
+  return htl.html`${legenda(setores.map(x => [x, x === "Privado" ? cor.s1 : cor.s2]))}
+  ${Plot.plot({style: estilo, height: 420, marginBottom: 34, marginLeft: 250, marginRight: 70,
+    x: {label: null, tickFormat: v => compacto.format(v), zero: true}, y: {domain: ordem, label: null},
+    color: {domain: ["Privado", "Público"], range: [cor.s1, cor.s2]},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.ruleY(d3.groups(dados, d => d.nome).filter(([, v]) => v.length > 1).map(([nome, v]) =>
+        ({nome, a: d3.min(v, d => d.rem), b: d3.max(v, d => d.rem)})), {y: "nome", x1: "a", x2: "b", stroke: cor.suave, strokeOpacity: 0.5, strokeWidth: 2}),
+      Plot.dot(dados, {y: "nome", x: "rem", fill: "setor", r: 6, stroke: cor.fundo, strokeWidth: 2}),
+      Plot.tip(dados, Plot.pointer({y: "nome", x: "rem",
+        title: d => `${d.nome} · setor ${d.setor.toLowerCase()}\nRemuneração média: ${brl.format(d.rem)}\nVínculos: ${nf.format(d.n)}`}))]})}`;
+}
+```
+
 ### Row {height="660px"}
 
 ```{ojs}
 //| title: "Vínculos ativos por Unidade da Federação (RAIS)"
 {
-  const dados = d3.rollups(raisCont.filter(fGrupo), v => d3.sum(v, d => d.vinculos), d => d.uf)
+  const dados = d3.rollups(raisCont.filter(d => fGrupo(d) && siglaUF.has(d.uf)), v => d3.sum(v, d => d.vinculos), d => d.uf)
     .map(([uf, n]) => ({uf, sigla: siglaUF.get(uf), nome: nomeUF.get(uf), n}));
   return Plot.plot({style: estilo, height: 590, marginLeft: 36, marginRight: 64, marginBottom: 32,
     x: {label: null, tickFormat: v => compacto.format(v)}, y: {label: null},
@@ -681,7 +742,13 @@ scripts reprodutíveis, o que dispensa servidor e facilita a atualização.
   divulgação do MTE em função de revisões posteriores dos arquivos.
 - **Salário médio de admissão**: média nominal dos salários de admissão, considerando contratos com jornada
   informada e salário entre R$ 300 e R$ 100 mil.
-- **Profissionais contábeis**: famílias 2522 (contadores e afins) e 3511 (técnicos em contabilidade) da CBO 2002.
+- **Profissionais contábeis**: ocupações da CBO 2002 2522-05 (auditor), 2522-10 (contador), 2522-15 (perito
+  contábil), 2348-15 (professor de contabilidade), 3511-05 (técnico de contabilidade), 3511-10 (chefe de
+  contabilidade, técnico), 3511-15 (consultor contábil, técnico) e 4131-10 (auxiliar de contabilidade).
+- **Setor público e privado**: na RAIS, setor público corresponde à natureza jurídica do grupo 1
+  (administração pública direta, autarquias e fundações públicas); empresas públicas e sociedades de economia
+  mista ficam no setor privado. No Novo CAGED, que cobre apenas empregos celetistas e não informa a natureza
+  jurídica, o setor público é aproximado pela seção O da CNAE (administração pública, defesa e seguridade social).
 - **RAIS**: vínculos ativos em 31 de dezembro (sem desligamento no ano) e remuneração nominal de dezembro,
   considerando remunerações positivas.
 

@@ -49,7 +49,7 @@ if (dir.exists(p)) {
 
 # ---- Novo CAGED -------------------------------------------------------------
 cg <- file.path(raw, "caged")
-fg <- list.files(cg, "^geral_\\d{4}\\.parquet$", full.names = TRUE)
+fg <- list.files(cg, "^geral_\\d{4}(_\\d+)?\\.parquet$", full.names = TRUE)
 if (length(fg)) {
   geral <- bind_rows(lapply(fg, read_parquet)) |>
     filter(uf %in% tab_uf$uf, !is.na(secao), secao != "Z", comp >= 202001) |>
@@ -61,16 +61,16 @@ if (length(fg)) {
     arrange(data, uf, secao)
   write_csv(geral, file.path(out, "caged_uf_secao.csv"))
 
-  fc <- list.files(cg, "^contabil_\\d{4}\\.parquet$", full.names = TRUE)
+  fc <- list.files(cg, "^contabil_\\d{4}(_\\d+)?\\.parquet$", full.names = TRUE)
   contabil <- bind_rows(lapply(fc, read_parquet)) |>
     filter(uf %in% tab_uf$uf, comp >= 202001) |>
-    group_by(comp, uf, grupo, sexo, racacor) |>
+    group_by(comp, uf, cbo, setor, sexo) |>
     summarise(across(c(admissoes, desligamentos, saldo, soma_sal_adm, n_sal_adm), ~ sum(.x, na.rm = TRUE)),
               .groups = "drop") |>
     mutate(data = as_data(comp), sal_soma = round(soma_sal_adm), .keep = "unused") |>
-    select(data, uf, grupo, sexo, raca = racacor, admissoes, desligamentos, saldo,
+    select(data, uf, cbo, setor, sexo, admissoes, desligamentos, saldo,
            sal_soma, sal_n = n_sal_adm) |>
-    arrange(data, uf, grupo)
+    arrange(data, uf, cbo)
   write_csv(contabil, file.path(out, "caged_contabil.csv"))
 }
 
