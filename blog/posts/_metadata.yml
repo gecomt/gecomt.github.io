@@ -4,7 +4,9 @@ toc-location: right
 author: "Equipe GECOMT"
 date-format: "D [de] MMMM [de] YYYY"
 citation: true
-appendix-cite-as: display
+google-scholar: true
+# a citação aparece no bloco "Como citar" (assets/js/posts.js), em ABNT e BibTeX
+appendix-cite-as: false
 comments: false
 execute:
   freeze: true

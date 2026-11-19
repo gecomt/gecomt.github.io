@@ -7,6 +7,7 @@ project:
     - "equipe/*.png"
     - ".nojekyll"
     - "dashboard/data/*"
+    - "assets/js/*.js"
 
 lang: pt-BR
 
