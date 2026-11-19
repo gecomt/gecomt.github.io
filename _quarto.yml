@@ -6,6 +6,7 @@ project:
     - "assets/images/logos/*.svg"
     - "equipe/*.png"
     - ".nojekyll"
+    - "dashboard/data/*"
 
 lang: pt-BR
 
@@ -34,11 +35,12 @@ website:
         href: producao.qmd
       - text: "Blog"
         href: blog/index.qmd
+      - text: "Painel"
+        href: dashboard/index.qmd
       - text: "Projetos"
         menu:
-          - text: "Dashboard"
-            href: https://gecomt.shinyapps.io/dashboard/
-            target: _blank
+          - text: "Painel do Mercado de Trabalho"
+            href: dashboard/index.qmd
           - text: "contabiliDados"
             href: https://contabilidados.com.br/
             target: _blank

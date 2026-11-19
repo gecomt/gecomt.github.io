@@ -15,6 +15,7 @@ _extensions/gecomt/         tipo de projeto "gecomt" (tema, formato e opções, 
 assets/images/              favicon, imagem de compartilhamento e emblemas recortados
 assets/images/logos/        todos os arquivos de logo originais
 index.qmd                   página inicial
+dashboard/                  Painel do Mercado de Trabalho (dados e scripts em R)
 pacotes/datacaged.qmd       página dedicada ao dataCAGED
 pacotes/datarais.qmd        página dedicada ao dataRAIS
 assets/images/pacotes/      logos hexagonais dos pacotes
@@ -62,6 +63,34 @@ automaticamente na seção "Posts sobre..." da página do pacote.
 ### Novo membro
 
 Edite `equipe/membros.yml` e coloque a foto quadrada em `equipe/`.
+
+## Painel do Mercado de Trabalho
+
+O painel (`dashboard/index.qmd`) substitui a antiga versão em shinyapps.io e é gerado como página
+estática (Quarto Dashboard + Observable JS), sem necessidade de servidor. Os dados ficam em
+`dashboard/data/` e são produzidos pelos scripts de `dashboard/scripts/`:
+
+| Script | Fonte | Saída |
+|---|---|---|
+| `01_caged.R` | Novo CAGED (pacote `datacaged`) | agregados por competência, UF e seção CNAE; recorte CBO 2522/3511 |
+| `02_pnadc.R` | PNAD Contínua (API SIDRA/IBGE) | indicadores em trimestres móveis |
+| `03_rais.R` | RAIS (pacote `datarais`) | vínculos ativos e remuneração dos profissionais contábeis |
+| `04_exportar.R` | agregados acima | CSV/JSON leves em `dashboard/data/` |
+
+Atualização mensal (na raiz do repositório):
+
+```bash
+Rscript dashboard/scripts/01_caged.R 2026 2026   # reprocessa o ano corrente do CAGED
+Rscript dashboard/scripts/02_pnadc.R
+Rscript dashboard/scripts/03_rais.R              # apenas quando sair nova RAIS
+Rscript dashboard/scripts/04_exportar.R
+quarto render
+```
+
+O CAGED é processado um ano por vez (DuckDB temporário), o que mantém o uso de disco baixo.
+Como as declarações fora do prazo de um ano chegam nos arquivos do ano seguinte, ao reprocessar
+o ano corrente convém reprocessar também o anterior. Os agregados intermediários ficam em
+`dashboard/data-raw/` (fora do controle de versão).
 
 ## Publicação no GitHub Pages
 

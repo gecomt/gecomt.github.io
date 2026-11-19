@@ -14,312 +14,18 @@
     "text": "Microdados do CAGED (Novo CAGED, CAGED antigo e ajustes) em banco DuckDB local. Disponível no CRAN.\nPágina do pacote · GitHub · CRAN · DOI\n\n\n\n\n\n\n\n\nMicrodados da RAIS de 1985 a 2025 (vínculos e estabelecimentos), com variáveis padronizadas entre leiautes.\nPágina do pacote · GitHub"
   },
   {
+    "objectID": "producao.html#painel-do-mercado-de-trabalho",
+    "href": "producao.html#painel-do-mercado-de-trabalho",
+    "title": "Produção",
+    "section": "Painel do Mercado de Trabalho",
+    "text": "Painel do Mercado de Trabalho\n\n\n\nPainel do Mercado de Trabalho\nIndicadores da PNAD Contínua, do Novo CAGED e da RAIS, com recorte dedicado aos profissionais contábeis. Os dados são atualizados com os pacotes dataCAGED e dataRAIS.\nAbrir o painel"
+  },
+  {
     "objectID": "producao.html#dados-abertos",
     "href": "producao.html#dados-abertos",
     "title": "Produção",
     "section": "Dados abertos",
     "text": "Dados abertos\n\n\n\n\n\nEspelho do CAGED\nMicrodados do CAGED disponibilizados pelo Ministério do Trabalho e Emprego, organizados no Hugging Face.\nHugging Face\n\n\n\n\n\n\n\nEspelho da RAIS\nMicrodados da RAIS (vínculos, estabelecimentos e trabalho doméstico), organizados no Hugging Face.\nHugging Face\n\n\n\n\n\n\n\n\n\n\nEsta página é atualizada continuamente. Artigos, capítulos, trabalhos em eventos e trabalhos orientados podem ser incluídos em novas seções, no formato de lista."
-  },
-  {
-    "objectID": "pacotes/datarais.html",
-    "href": "pacotes/datarais.html",
-    "title": "dataRAIS",
-    "section": "",
-    "text": "O dataRAIS (pacote R datarais) dá acesso aos microdados da Relação Anual de Informações Sociais (RAIS), o censo anual do emprego formal no Brasil, cobrindo vínculos e estabelecimentos de 1985 a 2025, armazenados em banco DuckDB local.\n\n\n GitHub  Dados no Hugging Face  Reportar problema"
-  },
-  {
-    "objectID": "pacotes/datarais.html#principais-recursos",
-    "href": "pacotes/datarais.html#principais-recursos",
-    "title": "dataRAIS",
-    "section": "Principais recursos",
-    "text": "Principais recursos\n\nDownload dos arquivos a partir de um espelho da RAIS no Hugging Face, com cache persistente e downloads paralelos opcionais;\nSuporte aos dois formatos de distribuição: arquivos por Unidade da Federação (1985 a 2017) e por região geográfica (2018 em diante);\nNomes de variáveis normalizados em português (snake_case), consistentes entre todos os leiautes históricos;\nDicionário de variáveis integrado (rais_col_info()) e resumo dos leiautes (rais_layouts());\nAtualização incremental (rais_update()) e exportação para Parquet (rais_to_parquet());\nMensagens em português e em inglês."
-  },
-  {
-    "objectID": "pacotes/datarais.html#instalação",
-    "href": "pacotes/datarais.html#instalação",
-    "title": "dataRAIS",
-    "section": "Instalação",
-    "text": "Instalação\n# Versão de desenvolvimento (GitHub)\npak::pak(\"gecomt/datarais\")\n\n\n\n\n\n\nOs arquivos anteriores a 2020 utilizam compressão PPMd e exigem o 7-Zip instalado. Recomenda-se, ainda, ao menos 8 GB de RAM e cerca de 20 GB livres em disco por ano de dados de vínculos."
-  },
-  {
-    "objectID": "pacotes/datarais.html#uso-rápido",
-    "href": "pacotes/datarais.html#uso-rápido",
-    "title": "dataRAIS",
-    "section": "Uso rápido",
-    "text": "Uso rápido\nlibrary(datarais)\nlibrary(dplyr)\n\n# Verifica a disponibilidade do repositório\nrais_status()\n\n# Download, leitura e gravação no DuckDB em uma etapa\nrais_load(\n  years   = 2022:2023,\n  type    = \"vinculos\",\n  db_path = \"rais.duckdb\"\n)\n\ncon &lt;- rais_connect(\"rais.duckdb\")\n\ntbl(con, \"rais_novo\") |&gt;\n  filter(ano == 2023) |&gt;\n  group_by(sigla_uf) |&gt;\n  summarise(\n    vinculos           = n(),\n    remuneracao_media  = mean(vl_remun_media_nom, na.rm = TRUE)\n  ) |&gt;\n  arrange(desc(remuneracao_media)) |&gt;\n  collect()\n\nDBI::dbDisconnect(con, shutdown = TRUE)"
-  },
-  {
-    "objectID": "pacotes/datarais.html#tabelas-no-duckdb",
-    "href": "pacotes/datarais.html#tabelas-no-duckdb",
-    "title": "dataRAIS",
-    "section": "Tabelas no DuckDB",
-    "text": "Tabelas no DuckDB\n\n\n\nTabela\nConteúdo\nPeríodo\n\n\n\n\nrais_antigo\nVínculos por Unidade da Federação\n1985 a 2017\n\n\nrais_novo\nVínculos por região\n2018 em diante\n\n\nrais_estab\nEstabelecimentos\n1985 em diante"
-  },
-  {
-    "objectID": "pacotes/datarais.html#funções-principais",
-    "href": "pacotes/datarais.html#funções-principais",
-    "title": "dataRAIS",
-    "section": "Funções principais",
-    "text": "Funções principais\n\n\n\n\n\n\n\nFunção\nDescrição\n\n\n\n\nrais_load()\nPipeline completo (download, leitura e gravação no DuckDB)\n\n\nrais_update()\nBaixa apenas os anos ainda ausentes no banco\n\n\nrais_connect() / rais_tbl()\nConexão e referência às tabelas\n\n\nrais_available()\nAnos disponíveis no Hugging Face\n\n\nrais_col_info()\nMetadados das variáveis (tipo, descrição e disponibilidade)\n\n\nrais_layouts()\nResumo dos leiautes históricos\n\n\nrais_to_parquet()\nExporta tabelas para Parquet"
-  },
-  {
-    "objectID": "pacotes/datarais.html#como-citar",
-    "href": "pacotes/datarais.html#como-citar",
-    "title": "dataRAIS",
-    "section": "Como citar",
-    "text": "Como citar\ncitation(\"datarais\")"
-  },
-  {
-    "objectID": "pacotes/datarais.html#posts-sobre-o-datarais",
-    "href": "pacotes/datarais.html#posts-sobre-o-datarais",
-    "title": "dataRAIS",
-    "section": "Posts sobre o dataRAIS",
-    "text": "Posts sobre o dataRAIS\n\n\n\n\n\n\n\n\n\n\nConheça o dataRAIS: quatro décadas de RAIS em R\n\n\nO novo pacote do GECOMT dá acesso aos microdados da RAIS de 1985 a 2025, com variáveis padronizadas entre leiautes e consultas rápidas em DuckDB.\n\n\n\n13 de novembro de 2026\n\n\n\n\n\n\nSem itens correspondentes"
-  },
-  {
-    "objectID": "blog/index.html",
-    "href": "blog/index.html",
-    "title": "Blog do GECOMT",
-    "section": "",
-    "text": "Ordenar por\n      Padrão\n      \n        Título\n      \n      \n        Data - Mais antigo\n      \n      \n        Data - O mais novo\n      \n      \n        Autor\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBoas-vindas ao blog do GECOMT\n\n\n\nAnúncio\n\nGECOMT\n\n\n\nO Grupo de Estudos sobre Contabilidade e Mercado de Trabalho inaugura um espaço para divulgar pesquisas, tutoriais com dados abertos e reflexões sobre temas contábeis e trabalhistas.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nConheça o dataCAGED: microdados do CAGED direto no DuckDB\n\n\n\ndataCAGED\n\nPacotes\n\nR\n\nDados abertos\n\n\n\nO GECOMT apresenta o dataCAGED, pacote R disponível no CRAN que reduz a uma única função o trabalho de baixar, ler e organizar os microdados do CAGED.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nConheça o dataRAIS: quatro décadas de RAIS em R\n\n\n\ndataRAIS\n\nPacotes\n\nR\n\nDados abertos\n\nMercado de trabalho\n\n\n\nO novo pacote do GECOMT dá acesso aos microdados da RAIS de 1985 a 2025, com variáveis padronizadas entre leiautes e consultas rápidas em DuckDB.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nMicrodados do Novo CAGED: primeiros passos em R\n\n\n\ndataCAGED\n\nMercado de trabalho\n\nDados abertos\n\nR\n\n\n\nRoteiro introdutório para baixar, armazenar e consultar os microdados do Novo CAGED com o pacote dataCAGED, calculando o saldo mensal de empregos formais no Rio Grande do Norte.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nTreinamento: R e Rstudio\n\n\n\nR\n\nCiência de dados\n\n\n\n\n\n\n\n\n\n14 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\n\n\n\n\n\n\n\nBoas práticas no Uso do R - parte I\n\n\n\nR\n\nCiência de dados\n\n\n\n\n\n\n\n\n\n11 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\n\n\n\n\n\n\n\nO Contador e o Mercado de Trabalho\n\n\n\nMercado de trabalho\n\n\n\n\n\n\n\n\n\n11 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\n\n\n\n\n\n\n\nInstalação do R, RStudio e Rtools no Windows\n\n\n\nR\n\nCiência de dados\n\n\n\n\n\n\n\n\n\n11 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\nSem itens correspondentes\n De volta ao topo"
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-contador-mercado-trabalho/index.html",
-    "href": "blog/posts/2024-08-11-contador-mercado-trabalho/index.html",
-    "title": "O Contador e o Mercado de Trabalho",
-    "section": "",
-    "text": "O Contador e o Mercado de Trabalho\nO contador é um profissional fundamental no mundo dos negócios, desempenhando um papel crucial em diversas áreas que vão muito além da simples escrituração contábil. Com a evolução das práticas empresariais e a crescente complexidade das normas regulatórias, o campo de atuação do contador se expandiu, fazendo com que esse profissional seja indispensável em diferentes setores da economia.\n\nPrincipais Funções de um Contador\n\nContabilidade Geral:\n\nEscrituração Contábil: Registro das operações financeiras de uma empresa, garantindo que todos os dados sejam organizados e que os balanços patrimoniais, demonstrações de resultados e fluxos de caixa reflitam a realidade da entidade.\nAnálise de Balanços: Interpretação dos demonstrativos financeiros para entender a situação econômica da empresa e auxiliar na tomada de decisões estratégicas.\n\nPlanejamento Tributário:\n\nGestão Fiscal: Planejamento e execução de estratégias para reduzir a carga tributária da empresa dentro dos limites legais. O contador deve estar atualizado com a legislação tributária e ser capaz de identificar oportunidades de economia fiscal.\nDeclarações de Impostos: Preparação e envio das declarações fiscais, garantindo o cumprimento das obrigações tributárias.\n\nAuditoria Contábil:\n\nAuditoria Interna: Revisão dos processos e registros contábeis para assegurar que as operações financeiras estejam sendo conduzidas de acordo com as políticas internas e normas legais.\nAuditoria Externa: Exame independente das demonstrações financeiras de uma empresa para fornecer uma opinião imparcial sobre sua conformidade e veracidade.\n\nConsultoria Financeira e Empresarial:\n\nAnálise de Viabilidade Econômica: Avaliação de projetos de investimento, analisando os custos, benefícios e riscos envolvidos para orientar a tomada de decisões.\nEstratégia de Negócios: Auxílio na formulação de estratégias empresariais baseadas em análises financeiras e econômicas, ajudando a empresa a alcançar seus objetivos.\n\nPerícia Contábil:\n\nPerícia Judicial: Atuação em processos judiciais como perito contábil, fornecendo laudos técnicos que auxiliam o julgamento de questões que envolvem disputas financeiras e contábeis.\nArbitragem e Mediação: Participação em processos de resolução de conflitos, utilizando seu conhecimento técnico para ajudar a resolver disputas fora do âmbito judicial.\n\nControladoria:\n\nGestão de Custos: Implementação de sistemas de controle de custos e análise da rentabilidade, identificando áreas onde a empresa pode melhorar sua eficiência operacional.\nOrçamento e Planejamento: Desenvolvimento e monitoramento de orçamentos empresariais, assegurando que as metas financeiras sejam alcançadas.\n\nCompliance e Governança Corporativa:\n\nImplementação de Políticas de Compliance: Desenvolvimento de sistemas de controle interno para garantir que a empresa cumpra todas as normas e regulamentações aplicáveis.\nRelatórios de Governança: Elaboração de relatórios para investidores e partes interessadas, demonstrando o compromisso da empresa com as práticas de governança corporativa.\n\nTecnologia e Inovação:\n\nAutomação de Processos Contábeis: Implementação de sistemas de software para automatizar tarefas rotineiras, como a escrituração contábil e a emissão de relatórios financeiros.\nAnálise de Dados: Uso de ferramentas de análise de dados para extrair insights financeiros e identificar tendências que possam impactar a empresa.\n\n\n\n\n\nO Futuro da Contabilidade\nCom a transformação digital, o papel do contador está evoluindo rapidamente. Profissionais que dominam tecnologias emergentes, como inteligência artificial, big data e blockchain, terão uma vantagem competitiva no mercado de trabalho. Além disso, a globalização e a complexidade crescente das normas contábeis internacionais (como as IFRS) estão ampliando o escopo de atuação do contador, que precisa estar preparado para lidar com novos desafios e oportunidades.\nDessa forma, o contador se torna cada vez mais um parceiro estratégico nas organizações, contribuindo não apenas para o cumprimento de obrigações legais, mas também para o sucesso e crescimento sustentável dos negócios.\n\n\n\n\n\n De volta ao topoCitaçãoPor favor, cite este trabalho como:\nPrado, Alexsandro. 2024. “O Contador e o Mercado de\nTrabalho.” August 11. https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html",
-    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html",
-    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
-    "section": "",
-    "text": "Os microdados do Cadastro Geral de Empregados e Desempregados (CAGED) constituem uma das fontes mais ricas para o acompanhamento mensal do emprego formal no Brasil. No entanto, o uso dessas informações impõe obstáculos práticos: os arquivos são distribuídos compactados, mudaram de estrutura ao longo do tempo e somam volumes que dificilmente cabem na memória de um computador pessoal."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#o-que-o-pacote-faz",
-    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#o-que-o-pacote-faz",
-    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
-    "section": "O que o pacote faz",
-    "text": "O que o pacote faz\nNesse sentido, o dataCAGED foi desenvolvido para automatizar esse fluxo de trabalho. A partir da função caged_load(), o pacote (i) baixa os arquivos de um espelho dos dados do Ministério do Trabalho e Emprego (MTE) no Hugging Face; (ii) realiza a leitura com descompressão em fluxo, sem gravar arquivos temporários; e (iii) armazena os registros em um banco DuckDB local, no qual as consultas podem ser feitas com dplyr ou SQL.\ninstall.packages(\"datacaged\")\n\nlibrary(datacaged)\n\ncaged_load(\n  years   = 2024,\n  months  = seq_len(12L),\n  db_path = \"caged.duckdb\"\n)"
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#bases-cobertas",
-    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#bases-cobertas",
-    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
-    "section": "Bases cobertas",
-    "text": "Bases cobertas\nO pacote contempla o Novo CAGED (2020 em diante), com as tabelas de movimentações, declarações fora do prazo e exclusões, além do CAGED antigo (2007 a 2019) e dos ajustes históricos. Dessa forma, torna-se possível construir séries longas e comparar períodos, observadas as diferenças metodológicas entre as bases."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#manutenção-e-atualização",
-    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#manutenção-e-atualização",
-    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
-    "section": "Manutenção e atualização",
-    "text": "Manutenção e atualização\nPara manter o banco atualizado, a função caged_update() baixa apenas as competências ainda ausentes. Além disso, caged_to_parquet() exporta as tabelas para o formato Parquet, o que facilita o compartilhamento dos dados com outras linguagens, como Python."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#próximos-passos",
-    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#próximos-passos",
-    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
-    "section": "Próximos passos",
-    "text": "Próximos passos\nO código-fonte está disponível no GitHub, e sugestões ou problemas podem ser registrados nas issues do repositório. Um roteiro com exemplos de consulta pode ser consultado no post Microdados do Novo CAGED: primeiros passos em R."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html",
-    "href": "blog/posts/2026-11-13-boas-vindas/index.html",
-    "title": "Boas-vindas ao blog do GECOMT",
-    "section": "",
-    "text": "O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT), vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), inaugura este blog com o propósito de aproximar a produção acadêmica do grupo de estudantes, profissionais e demais interessados nos temas que articulam a informação contábil e o mercado de trabalho."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html#o-que-será-publicado",
-    "href": "blog/posts/2026-11-13-boas-vindas/index.html#o-que-será-publicado",
-    "title": "Boas-vindas ao blog do GECOMT",
-    "section": "O que será publicado",
-    "text": "O que será publicado\nEm linhas gerais, os conteúdos do blog organizam-se em três frentes:\n\nNotas de pesquisa: sínteses de artigos, dissertações e trabalhos de conclusão de curso desenvolvidos pelos membros do grupo, com destaque para os principais achados e suas implicações;\nTutoriais com dados abertos: roteiros reprodutíveis, em R e Python, para o uso de bases como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS);\nComentários técnicos: análises de mudanças normativas e regulatórias, a exemplo da legislação trabalhista e das políticas de emprego e renda."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html#ciência-aberta-como-princípio",
-    "href": "blog/posts/2026-11-13-boas-vindas/index.html#ciência-aberta-como-princípio",
-    "title": "Boas-vindas ao blog do GECOMT",
-    "section": "Ciência aberta como princípio",
-    "text": "Ciência aberta como princípio\nRessalta-se que o grupo adota a reprodutibilidade como princípio de trabalho. Dessa forma, sempre que possível, os posts serão acompanhados do código utilizado e das referências às bases de dados originais, permitindo que os resultados sejam verificados, replicados e ampliados por outros pesquisadores."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html#como-acompanhar",
-    "href": "blog/posts/2026-11-13-boas-vindas/index.html#como-acompanhar",
-    "title": "Boas-vindas ao blog do GECOMT",
-    "section": "Como acompanhar",
-    "text": "Como acompanhar\nAs novas publicações podem ser acompanhadas pelo feed RSS do blog e pelos repositórios do grupo no GitHub. Sugestões de temas e propostas de colaboração podem ser encaminhadas à coordenação, conforme indicado na página O grupo."
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-boas-praticas-r/index.html",
-    "href": "blog/posts/2024-08-11-boas-praticas-r/index.html",
-    "title": "Boas práticas no Uso do R - parte I",
-    "section": "",
-    "text": "Introdução\nTrabalhar com o R de maneira eficiente e organizada é essencial para garantir a reprodutibilidade e a manutenção do seu código ao longo do tempo. Uma das principais boas práticas é a adoção do conceito de projetos em vez de depender do diretório home padrão ou do uso da função setwd() para definir o diretório de trabalho.\n\n\nPor que usar projetos no R?\nOrganização: Cada projeto no RStudio, por exemplo, é associado a um diretório específico que contém todos os arquivos relevantes para aquele projeto. Isso facilita a organização, pois todos os scripts, dados, outputs e outros recursos ficam centralizados em um único local.\nReprodutibilidade: Usando projetos, você elimina a dependência de caminhos absolutos. Caminhos relativos são utilizados, o que significa que o código pode ser executado em qualquer máquina, desde que o projeto seja transferido junto com sua estrutura de pastas. Isso melhora significativamente a reprodutibilidade e facilita o compartilhamento do código com outras pessoas.\nEvita erros comuns: O uso da função setwd() para alterar o diretório de trabalho pode causar problemas, especialmente quando o código é compartilhado ou movido para diferentes sistemas. Como o caminho pode não existir em outra máquina, isso pode gerar erros e complicações desnecessárias.\nAmbiente limpo: Trabalhar com projetos ajuda a manter seu ambiente de trabalho limpo, sem a necessidade de ajustar manualmente o diretório de trabalho para cada sessão de R. O ambiente de trabalho, junto com as configurações e dependências, é armazenado dentro do projeto, tornando o ambiente de desenvolvimento mais controlado e previsível.\n\n\nPor que não utilizar o diretório home padrão no RStudio?\nUtilizar o diretório home padrão no RStudio pode levar a vários problemas de organização e reprodutibilidade. O diretório home é um local genérico e comum para todos os projetos e arquivos do usuário, o que pode resultar em confusão quando múltiplos projetos estão sendo gerenciados simultaneamente. Sem uma estrutura de projeto específica, há um maior risco de sobrescrever arquivos acidentalmente ou de misturar dados e scripts de diferentes projetos. Além disso, ao depender do diretório home padrão, você corre o risco de enfrentar problemas ao compartilhar seu código, pois outros usuários podem ter uma estrutura de diretórios diferente, tornando o código menos portável. Portanto, adotar o uso de projetos no RStudio e evitar o diretório home padrão é uma prática recomendada para garantir um ambiente de trabalho mais controlado e menos propenso a erros.\n\n\nComo começar a usar projetos?\nNo RStudio, você pode criar um novo projeto facilmente:\n\nVá em File &gt; New Project.\nEscolha criar um projeto em um diretório novo ou em um diretório existente.\n\nA partir daí, RStudio gerencia automaticamente o diretório de trabalho para você, eliminando a necessidade de utilizar setwd().\n\n\nConclusão\nAdotar projetos no R é uma prática recomendada que promove a organização, reprodutibilidade e eficiência no desenvolvimento de códigos. Evitar o uso do diretório home padrão e da função setwd() previne erros e melhora a portabilidade do seu trabalho. Trabalhar com projetos desde o início de um novo trabalho em R garantirá que você esteja seguindo as melhores práticas e mantendo seu código limpo e bem estruturado.\n\n\n\n\n\n De volta ao topoCitaçãoPor favor, cite este trabalho como:\nPrado, Alexsandro. 2024. “Boas práticas no Uso do R - parte\nI.” August 11. https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/."
-  },
-  {
-    "objectID": "equipe.html",
-    "href": "equipe.html",
-    "title": "Equipe",
-    "section": "",
-    "text": "O GECOMT reúne docentes, pesquisadores e discentes de graduação e de pós-graduação da Universidade Federal Rural do Semi-Árido (UFERSA) interessados em pesquisa empírica nas áreas de contabilidade e mercado de trabalho.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProf. Dr. Alexsandro Prado\n\n\nCoordenador\n\n\nProfessor Adjunto do Departamento de Ciências Sociais Aplicadas e Humanas da UFERSA. Doutor em Economia (UFPB) e mestre em Ciências Contábeis (UnB). Pesquisa mercado de trabalho com microdados públicos.\n\n\n\n\n\nSem itens correspondentes\n De volta ao topo"
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html",
-    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html",
-    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
-    "section": "",
-    "text": "A Relação Anual de Informações Sociais (RAIS) é o registro administrativo que retrata, ano a ano, o conjunto dos vínculos formais de emprego e dos estabelecimentos do país. Trata-se, portanto, de uma base central para estudos sobre salários, ocupações, rotatividade e estrutura produtiva. Ao mesmo tempo, a RAIS impõe desafios consideráveis ao pesquisador, tendo em vista as sucessivas mudanças de leiaute, de codificação e de forma de distribuição dos arquivos ao longo de quase quarenta anos."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#o-que-o-pacote-faz",
-    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#o-que-o-pacote-faz",
-    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
-    "section": "O que o pacote faz",
-    "text": "O que o pacote faz\nO dataRAIS, desenvolvido pelo GECOMT a partir da mesma arquitetura do dataCAGED, enfrenta esses desafios em três frentes: (i) o download dos arquivos de um espelho da RAIS no Hugging Face; (ii) a leitura dos diferentes leiautes históricos, com nomes de variáveis normalizados em português; e (iii) o armazenamento em banco DuckDB local, viabilizando consultas rápidas mesmo em volumes de dezenas de gigabytes.\n# install.packages(\"pak\")\npak::pak(\"gecomt/datarais\")"
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#exemplo-vínculos-e-remuneração-no-rio-grande-do-norte",
-    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#exemplo-vínculos-e-remuneração-no-rio-grande-do-norte",
-    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
-    "section": "Exemplo: vínculos e remuneração no Rio Grande do Norte",
-    "text": "Exemplo: vínculos e remuneração no Rio Grande do Norte\nNo exemplo a seguir, são carregados os vínculos de 2023 e calculados, por município do Rio Grande do Norte (código 24 do IBGE), o número de registros e a remuneração média nominal:\nlibrary(datarais)\nlibrary(dplyr)\n\nrais_load(years = 2023, type = \"vinculos\", db_path = \"rais.duckdb\")\n\ncon &lt;- rais_connect(\"rais.duckdb\")\n\nrn_2023 &lt;- tbl(con, \"rais_novo\") |&gt;\n  filter(ano == 2023, sigla_uf == 24L) |&gt;\n  group_by(id_municipio) |&gt;\n  summarise(\n    vinculos          = n(),\n    remuneracao_media = mean(vl_remun_media_nom, na.rm = TRUE)\n  ) |&gt;\n  arrange(desc(vinculos)) |&gt;\n  collect()\n\nDBI::dbDisconnect(con, shutdown = TRUE)\n\n\n\n\n\n\nImportanteRegistros e estoque de empregos\n\n\n\nA RAIS registra todos os vínculos ocorridos no ano, inclusive os encerrados antes de 31 de dezembro. Para obter o estoque de empregos, deve-se filtrar os vínculos ativos no fim do ano. A variável correspondente pode ser localizada com rais_col_info(search = \"ativo\")."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#arquivos-por-região-a-partir-de-2018",
-    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#arquivos-por-região-a-partir-de-2018",
-    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
-    "section": "Arquivos por região a partir de 2018",
-    "text": "Arquivos por região a partir de 2018\nRessalta-se que, a partir de 2018, os arquivos passaram a ser distribuídos por região geográfica. Assim, o argumento state de rais_load() funciona apenas para os anos anteriores; nos anos mais recentes, baixa-se o arquivo da região inteira e o filtro por Unidade da Federação é feito após a carga, como no exemplo acima."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#próximos-passos",
-    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#próximos-passos",
-    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
-    "section": "Próximos passos",
-    "text": "Próximos passos\nO pacote encontra-se em fase experimental, e as contribuições da comunidade são bem-vindas. O código está disponível no GitHub, onde também podem ser registrados problemas e sugestões."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html",
-    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html",
-    "title": "Microdados do Novo CAGED: primeiros passos em R",
-    "section": "",
-    "text": "O Cadastro Geral de Empregados e Desempregados (CAGED) registra, mês a mês, as admissões e os desligamentos de trabalhadores celetistas no Brasil. A partir de 2020, com a implantação do Novo CAGED, as informações passaram a ser captadas majoritariamente pelo eSocial, o que alterou a estrutura dos arquivos e exige cautela na comparação com a série anterior.\nTendo em vista o volume dos microdados, que somam milhões de registros por ano, o GECOMT desenvolveu o pacote dataCAGED, que automatiza o fluxo completo: download dos arquivos, leitura com descompressão em fluxo e gravação em um banco analítico local (DuckDB)."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#instalação",
-    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#instalação",
-    "title": "Microdados do Novo CAGED: primeiros passos em R",
-    "section": "Instalação",
-    "text": "Instalação\nO pacote está disponível no CRAN:\ninstall.packages(\"datacaged\")"
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#carga-dos-dados",
-    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#carga-dos-dados",
-    "title": "Microdados do Novo CAGED: primeiros passos em R",
-    "section": "Carga dos dados",
-    "text": "Carga dos dados\nA função caged_load() executa o pipeline completo em uma única chamada. No exemplo a seguir, são carregadas as competências de 2023 e 2024:\nlibrary(datacaged)\n\ncaged_load(\n  years   = 2023:2024,\n  months  = seq_len(12L),\n  db_path = \"dados/caged.duckdb\"\n)\nAs movimentações ficam armazenadas na tabela caged_mov, enquanto as declarações fora do prazo e as exclusões são gravadas, respectivamente, em caged_for e caged_exc."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#saldo-mensal-no-rio-grande-do-norte",
-    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#saldo-mensal-no-rio-grande-do-norte",
-    "title": "Microdados do Novo CAGED: primeiros passos em R",
-    "section": "Saldo mensal no Rio Grande do Norte",
-    "text": "Saldo mensal no Rio Grande do Norte\nCom a conexão aberta, a consulta pode ser escrita com dplyr, e o processamento ocorre dentro do DuckDB, sem carregar todos os registros na memória. O código da Unidade da Federação do Rio Grande do Norte, segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), é 24:\nlibrary(dplyr)\n\ncon &lt;- caged_connect(\"dados/caged.duckdb\")\n\nsaldo_rn &lt;- tbl(con, \"caged_mov\") |&gt;\n  filter(uf == 24) |&gt;\n  group_by(competenciamov) |&gt;\n  summarise(saldo = sum(saldomovimentacao, na.rm = TRUE)) |&gt;\n  arrange(competenciamov) |&gt;\n  collect()\n\nDBI::dbDisconnect(con, shutdown = TRUE)\nO objeto saldo_rn contém o saldo (admissões menos desligamentos) de cada competência e pode ser utilizado diretamente na elaboração de gráficos ou de indicadores.\n\n\n\n\n\n\nImportanteAtenção às declarações fora do prazo\n\n\n\nOs totais calculados apenas com a tabela caged_mov não incorporam as declarações entregues fora do prazo nem as exclusões. Para reproduzir as estatísticas oficiais divulgadas pelo Ministério do Trabalho e Emprego (MTE), essas tabelas também devem ser consideradas."
-  },
-  {
-    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#próximos-passos",
-    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#próximos-passos",
-    "title": "Microdados do Novo CAGED: primeiros passos em R",
-    "section": "Próximos passos",
-    "text": "Próximos passos\nEm posts futuros, serão apresentados exemplos de cálculo de indicadores de rotatividade, de análise salarial por ocupação e de integração do CAGED com a RAIS. Sugestões de análises podem ser enviadas à coordenação do grupo."
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#intodução",
-    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#intodução",
-    "title": "Instalação do R, RStudio e Rtools no Windows",
-    "section": "Intodução",
-    "text": "Intodução\n\nO R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código aberto da linguagem de programação S, criada por John M. Chambers na Stanford University, CA, EUA, durante os anos 1980, no Bell Labs. A linguagem S passou por três versões principais: Old S (1976-1987), New S (1988-1997) e S4 (1998), utilizada na IDE S-PLUS (1988-2008). A popularidade da linguagem S resultou em diversos produtos comerciais, como o SAS, que ainda estão em uso.\nNo final da década de 1990, Robert Gentleman e Ross Ihaka, da Universidade de Auckland, Nova Zelândia, iniciaram o desenvolvimento de uma versão livre da linguagem S, conhecida como R. O R passou pelas seguintes fases: Desenvolvimento (1997-2000), Versão 1 (2000-2004), Versão 2 (2004-2013), Versão 3 (2013-2020) e Versão 4 (desde 2020). Para mais detalhes sobre o desenvolvimento das linguagens S e R, consulte Wickham (2013). Atualmente, a linguagem R é mantida por uma rede de colaboradores chamada R Core Team. A origem do nome R não é totalmente clara, mas acredita-se que tenha sido escolhida por ser a letra que precede o “S”, indicando a sua base na linguagem anterior, ou pelo fato de os nomes dos dois criadores começarem com “R”.\nUm ponto importante é que o R é uma linguagem de programação interpretada, assim como o Python, ao contrário de linguagens compiladas como C e Java. Isso torna o R mais acessível, já que ele processa e executa o código em tempo real, transformando-o diretamente em linguagem de máquina (código binário que o computador lê). No entanto, essa característica pode resultar em uma velocidade de processamento menor em comparação com linguagens compiladas."
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-1-instalar-o-r",
-    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-1-instalar-o-r",
-    "title": "Instalação do R, RStudio e Rtools no Windows",
-    "section": "Passo 1: Instalar o R",
-    "text": "Passo 1: Instalar o R\n\nAcesse o site do R:\n\nAbra o navegador e vá para https://cran.r-project.org/.\n\nBaixe o R:\n\nNo menu à esquerda, clique em Download R for Windows.\nNa página seguinte, clique em base.\nClique em Download R 4.x.x for Windows (o número da versão pode variar).\n\nInstale o R:\n\nDepois que o download for concluído, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nEscolha o idioma (português está disponível).\nAceite os termos e condições.\nEscolha o local de instalação (o padrão é geralmente recomendado).\nMantenha as configurações padrão durante a instalação.\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-2-instalar-o-rstudio",
-    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-2-instalar-o-rstudio",
-    "title": "Instalação do R, RStudio e Rtools no Windows",
-    "section": "Passo 2: Instalar o RStudio",
-    "text": "Passo 2: Instalar o RStudio\n\nAcesse o site do RStudio:\n\nVá para https://posit.co/download/rstudio-desktop/.\n\nBaixe o RStudio:\n\nRole a página para baixo até encontrar a seção de RStudio Desktop.\nClique no botão de download correspondente à versão do Windows.\n\nInstale o RStudio:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação (novamente, o padrão é recomendado).\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
-    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
-    "title": "Instalação do R, RStudio e Rtools no Windows",
-    "section": "Passo 3: Instalar o Rtools (opcional, mas recomendado)",
-    "text": "Passo 3: Instalar o Rtools (opcional, mas recomendado)\nO Rtools é necessário se você quiser compilar pacotes que contêm código C, C++, ou Fortran. Alguns pacotes do R requerem o Rtools para serem instalados.\n\nAcesse o site do Rtools:\n\nVá para https://cran.r-project.org/bin/windows/Rtools/.\n\nBaixe o Rtools:\n\nClique no link para a versão mais recente do Rtools para o seu sistema.\n\nInstale o Rtools:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação.\nCertifique-se de que a opção “Add Rtools to system PATH” esteja marcada. Isso permite que o Rtools seja usado diretamente no RStudio.\nClique em “Install” para iniciar a instalação.\n\n\nConfigure o Rtools no RStudio:\n\nAbra o RStudio.\nNo console, digite writeLines('PATH=\"${RTOOLS40_HOME}\\\\usr\\\\bin;${PATH}\"', con = \"~/.Renviron\") e pressione Enter.\nReinicie o RStudio."
-  },
-  {
-    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-4-verificar-as-instalações",
-    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-4-verificar-as-instalações",
-    "title": "Instalação do R, RStudio e Rtools no Windows",
-    "section": "Passo 4: Verificar as Instalações",
-    "text": "Passo 4: Verificar as Instalações\n\nVerificar a instalação do R:\n\nAbra o RStudio.\nNo console, digite R.version e pressione Enter. As informações sobre a versão do R instalada serão exibidas.\n\nVerificar a instalação do Rtools:\n\nNo console do RStudio, digite Sys.which(\"make\") e pressione Enter.\nSe o caminho para o make for exibido, o Rtools foi instalado corretamente.\n\n\nAgora você está pronto para usar o R e o RStudio no Windows!"
-  },
-  {
-    "objectID": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html",
-    "href": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html",
-    "title": "Treinamento: R e Rstudio",
-    "section": "",
-    "text": "Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.\nArquivos do treinamento: download\nInformações adicionais:\n\nInstalação do R, RStudio e Rtools no Windows\nBoas práticas no Uso do R - parte I"
-  },
-  {
-    "objectID": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html#intodução",
-    "href": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html#intodução",
-    "title": "Treinamento: R e Rstudio",
-    "section": "",
-    "text": "Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.\nArquivos do treinamento: download\nInformações adicionais:\n\nInstalação do R, RStudio e Rtools no Windows\nBoas práticas no Uso do R - parte I"
-  },
-  {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "O grupo",
-    "section": "",
-    "text": "O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT) é um grupo de pesquisa vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), em Mossoró/RN. O grupo objetiva mapear o mercado de trabalho contábil, compreendendo os trabalhadores do mercado formal e discutindo questões relativas à remuneração e à discriminação salarial em função de gênero, raça, região e setor de atuação, entre outros aspectos.\nOs resultados podem potencialmente contribuir para:\n\nIdentificar as habilidades e os conhecimentos mais valorizados pelos empregadores, bem como as áreas e as regiões mais promissoras dentro da contabilidade, ajudando os profissionais a se prepararem melhor para o mercado de trabalho;\nObservar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais estejam mais bem preparados para se adaptar às novas demandas;\nSubsidiar decisões mais informadas e estratégicas de gestores e profissionais em relação ao desenvolvimento de suas carreiras ou negócios;\nOrientar políticas públicas voltadas à formação e à qualificação de profissionais contábeis, promovendo o equilíbrio entre oferta e demanda;\nPerceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil, permitindo o desenvolvimento de estratégias que facilitem a sua integração.\n\nNesse sentido, os trabalhos desenvolvidos privilegiam (i) o uso de microdados públicos, como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS); e (ii) práticas de ciência aberta, com código e ferramentas disponibilizados à comunidade.\n\n“Conselhos para os meus três filhos: […] nunca desista do trabalho. Trabalho dá significado e propósito, e a vida está vazia sem ele.”\nStephen Hawking"
-  },
-  {
-    "objectID": "sobre.html#apresentação",
-    "href": "sobre.html#apresentação",
-    "title": "O grupo",
-    "section": "",
-    "text": "O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT) é um grupo de pesquisa vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), em Mossoró/RN. O grupo objetiva mapear o mercado de trabalho contábil, compreendendo os trabalhadores do mercado formal e discutindo questões relativas à remuneração e à discriminação salarial em função de gênero, raça, região e setor de atuação, entre outros aspectos.\nOs resultados podem potencialmente contribuir para:\n\nIdentificar as habilidades e os conhecimentos mais valorizados pelos empregadores, bem como as áreas e as regiões mais promissoras dentro da contabilidade, ajudando os profissionais a se prepararem melhor para o mercado de trabalho;\nObservar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais estejam mais bem preparados para se adaptar às novas demandas;\nSubsidiar decisões mais informadas e estratégicas de gestores e profissionais em relação ao desenvolvimento de suas carreiras ou negócios;\nOrientar políticas públicas voltadas à formação e à qualificação de profissionais contábeis, promovendo o equilíbrio entre oferta e demanda;\nPerceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil, permitindo o desenvolvimento de estratégias que facilitem a sua integração.\n\nNesse sentido, os trabalhos desenvolvidos privilegiam (i) o uso de microdados públicos, como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS); e (ii) práticas de ciência aberta, com código e ferramentas disponibilizados à comunidade.\n\n“Conselhos para os meus três filhos: […] nunca desista do trabalho. Trabalho dá significado e propósito, e a vida está vazia sem ele.”\nStephen Hawking"
-  },
-  {
-    "objectID": "sobre.html#linhas-de-pesquisa",
-    "href": "sobre.html#linhas-de-pesquisa",
-    "title": "O grupo",
-    "section": "Linhas de pesquisa",
-    "text": "Linhas de pesquisa\n\nMercado de trabalho contábil\n\nPerfil dos profissionais contábeis no mercado formal, demanda por habilidades, barreiras à entrada e tendências da profissão.\n\nRemuneração e desigualdades\n\nDiferenças salariais em função de gênero, raça, região e setor de atuação, com métodos de decomposição.\n\nEmprego e políticas públicas\n\nEmprego formal, rotatividade e avaliação de programas como o seguro-desemprego, com microdados do CAGED e da RAIS."
-  },
-  {
-    "objectID": "sobre.html#objetivos",
-    "href": "sobre.html#objetivos",
-    "title": "O grupo",
-    "section": "Objetivos",
-    "text": "Objetivos\n\nProduzir pesquisa empírica de qualidade em contabilidade e economia do trabalho;\nFormar discentes em métodos quantitativos e em análise de dados com R e Python;\nDesenvolver e manter ferramentas abertas para acesso a dados públicos, como os pacotes dataCAGED e dataRAIS;\nDivulgar resultados de pesquisa para a sociedade em linguagem acessível."
-  },
-  {
-    "objectID": "sobre.html#contato",
-    "href": "sobre.html#contato",
-    "title": "O grupo",
-    "section": "Contato",
-    "text": "Contato\nO grupo recebe discentes de graduação e de pós-graduação interessados em iniciação científica, trabalhos de conclusão de curso, dissertações e projetos de extensão. O contato pode ser feito com a coordenação pelo e-mail gecomt@ufersa.edu.br.\nO grupo também pode ser consultado no Diretório dos Grupos de Pesquisa do CNPq e na página de pesquisa do departamento no SIGAA/UFERSA.\n\n\n\n\n\n\nDicaAcompanhe o GECOMT\n\n\n\nOs repositórios do grupo estão em github.com/gecomt, e as novidades são publicadas no blog, no Instagram, no X e no YouTube."
   },
   {
     "objectID": "pacotes/datacaged.html",
@@ -376,5 +82,306 @@
     "title": "dataCAGED",
     "section": "Posts sobre o dataCAGED",
     "text": "Posts sobre o dataCAGED\n\n\n\n\n\n\n\n\n\n\nConheça o dataCAGED: microdados do CAGED direto no DuckDB\n\n\nO GECOMT apresenta o dataCAGED, pacote R disponível no CRAN que reduz a uma única função o trabalho de baixar, ler e organizar os microdados do CAGED.\n\n\n\n13 de novembro de 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nMicrodados do Novo CAGED: primeiros passos em R\n\n\nRoteiro introdutório para baixar, armazenar e consultar os microdados do Novo CAGED com o pacote dataCAGED, calculando o saldo mensal de empregos formais no Rio Grande do…\n\n\n\n13 de novembro de 2026\n\n\n\n\n\n\nSem itens correspondentes"
+  },
+  {
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "O grupo",
+    "section": "",
+    "text": "O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT) é um grupo de pesquisa vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), em Mossoró/RN. O grupo objetiva mapear o mercado de trabalho contábil, compreendendo os trabalhadores do mercado formal e discutindo questões relativas à remuneração e à discriminação salarial em função de gênero, raça, região e setor de atuação, entre outros aspectos.\nOs resultados podem potencialmente contribuir para:\n\nIdentificar as habilidades e os conhecimentos mais valorizados pelos empregadores, bem como as áreas e as regiões mais promissoras dentro da contabilidade, ajudando os profissionais a se prepararem melhor para o mercado de trabalho;\nObservar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais estejam mais bem preparados para se adaptar às novas demandas;\nSubsidiar decisões mais informadas e estratégicas de gestores e profissionais em relação ao desenvolvimento de suas carreiras ou negócios;\nOrientar políticas públicas voltadas à formação e à qualificação de profissionais contábeis, promovendo o equilíbrio entre oferta e demanda;\nPerceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil, permitindo o desenvolvimento de estratégias que facilitem a sua integração.\n\nNesse sentido, os trabalhos desenvolvidos privilegiam (i) o uso de microdados públicos, como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS); e (ii) práticas de ciência aberta, com código e ferramentas disponibilizados à comunidade.\n\n“Conselhos para os meus três filhos: […] nunca desista do trabalho. Trabalho dá significado e propósito, e a vida está vazia sem ele.”\nStephen Hawking"
+  },
+  {
+    "objectID": "sobre.html#apresentação",
+    "href": "sobre.html#apresentação",
+    "title": "O grupo",
+    "section": "",
+    "text": "O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT) é um grupo de pesquisa vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), em Mossoró/RN. O grupo objetiva mapear o mercado de trabalho contábil, compreendendo os trabalhadores do mercado formal e discutindo questões relativas à remuneração e à discriminação salarial em função de gênero, raça, região e setor de atuação, entre outros aspectos.\nOs resultados podem potencialmente contribuir para:\n\nIdentificar as habilidades e os conhecimentos mais valorizados pelos empregadores, bem como as áreas e as regiões mais promissoras dentro da contabilidade, ajudando os profissionais a se prepararem melhor para o mercado de trabalho;\nObservar mudanças e tendências no mercado de trabalho contábil, permitindo que os profissionais estejam mais bem preparados para se adaptar às novas demandas;\nSubsidiar decisões mais informadas e estratégicas de gestores e profissionais em relação ao desenvolvimento de suas carreiras ou negócios;\nOrientar políticas públicas voltadas à formação e à qualificação de profissionais contábeis, promovendo o equilíbrio entre oferta e demanda;\nPerceber as principais barreiras à entrada de novos profissionais no mercado de trabalho contábil, permitindo o desenvolvimento de estratégias que facilitem a sua integração.\n\nNesse sentido, os trabalhos desenvolvidos privilegiam (i) o uso de microdados públicos, como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS); e (ii) práticas de ciência aberta, com código e ferramentas disponibilizados à comunidade.\n\n“Conselhos para os meus três filhos: […] nunca desista do trabalho. Trabalho dá significado e propósito, e a vida está vazia sem ele.”\nStephen Hawking"
+  },
+  {
+    "objectID": "sobre.html#linhas-de-pesquisa",
+    "href": "sobre.html#linhas-de-pesquisa",
+    "title": "O grupo",
+    "section": "Linhas de pesquisa",
+    "text": "Linhas de pesquisa\n\nMercado de trabalho contábil\n\nPerfil dos profissionais contábeis no mercado formal, demanda por habilidades, barreiras à entrada e tendências da profissão.\n\nRemuneração e desigualdades\n\nDiferenças salariais em função de gênero, raça, região e setor de atuação, com métodos de decomposição.\n\nEmprego e políticas públicas\n\nEmprego formal, rotatividade e avaliação de programas como o seguro-desemprego, com microdados do CAGED e da RAIS."
+  },
+  {
+    "objectID": "sobre.html#objetivos",
+    "href": "sobre.html#objetivos",
+    "title": "O grupo",
+    "section": "Objetivos",
+    "text": "Objetivos\n\nProduzir pesquisa empírica de qualidade em contabilidade e economia do trabalho;\nFormar discentes em métodos quantitativos e em análise de dados com R e Python;\nDesenvolver e manter ferramentas abertas para acesso a dados públicos, como os pacotes dataCAGED e dataRAIS;\nDivulgar resultados de pesquisa para a sociedade em linguagem acessível."
+  },
+  {
+    "objectID": "sobre.html#contato",
+    "href": "sobre.html#contato",
+    "title": "O grupo",
+    "section": "Contato",
+    "text": "Contato\nO grupo recebe discentes de graduação e de pós-graduação interessados em iniciação científica, trabalhos de conclusão de curso, dissertações e projetos de extensão. O contato pode ser feito com a coordenação pelo e-mail gecomt@ufersa.edu.br.\nO grupo também pode ser consultado no Diretório dos Grupos de Pesquisa do CNPq e na página de pesquisa do departamento no SIGAA/UFERSA.\n\n\n\n\n\n\nDicaAcompanhe o GECOMT\n\n\n\nOs repositórios do grupo estão em github.com/gecomt, e as novidades são publicadas no blog, no Instagram, no X e no YouTube."
+  },
+  {
+    "objectID": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html",
+    "href": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html",
+    "title": "Treinamento: R e Rstudio",
+    "section": "",
+    "text": "Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.\nArquivos do treinamento: download\nInformações adicionais:\n\nInstalação do R, RStudio e Rtools no Windows\nBoas práticas no Uso do R - parte I"
+  },
+  {
+    "objectID": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html#intodução",
+    "href": "blog/posts/2024-08-14-treinamento-r-rstudio/index.html#intodução",
+    "title": "Treinamento: R e Rstudio",
+    "section": "",
+    "text": "Durante o treinamento, discutimos três pontos principais. Primeiro, abordamos a instalação do R, RStudio e RTools. O R é a base para a programação, enquanto o RStudio oferece uma interface gráfica amigável. O RTools é necessário para compilar pacotes que não são nativamente compatíveis com o sistema operacional. Em seguida, falamos sobre boas práticas no uso do R, destacando a importância de segui-las para evitar dificuldades. Postagens detalhadas estão disponíveis para consulta posterior. Por fim, exploramos a interface do RStudio, onde a área superior esquerda é usada para escrever scripts, a superior direita para visualizar data frames e variáveis, a inferior direita para gerenciar arquivos e pastas, visualizar gráficos e instalar pacotes.\nArquivos do treinamento: download\nInformações adicionais:\n\nInstalação do R, RStudio e Rtools no Windows\nBoas práticas no Uso do R - parte I"
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#intodução",
+    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#intodução",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Intodução",
+    "text": "Intodução\n\nO R permite manipular, analisar e visualizar dados, desde a escrita de pequenas linhas de código até o desenvolvimento de programas completos. Ele é uma versão de código aberto da linguagem de programação S, criada por John M. Chambers na Stanford University, CA, EUA, durante os anos 1980, no Bell Labs. A linguagem S passou por três versões principais: Old S (1976-1987), New S (1988-1997) e S4 (1998), utilizada na IDE S-PLUS (1988-2008). A popularidade da linguagem S resultou em diversos produtos comerciais, como o SAS, que ainda estão em uso.\nNo final da década de 1990, Robert Gentleman e Ross Ihaka, da Universidade de Auckland, Nova Zelândia, iniciaram o desenvolvimento de uma versão livre da linguagem S, conhecida como R. O R passou pelas seguintes fases: Desenvolvimento (1997-2000), Versão 1 (2000-2004), Versão 2 (2004-2013), Versão 3 (2013-2020) e Versão 4 (desde 2020). Para mais detalhes sobre o desenvolvimento das linguagens S e R, consulte Wickham (2013). Atualmente, a linguagem R é mantida por uma rede de colaboradores chamada R Core Team. A origem do nome R não é totalmente clara, mas acredita-se que tenha sido escolhida por ser a letra que precede o “S”, indicando a sua base na linguagem anterior, ou pelo fato de os nomes dos dois criadores começarem com “R”.\nUm ponto importante é que o R é uma linguagem de programação interpretada, assim como o Python, ao contrário de linguagens compiladas como C e Java. Isso torna o R mais acessível, já que ele processa e executa o código em tempo real, transformando-o diretamente em linguagem de máquina (código binário que o computador lê). No entanto, essa característica pode resultar em uma velocidade de processamento menor em comparação com linguagens compiladas."
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-1-instalar-o-r",
+    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-1-instalar-o-r",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 1: Instalar o R",
+    "text": "Passo 1: Instalar o R\n\nAcesse o site do R:\n\nAbra o navegador e vá para https://cran.r-project.org/.\n\nBaixe o R:\n\nNo menu à esquerda, clique em Download R for Windows.\nNa página seguinte, clique em base.\nClique em Download R 4.x.x for Windows (o número da versão pode variar).\n\nInstale o R:\n\nDepois que o download for concluído, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nEscolha o idioma (português está disponível).\nAceite os termos e condições.\nEscolha o local de instalação (o padrão é geralmente recomendado).\nMantenha as configurações padrão durante a instalação.\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-2-instalar-o-rstudio",
+    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-2-instalar-o-rstudio",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 2: Instalar o RStudio",
+    "text": "Passo 2: Instalar o RStudio\n\nAcesse o site do RStudio:\n\nVá para https://posit.co/download/rstudio-desktop/.\n\nBaixe o RStudio:\n\nRole a página para baixo até encontrar a seção de RStudio Desktop.\nClique no botão de download correspondente à versão do Windows.\n\nInstale o RStudio:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação (novamente, o padrão é recomendado).\nClique em “Install” para iniciar a instalação.\n\n\nFinalize a instalação:\n\nQuando a instalação terminar, clique em “Finish”."
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
+    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-3-instalar-o-rtools-opcional-mas-recomendado",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 3: Instalar o Rtools (opcional, mas recomendado)",
+    "text": "Passo 3: Instalar o Rtools (opcional, mas recomendado)\nO Rtools é necessário se você quiser compilar pacotes que contêm código C, C++, ou Fortran. Alguns pacotes do R requerem o Rtools para serem instalados.\n\nAcesse o site do Rtools:\n\nVá para https://cran.r-project.org/bin/windows/Rtools/.\n\nBaixe o Rtools:\n\nClique no link para a versão mais recente do Rtools para o seu sistema.\n\nInstale o Rtools:\n\nApós o download, clique duas vezes no arquivo de instalação.\nSiga as instruções do instalador:\n\nAceite os termos e condições.\nEscolha o local de instalação.\nCertifique-se de que a opção “Add Rtools to system PATH” esteja marcada. Isso permite que o Rtools seja usado diretamente no RStudio.\nClique em “Install” para iniciar a instalação.\n\n\nConfigure o Rtools no RStudio:\n\nAbra o RStudio.\nNo console, digite writeLines('PATH=\"${RTOOLS40_HOME}\\\\usr\\\\bin;${PATH}\"', con = \"~/.Renviron\") e pressione Enter.\nReinicie o RStudio."
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-4-verificar-as-instalações",
+    "href": "blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html#passo-4-verificar-as-instalações",
+    "title": "Instalação do R, RStudio e Rtools no Windows",
+    "section": "Passo 4: Verificar as Instalações",
+    "text": "Passo 4: Verificar as Instalações\n\nVerificar a instalação do R:\n\nAbra o RStudio.\nNo console, digite R.version e pressione Enter. As informações sobre a versão do R instalada serão exibidas.\n\nVerificar a instalação do Rtools:\n\nNo console do RStudio, digite Sys.which(\"make\") e pressione Enter.\nSe o caminho para o make for exibido, o Rtools foi instalado corretamente.\n\n\nAgora você está pronto para usar o R e o RStudio no Windows!"
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html",
+    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html",
+    "title": "Microdados do Novo CAGED: primeiros passos em R",
+    "section": "",
+    "text": "O Cadastro Geral de Empregados e Desempregados (CAGED) registra, mês a mês, as admissões e os desligamentos de trabalhadores celetistas no Brasil. A partir de 2020, com a implantação do Novo CAGED, as informações passaram a ser captadas majoritariamente pelo eSocial, o que alterou a estrutura dos arquivos e exige cautela na comparação com a série anterior.\nTendo em vista o volume dos microdados, que somam milhões de registros por ano, o GECOMT desenvolveu o pacote dataCAGED, que automatiza o fluxo completo: download dos arquivos, leitura com descompressão em fluxo e gravação em um banco analítico local (DuckDB)."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#instalação",
+    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#instalação",
+    "title": "Microdados do Novo CAGED: primeiros passos em R",
+    "section": "Instalação",
+    "text": "Instalação\nO pacote está disponível no CRAN:\ninstall.packages(\"datacaged\")"
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#carga-dos-dados",
+    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#carga-dos-dados",
+    "title": "Microdados do Novo CAGED: primeiros passos em R",
+    "section": "Carga dos dados",
+    "text": "Carga dos dados\nA função caged_load() executa o pipeline completo em uma única chamada. No exemplo a seguir, são carregadas as competências de 2023 e 2024:\nlibrary(datacaged)\n\ncaged_load(\n  years   = 2023:2024,\n  months  = seq_len(12L),\n  db_path = \"dados/caged.duckdb\"\n)\nAs movimentações ficam armazenadas na tabela caged_mov, enquanto as declarações fora do prazo e as exclusões são gravadas, respectivamente, em caged_for e caged_exc."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#saldo-mensal-no-rio-grande-do-norte",
+    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#saldo-mensal-no-rio-grande-do-norte",
+    "title": "Microdados do Novo CAGED: primeiros passos em R",
+    "section": "Saldo mensal no Rio Grande do Norte",
+    "text": "Saldo mensal no Rio Grande do Norte\nCom a conexão aberta, a consulta pode ser escrita com dplyr, e o processamento ocorre dentro do DuckDB, sem carregar todos os registros na memória. O código da Unidade da Federação do Rio Grande do Norte, segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), é 24:\nlibrary(dplyr)\n\ncon &lt;- caged_connect(\"dados/caged.duckdb\")\n\nsaldo_rn &lt;- tbl(con, \"caged_mov\") |&gt;\n  filter(uf == 24) |&gt;\n  group_by(competenciamov) |&gt;\n  summarise(saldo = sum(saldomovimentacao, na.rm = TRUE)) |&gt;\n  arrange(competenciamov) |&gt;\n  collect()\n\nDBI::dbDisconnect(con, shutdown = TRUE)\nO objeto saldo_rn contém o saldo (admissões menos desligamentos) de cada competência e pode ser utilizado diretamente na elaboração de gráficos ou de indicadores.\n\n\n\n\n\n\nImportanteAtenção às declarações fora do prazo\n\n\n\nOs totais calculados apenas com a tabela caged_mov não incorporam as declarações entregues fora do prazo nem as exclusões. Para reproduzir as estatísticas oficiais divulgadas pelo Ministério do Trabalho e Emprego (MTE), essas tabelas também devem ser consideradas."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-microdados-novo-caged/index.html#próximos-passos",
+    "href": "blog/posts/2026-11-13-microdados-novo-caged/index.html#próximos-passos",
+    "title": "Microdados do Novo CAGED: primeiros passos em R",
+    "section": "Próximos passos",
+    "text": "Próximos passos\nEm posts futuros, serão apresentados exemplos de cálculo de indicadores de rotatividade, de análise salarial por ocupação e de integração do CAGED com a RAIS. Sugestões de análises podem ser enviadas à coordenação do grupo."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html",
+    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html",
+    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
+    "section": "",
+    "text": "A Relação Anual de Informações Sociais (RAIS) é o registro administrativo que retrata, ano a ano, o conjunto dos vínculos formais de emprego e dos estabelecimentos do país. Trata-se, portanto, de uma base central para estudos sobre salários, ocupações, rotatividade e estrutura produtiva. Ao mesmo tempo, a RAIS impõe desafios consideráveis ao pesquisador, tendo em vista as sucessivas mudanças de leiaute, de codificação e de forma de distribuição dos arquivos ao longo de quase quarenta anos."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#o-que-o-pacote-faz",
+    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#o-que-o-pacote-faz",
+    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
+    "section": "O que o pacote faz",
+    "text": "O que o pacote faz\nO dataRAIS, desenvolvido pelo GECOMT a partir da mesma arquitetura do dataCAGED, enfrenta esses desafios em três frentes: (i) o download dos arquivos de um espelho da RAIS no Hugging Face; (ii) a leitura dos diferentes leiautes históricos, com nomes de variáveis normalizados em português; e (iii) o armazenamento em banco DuckDB local, viabilizando consultas rápidas mesmo em volumes de dezenas de gigabytes.\n# install.packages(\"pak\")\npak::pak(\"gecomt/datarais\")"
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#exemplo-vínculos-e-remuneração-no-rio-grande-do-norte",
+    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#exemplo-vínculos-e-remuneração-no-rio-grande-do-norte",
+    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
+    "section": "Exemplo: vínculos e remuneração no Rio Grande do Norte",
+    "text": "Exemplo: vínculos e remuneração no Rio Grande do Norte\nNo exemplo a seguir, são carregados os vínculos de 2023 e calculados, por município do Rio Grande do Norte (código 24 do IBGE), o número de registros e a remuneração média nominal:\nlibrary(datarais)\nlibrary(dplyr)\n\nrais_load(years = 2023, type = \"vinculos\", db_path = \"rais.duckdb\")\n\ncon &lt;- rais_connect(\"rais.duckdb\")\n\nrn_2023 &lt;- tbl(con, \"rais_novo\") |&gt;\n  filter(ano == 2023, sigla_uf == 24L) |&gt;\n  group_by(id_municipio) |&gt;\n  summarise(\n    vinculos          = n(),\n    remuneracao_media = mean(vl_remun_media_nom, na.rm = TRUE)\n  ) |&gt;\n  arrange(desc(vinculos)) |&gt;\n  collect()\n\nDBI::dbDisconnect(con, shutdown = TRUE)\n\n\n\n\n\n\nImportanteRegistros e estoque de empregos\n\n\n\nA RAIS registra todos os vínculos ocorridos no ano, inclusive os encerrados antes de 31 de dezembro. Para obter o estoque de empregos, deve-se filtrar os vínculos ativos no fim do ano. A variável correspondente pode ser localizada com rais_col_info(search = \"ativo\")."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#arquivos-por-região-a-partir-de-2018",
+    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#arquivos-por-região-a-partir-de-2018",
+    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
+    "section": "Arquivos por região a partir de 2018",
+    "text": "Arquivos por região a partir de 2018\nRessalta-se que, a partir de 2018, os arquivos passaram a ser distribuídos por região geográfica. Assim, o argumento state de rais_load() funciona apenas para os anos anteriores; nos anos mais recentes, baixa-se o arquivo da região inteira e o filtro por Unidade da Federação é feito após a carga, como no exemplo acima."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datarais/index.html#próximos-passos",
+    "href": "blog/posts/2026-11-13-conheca-o-datarais/index.html#próximos-passos",
+    "title": "Conheça o dataRAIS: quatro décadas de RAIS em R",
+    "section": "Próximos passos",
+    "text": "Próximos passos\nO pacote encontra-se em fase experimental, e as contribuições da comunidade são bem-vindas. O código está disponível no GitHub, onde também podem ser registrados problemas e sugestões."
+  },
+  {
+    "objectID": "equipe.html",
+    "href": "equipe.html",
+    "title": "Equipe",
+    "section": "",
+    "text": "O GECOMT reúne docentes, pesquisadores e discentes de graduação e de pós-graduação da Universidade Federal Rural do Semi-Árido (UFERSA) interessados em pesquisa empírica nas áreas de contabilidade e mercado de trabalho.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProf. Dr. Alexsandro Prado\n\n\nCoordenador\n\n\nProfessor Adjunto do Departamento de Ciências Sociais Aplicadas e Humanas da UFERSA. Doutor em Economia (UFPB) e mestre em Ciências Contábeis (UnB). Pesquisa mercado de trabalho com microdados públicos.\n\n\n\n\n\nSem itens correspondentes\n De volta ao topo"
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-boas-praticas-r/index.html",
+    "href": "blog/posts/2024-08-11-boas-praticas-r/index.html",
+    "title": "Boas práticas no Uso do R - parte I",
+    "section": "",
+    "text": "Introdução\nTrabalhar com o R de maneira eficiente e organizada é essencial para garantir a reprodutibilidade e a manutenção do seu código ao longo do tempo. Uma das principais boas práticas é a adoção do conceito de projetos em vez de depender do diretório home padrão ou do uso da função setwd() para definir o diretório de trabalho.\n\n\nPor que usar projetos no R?\nOrganização: Cada projeto no RStudio, por exemplo, é associado a um diretório específico que contém todos os arquivos relevantes para aquele projeto. Isso facilita a organização, pois todos os scripts, dados, outputs e outros recursos ficam centralizados em um único local.\nReprodutibilidade: Usando projetos, você elimina a dependência de caminhos absolutos. Caminhos relativos são utilizados, o que significa que o código pode ser executado em qualquer máquina, desde que o projeto seja transferido junto com sua estrutura de pastas. Isso melhora significativamente a reprodutibilidade e facilita o compartilhamento do código com outras pessoas.\nEvita erros comuns: O uso da função setwd() para alterar o diretório de trabalho pode causar problemas, especialmente quando o código é compartilhado ou movido para diferentes sistemas. Como o caminho pode não existir em outra máquina, isso pode gerar erros e complicações desnecessárias.\nAmbiente limpo: Trabalhar com projetos ajuda a manter seu ambiente de trabalho limpo, sem a necessidade de ajustar manualmente o diretório de trabalho para cada sessão de R. O ambiente de trabalho, junto com as configurações e dependências, é armazenado dentro do projeto, tornando o ambiente de desenvolvimento mais controlado e previsível.\n\n\nPor que não utilizar o diretório home padrão no RStudio?\nUtilizar o diretório home padrão no RStudio pode levar a vários problemas de organização e reprodutibilidade. O diretório home é um local genérico e comum para todos os projetos e arquivos do usuário, o que pode resultar em confusão quando múltiplos projetos estão sendo gerenciados simultaneamente. Sem uma estrutura de projeto específica, há um maior risco de sobrescrever arquivos acidentalmente ou de misturar dados e scripts de diferentes projetos. Além disso, ao depender do diretório home padrão, você corre o risco de enfrentar problemas ao compartilhar seu código, pois outros usuários podem ter uma estrutura de diretórios diferente, tornando o código menos portável. Portanto, adotar o uso de projetos no RStudio e evitar o diretório home padrão é uma prática recomendada para garantir um ambiente de trabalho mais controlado e menos propenso a erros.\n\n\nComo começar a usar projetos?\nNo RStudio, você pode criar um novo projeto facilmente:\n\nVá em File &gt; New Project.\nEscolha criar um projeto em um diretório novo ou em um diretório existente.\n\nA partir daí, RStudio gerencia automaticamente o diretório de trabalho para você, eliminando a necessidade de utilizar setwd().\n\n\nConclusão\nAdotar projetos no R é uma prática recomendada que promove a organização, reprodutibilidade e eficiência no desenvolvimento de códigos. Evitar o uso do diretório home padrão e da função setwd() previne erros e melhora a portabilidade do seu trabalho. Trabalhar com projetos desde o início de um novo trabalho em R garantirá que você esteja seguindo as melhores práticas e mantendo seu código limpo e bem estruturado.\n\n\n\n\n\n De volta ao topoCitaçãoPor favor, cite este trabalho como:\nPrado, Alexsandro. 2024. “Boas práticas no Uso do R - parte\nI.” August 11. https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html",
+    "href": "blog/posts/2026-11-13-boas-vindas/index.html",
+    "title": "Boas-vindas ao blog do GECOMT",
+    "section": "",
+    "text": "O Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT), vinculado ao curso de Ciências Contábeis da Universidade Federal Rural do Semi-Árido (UFERSA), inaugura este blog com o propósito de aproximar a produção acadêmica do grupo de estudantes, profissionais e demais interessados nos temas que articulam a informação contábil e o mercado de trabalho."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html#o-que-será-publicado",
+    "href": "blog/posts/2026-11-13-boas-vindas/index.html#o-que-será-publicado",
+    "title": "Boas-vindas ao blog do GECOMT",
+    "section": "O que será publicado",
+    "text": "O que será publicado\nEm linhas gerais, os conteúdos do blog organizam-se em três frentes:\n\nNotas de pesquisa: sínteses de artigos, dissertações e trabalhos de conclusão de curso desenvolvidos pelos membros do grupo, com destaque para os principais achados e suas implicações;\nTutoriais com dados abertos: roteiros reprodutíveis, em R e Python, para o uso de bases como o Cadastro Geral de Empregados e Desempregados (CAGED) e a Relação Anual de Informações Sociais (RAIS);\nComentários técnicos: análises de mudanças normativas e regulatórias, a exemplo da legislação trabalhista e das políticas de emprego e renda."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html#ciência-aberta-como-princípio",
+    "href": "blog/posts/2026-11-13-boas-vindas/index.html#ciência-aberta-como-princípio",
+    "title": "Boas-vindas ao blog do GECOMT",
+    "section": "Ciência aberta como princípio",
+    "text": "Ciência aberta como princípio\nRessalta-se que o grupo adota a reprodutibilidade como princípio de trabalho. Dessa forma, sempre que possível, os posts serão acompanhados do código utilizado e das referências às bases de dados originais, permitindo que os resultados sejam verificados, replicados e ampliados por outros pesquisadores."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-boas-vindas/index.html#como-acompanhar",
+    "href": "blog/posts/2026-11-13-boas-vindas/index.html#como-acompanhar",
+    "title": "Boas-vindas ao blog do GECOMT",
+    "section": "Como acompanhar",
+    "text": "Como acompanhar\nAs novas publicações podem ser acompanhadas pelo feed RSS do blog e pelos repositórios do grupo no GitHub. Sugestões de temas e propostas de colaboração podem ser encaminhadas à coordenação, conforme indicado na página O grupo."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html",
+    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html",
+    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
+    "section": "",
+    "text": "Os microdados do Cadastro Geral de Empregados e Desempregados (CAGED) constituem uma das fontes mais ricas para o acompanhamento mensal do emprego formal no Brasil. No entanto, o uso dessas informações impõe obstáculos práticos: os arquivos são distribuídos compactados, mudaram de estrutura ao longo do tempo e somam volumes que dificilmente cabem na memória de um computador pessoal."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#o-que-o-pacote-faz",
+    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#o-que-o-pacote-faz",
+    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
+    "section": "O que o pacote faz",
+    "text": "O que o pacote faz\nNesse sentido, o dataCAGED foi desenvolvido para automatizar esse fluxo de trabalho. A partir da função caged_load(), o pacote (i) baixa os arquivos de um espelho dos dados do Ministério do Trabalho e Emprego (MTE) no Hugging Face; (ii) realiza a leitura com descompressão em fluxo, sem gravar arquivos temporários; e (iii) armazena os registros em um banco DuckDB local, no qual as consultas podem ser feitas com dplyr ou SQL.\ninstall.packages(\"datacaged\")\n\nlibrary(datacaged)\n\ncaged_load(\n  years   = 2024,\n  months  = seq_len(12L),\n  db_path = \"caged.duckdb\"\n)"
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#bases-cobertas",
+    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#bases-cobertas",
+    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
+    "section": "Bases cobertas",
+    "text": "Bases cobertas\nO pacote contempla o Novo CAGED (2020 em diante), com as tabelas de movimentações, declarações fora do prazo e exclusões, além do CAGED antigo (2007 a 2019) e dos ajustes históricos. Dessa forma, torna-se possível construir séries longas e comparar períodos, observadas as diferenças metodológicas entre as bases."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#manutenção-e-atualização",
+    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#manutenção-e-atualização",
+    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
+    "section": "Manutenção e atualização",
+    "text": "Manutenção e atualização\nPara manter o banco atualizado, a função caged_update() baixa apenas as competências ainda ausentes. Além disso, caged_to_parquet() exporta as tabelas para o formato Parquet, o que facilita o compartilhamento dos dados com outras linguagens, como Python."
+  },
+  {
+    "objectID": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#próximos-passos",
+    "href": "blog/posts/2026-11-13-conheca-o-datacaged/index.html#próximos-passos",
+    "title": "Conheça o dataCAGED: microdados do CAGED direto no DuckDB",
+    "section": "Próximos passos",
+    "text": "Próximos passos\nO código-fonte está disponível no GitHub, e sugestões ou problemas podem ser registrados nas issues do repositório. Um roteiro com exemplos de consulta pode ser consultado no post Microdados do Novo CAGED: primeiros passos em R."
+  },
+  {
+    "objectID": "blog/posts/2024-08-11-contador-mercado-trabalho/index.html",
+    "href": "blog/posts/2024-08-11-contador-mercado-trabalho/index.html",
+    "title": "O Contador e o Mercado de Trabalho",
+    "section": "",
+    "text": "O Contador e o Mercado de Trabalho\nO contador é um profissional fundamental no mundo dos negócios, desempenhando um papel crucial em diversas áreas que vão muito além da simples escrituração contábil. Com a evolução das práticas empresariais e a crescente complexidade das normas regulatórias, o campo de atuação do contador se expandiu, fazendo com que esse profissional seja indispensável em diferentes setores da economia.\n\nPrincipais Funções de um Contador\n\nContabilidade Geral:\n\nEscrituração Contábil: Registro das operações financeiras de uma empresa, garantindo que todos os dados sejam organizados e que os balanços patrimoniais, demonstrações de resultados e fluxos de caixa reflitam a realidade da entidade.\nAnálise de Balanços: Interpretação dos demonstrativos financeiros para entender a situação econômica da empresa e auxiliar na tomada de decisões estratégicas.\n\nPlanejamento Tributário:\n\nGestão Fiscal: Planejamento e execução de estratégias para reduzir a carga tributária da empresa dentro dos limites legais. O contador deve estar atualizado com a legislação tributária e ser capaz de identificar oportunidades de economia fiscal.\nDeclarações de Impostos: Preparação e envio das declarações fiscais, garantindo o cumprimento das obrigações tributárias.\n\nAuditoria Contábil:\n\nAuditoria Interna: Revisão dos processos e registros contábeis para assegurar que as operações financeiras estejam sendo conduzidas de acordo com as políticas internas e normas legais.\nAuditoria Externa: Exame independente das demonstrações financeiras de uma empresa para fornecer uma opinião imparcial sobre sua conformidade e veracidade.\n\nConsultoria Financeira e Empresarial:\n\nAnálise de Viabilidade Econômica: Avaliação de projetos de investimento, analisando os custos, benefícios e riscos envolvidos para orientar a tomada de decisões.\nEstratégia de Negócios: Auxílio na formulação de estratégias empresariais baseadas em análises financeiras e econômicas, ajudando a empresa a alcançar seus objetivos.\n\nPerícia Contábil:\n\nPerícia Judicial: Atuação em processos judiciais como perito contábil, fornecendo laudos técnicos que auxiliam o julgamento de questões que envolvem disputas financeiras e contábeis.\nArbitragem e Mediação: Participação em processos de resolução de conflitos, utilizando seu conhecimento técnico para ajudar a resolver disputas fora do âmbito judicial.\n\nControladoria:\n\nGestão de Custos: Implementação de sistemas de controle de custos e análise da rentabilidade, identificando áreas onde a empresa pode melhorar sua eficiência operacional.\nOrçamento e Planejamento: Desenvolvimento e monitoramento de orçamentos empresariais, assegurando que as metas financeiras sejam alcançadas.\n\nCompliance e Governança Corporativa:\n\nImplementação de Políticas de Compliance: Desenvolvimento de sistemas de controle interno para garantir que a empresa cumpra todas as normas e regulamentações aplicáveis.\nRelatórios de Governança: Elaboração de relatórios para investidores e partes interessadas, demonstrando o compromisso da empresa com as práticas de governança corporativa.\n\nTecnologia e Inovação:\n\nAutomação de Processos Contábeis: Implementação de sistemas de software para automatizar tarefas rotineiras, como a escrituração contábil e a emissão de relatórios financeiros.\nAnálise de Dados: Uso de ferramentas de análise de dados para extrair insights financeiros e identificar tendências que possam impactar a empresa.\n\n\n\n\n\nO Futuro da Contabilidade\nCom a transformação digital, o papel do contador está evoluindo rapidamente. Profissionais que dominam tecnologias emergentes, como inteligência artificial, big data e blockchain, terão uma vantagem competitiva no mercado de trabalho. Além disso, a globalização e a complexidade crescente das normas contábeis internacionais (como as IFRS) estão ampliando o escopo de atuação do contador, que precisa estar preparado para lidar com novos desafios e oportunidades.\nDessa forma, o contador se torna cada vez mais um parceiro estratégico nas organizações, contribuindo não apenas para o cumprimento de obrigações legais, mas também para o sucesso e crescimento sustentável dos negócios.\n\n\n\n\n\n De volta ao topoCitaçãoPor favor, cite este trabalho como:\nPrado, Alexsandro. 2024. “O Contador e o Mercado de\nTrabalho.” August 11. https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/."
+  },
+  {
+    "objectID": "blog/index.html",
+    "href": "blog/index.html",
+    "title": "Blog do GECOMT",
+    "section": "",
+    "text": "Ordenar por\n      Padrão\n      \n        Título\n      \n      \n        Data - Mais antigo\n      \n      \n        Data - O mais novo\n      \n      \n        Autor\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nBoas-vindas ao blog do GECOMT\n\n\n\nAnúncio\n\nGECOMT\n\n\n\nO Grupo de Estudos sobre Contabilidade e Mercado de Trabalho inaugura um espaço para divulgar pesquisas, tutoriais com dados abertos e reflexões sobre temas contábeis e trabalhistas.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nConheça o dataCAGED: microdados do CAGED direto no DuckDB\n\n\n\ndataCAGED\n\nPacotes\n\nR\n\nDados abertos\n\n\n\nO GECOMT apresenta o dataCAGED, pacote R disponível no CRAN que reduz a uma única função o trabalho de baixar, ler e organizar os microdados do CAGED.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nConheça o dataRAIS: quatro décadas de RAIS em R\n\n\n\ndataRAIS\n\nPacotes\n\nR\n\nDados abertos\n\nMercado de trabalho\n\n\n\nO novo pacote do GECOMT dá acesso aos microdados da RAIS de 1985 a 2025, com variáveis padronizadas entre leiautes e consultas rápidas em DuckDB.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nMicrodados do Novo CAGED: primeiros passos em R\n\n\n\ndataCAGED\n\nMercado de trabalho\n\nDados abertos\n\nR\n\n\n\nRoteiro introdutório para baixar, armazenar e consultar os microdados do Novo CAGED com o pacote dataCAGED, calculando o saldo mensal de empregos formais no Rio Grande do Norte.\n\n\n\n\n\n13 de novembro de 2026\n\n\nEquipe GECOMT\n\n\n\n\n\n\n\n\n\n\n\n\nTreinamento: R e Rstudio\n\n\n\nR\n\nCiência de dados\n\n\n\n\n\n\n\n\n\n14 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\n\n\n\n\n\n\n\nBoas práticas no Uso do R - parte I\n\n\n\nR\n\nCiência de dados\n\n\n\n\n\n\n\n\n\n11 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\n\n\n\n\n\n\n\nO Contador e o Mercado de Trabalho\n\n\n\nMercado de trabalho\n\n\n\n\n\n\n\n\n\n11 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\n\n\n\n\n\n\n\nInstalação do R, RStudio e Rtools no Windows\n\n\n\nR\n\nCiência de dados\n\n\n\n\n\n\n\n\n\n11 de agosto de 2024\n\n\nAlexsandro Prado\n\n\n\n\n\nSem itens correspondentes\n De volta ao topo"
+  },
+  {
+    "objectID": "pacotes/datarais.html",
+    "href": "pacotes/datarais.html",
+    "title": "dataRAIS",
+    "section": "",
+    "text": "O dataRAIS (pacote R datarais) dá acesso aos microdados da Relação Anual de Informações Sociais (RAIS), o censo anual do emprego formal no Brasil, cobrindo vínculos e estabelecimentos de 1985 a 2025, armazenados em banco DuckDB local.\n\n\n GitHub  Dados no Hugging Face  Reportar problema"
+  },
+  {
+    "objectID": "pacotes/datarais.html#principais-recursos",
+    "href": "pacotes/datarais.html#principais-recursos",
+    "title": "dataRAIS",
+    "section": "Principais recursos",
+    "text": "Principais recursos\n\nDownload dos arquivos a partir de um espelho da RAIS no Hugging Face, com cache persistente e downloads paralelos opcionais;\nSuporte aos dois formatos de distribuição: arquivos por Unidade da Federação (1985 a 2017) e por região geográfica (2018 em diante);\nNomes de variáveis normalizados em português (snake_case), consistentes entre todos os leiautes históricos;\nDicionário de variáveis integrado (rais_col_info()) e resumo dos leiautes (rais_layouts());\nAtualização incremental (rais_update()) e exportação para Parquet (rais_to_parquet());\nMensagens em português e em inglês."
+  },
+  {
+    "objectID": "pacotes/datarais.html#instalação",
+    "href": "pacotes/datarais.html#instalação",
+    "title": "dataRAIS",
+    "section": "Instalação",
+    "text": "Instalação\n# Versão de desenvolvimento (GitHub)\npak::pak(\"gecomt/datarais\")\n\n\n\n\n\n\nOs arquivos anteriores a 2020 utilizam compressão PPMd e exigem o 7-Zip instalado. Recomenda-se, ainda, ao menos 8 GB de RAM e cerca de 20 GB livres em disco por ano de dados de vínculos."
+  },
+  {
+    "objectID": "pacotes/datarais.html#uso-rápido",
+    "href": "pacotes/datarais.html#uso-rápido",
+    "title": "dataRAIS",
+    "section": "Uso rápido",
+    "text": "Uso rápido\nlibrary(datarais)\nlibrary(dplyr)\n\n# Verifica a disponibilidade do repositório\nrais_status()\n\n# Download, leitura e gravação no DuckDB em uma etapa\nrais_load(\n  years   = 2022:2023,\n  type    = \"vinculos\",\n  db_path = \"rais.duckdb\"\n)\n\ncon &lt;- rais_connect(\"rais.duckdb\")\n\ntbl(con, \"rais_novo\") |&gt;\n  filter(ano == 2023) |&gt;\n  group_by(sigla_uf) |&gt;\n  summarise(\n    vinculos           = n(),\n    remuneracao_media  = mean(vl_remun_media_nom, na.rm = TRUE)\n  ) |&gt;\n  arrange(desc(remuneracao_media)) |&gt;\n  collect()\n\nDBI::dbDisconnect(con, shutdown = TRUE)"
+  },
+  {
+    "objectID": "pacotes/datarais.html#tabelas-no-duckdb",
+    "href": "pacotes/datarais.html#tabelas-no-duckdb",
+    "title": "dataRAIS",
+    "section": "Tabelas no DuckDB",
+    "text": "Tabelas no DuckDB\n\n\n\nTabela\nConteúdo\nPeríodo\n\n\n\n\nrais_antigo\nVínculos por Unidade da Federação\n1985 a 2017\n\n\nrais_novo\nVínculos por região\n2018 em diante\n\n\nrais_estab\nEstabelecimentos\n1985 em diante"
+  },
+  {
+    "objectID": "pacotes/datarais.html#funções-principais",
+    "href": "pacotes/datarais.html#funções-principais",
+    "title": "dataRAIS",
+    "section": "Funções principais",
+    "text": "Funções principais\n\n\n\n\n\n\n\nFunção\nDescrição\n\n\n\n\nrais_load()\nPipeline completo (download, leitura e gravação no DuckDB)\n\n\nrais_update()\nBaixa apenas os anos ainda ausentes no banco\n\n\nrais_connect() / rais_tbl()\nConexão e referência às tabelas\n\n\nrais_available()\nAnos disponíveis no Hugging Face\n\n\nrais_col_info()\nMetadados das variáveis (tipo, descrição e disponibilidade)\n\n\nrais_layouts()\nResumo dos leiautes históricos\n\n\nrais_to_parquet()\nExporta tabelas para Parquet"
+  },
+  {
+    "objectID": "pacotes/datarais.html#como-citar",
+    "href": "pacotes/datarais.html#como-citar",
+    "title": "dataRAIS",
+    "section": "Como citar",
+    "text": "Como citar\ncitation(\"datarais\")"
+  },
+  {
+    "objectID": "pacotes/datarais.html#posts-sobre-o-datarais",
+    "href": "pacotes/datarais.html#posts-sobre-o-datarais",
+    "title": "dataRAIS",
+    "section": "Posts sobre o dataRAIS",
+    "text": "Posts sobre o dataRAIS\n\n\n\n\n\n\n\n\n\n\nConheça o dataRAIS: quatro décadas de RAIS em R\n\n\nO novo pacote do GECOMT dá acesso aos microdados da RAIS de 1985 a 2025, com variáveis padronizadas entre leiautes e consultas rápidas em DuckDB.\n\n\n\n13 de novembro de 2026\n\n\n\n\n\n\nSem itens correspondentes"
   }
 ]

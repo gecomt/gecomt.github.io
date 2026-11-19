@@ -1,0 +1,100 @@
+/*-- scss:defaults --*/
+/*-- scss:rules --*/
+// Ajustes do painel (formato dashboard), sobre o tema do site
+
+.quarto-dashboard .navbar #dashboard-nav-title, .quarto-dashboard .navbar .navbar-title {
+  font-family: $headings-font-family;
+  font-weight: 600;
+}
+
+.quarto-dashboard .card {
+  border-radius: .8rem;
+  @if $is-dark { border-color: #22395A; background: #0D2239; }
+  @else { border-color: #E3E8EF; box-shadow: 0 4px 16px rgba($gecomt-navy, .06); }
+}
+
+.quarto-dashboard .card-header {
+  font-family: $headings-font-family;
+  font-weight: 600;
+  font-size: .95rem;
+  background: transparent;
+  @if $is-dark { color: #fff; border-bottom-color: #22395A; }
+  @else { color: $gecomt-navy; border-bottom-color: #EEF2F7; }
+}
+
+.quarto-dashboard .bslib-value-box {
+  border-radius: .8rem;
+  border-bottom: 3px solid $gecomt-gold;
+  .value-box-title { font-weight: 500; opacity: .92; }
+  .value-box-value { font-family: $headings-font-family; font-weight: 700; }
+  p:last-child { font-size: .82rem; opacity: .85; margin-bottom: 0; }
+}
+
+.painel-legenda {
+  display: flex; gap: 1.1rem; flex-wrap: wrap;
+  font-size: .82rem; margin: .1rem 0 .3rem;
+  span { display: inline-flex; align-items: center; gap: .4rem; }
+  i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; }
+}
+
+.painel-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem 1.4rem;
+}
+
+.painel-duas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1rem 2rem;
+}
+
+.painel-mini svg, .painel-duas svg { max-width: 100%; height: auto; }
+
+.painel-mini-titulo {
+  font-family: $headings-font-family;
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: .2rem;
+  span { font-family: $font-family-sans-serif; font-weight: 400; font-size: .78rem; color: $text-muted; margin-left: .3rem; }
+}
+
+.painel-nota {
+  font-size: .82rem;
+  color: $text-muted;
+}
+
+.quarto-dashboard .sidebar .painel-nota { margin-top: 1rem; }
+
+// Caixas de valor nas cores da marca: texto claro sobre azul, azul sobre dourado
+.quarto-dashboard .bslib-value-box {
+  color: #fff;
+  .value-box-showcase, .value-box-title, .value-box-value, p { color: inherit; }
+  .value-box-showcase { opacity: .55; }
+}
+.quarto-dashboard .bslib-value-box[style*="E0A82E"] { color: $gecomt-navy; }
+.quarto-dashboard .bslib-value-box[style*="E0A82E"] .value-box-showcase { opacity: .45; }
+
+// Layout compacto das caixas de valor: ícone pequeno à esquerda em qualquer largura
+html body.quarto-dashboard .bslib-value-box.showcase-left-center.valuebox .value-box-grid {
+  grid-template-columns: 2.6rem 1fr !important;
+  grid-template-rows: auto !important;
+  grid-template-areas: "left right" !important;
+  align-items: center;
+}
+html body.quarto-dashboard .bslib-value-box.valuebox .value-box-showcase {
+  grid-area: left !important;
+  padding: 0 0 0 .9rem !important;
+  max-height: none !important;
+  .bi { font-size: 1.9rem !important; width: auto !important; height: auto !important; }
+}
+html body.quarto-dashboard .bslib-value-box.valuebox .value-box-area {
+  grid-area: right !important;
+  padding: .8rem 1rem .8rem 1.1rem !important;
+}
+.quarto-dashboard .bslib-value-box .value-box-value {
+  font-size: clamp(1.6rem, 2.2vw, 2.3rem) !important;
+  line-height: 1.1;
+  margin: .15rem 0 .25rem;
+}
+.quarto-dashboard .bslib-value-box .value-box-title { font-size: .92rem; }

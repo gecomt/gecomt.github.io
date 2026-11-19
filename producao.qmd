@@ -36,6 +36,19 @@ Microdados da RAIS de 1985 a 2025 (vínculos e estabelecimentos), com variáveis
 :::
 :::
 
+## Painel do Mercado de Trabalho
+
+::: {.gecomt-card}
+[`<i class="bi bi-speedometer2" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
+
+### Painel do Mercado de Trabalho
+
+Indicadores da PNAD Contínua, do Novo CAGED e da RAIS, com recorte dedicado aos profissionais
+contábeis. Os dados são atualizados com os pacotes dataCAGED e dataRAIS.
+
+[Abrir o painel](dashboard/index.qmd)
+:::
+
 ## Dados abertos
 
 ::: {.grid .gap-4}

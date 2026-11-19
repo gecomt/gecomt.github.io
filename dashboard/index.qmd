@@ -1,0 +1,695 @@
+---
+title: "Painel do Mercado de Trabalho"
+description: "Indicadores do mercado de trabalho brasileiro e dos profissionais contábeis, com dados da PNAD Contínua, do Novo CAGED e da RAIS."
+image: ../assets/images/gecomt-og.png
+format:
+  dashboard:
+    theme:
+      light: [cosmo, ../_extensions/gecomt/scss/gecomt.scss, painel.scss]
+      dark: [cosmo, ../_extensions/gecomt/scss/gecomt-dark.scss, painel.scss]
+    scrolling: true
+---
+
+# Visão geral
+
+## Row {height="180px"}
+
+::: {.valuebox icon="person-x" color="#133355"}
+Taxa de desocupação
+
+${vbDesoc}
+
+${vbDesocCap}
+:::
+
+::: {.valuebox icon="people-fill" color="#1B4472"}
+Pessoas ocupadas
+
+${vbOcup}
+
+PNAD Contínua · ${triMovel(ocupUlt.data)}
+:::
+
+::: {.valuebox icon="briefcase-fill" color="#0F2A48"}
+Saldo de empregos formais
+
+${vbBrSaldo}
+
+${vbBrMes}
+:::
+
+::: {.valuebox icon="calendar3" color="#E0A82E"}
+Saldo em 12 meses
+
+${vbBrSaldo12}
+
+${vbBrAte}
+:::
+
+## Row
+
+```{ojs}
+//| title: "Taxa de desocupação (%), trimestre móvel"
+Plot.plot({...linha(desoc, {tituloTip: d => triMovel(d.data), rotulo: d => nf1.format(d.valor) + "%"})})
+```
+
+```{ojs}
+//| title: "Saldo mensal de empregos formais (admissões − desligamentos)"
+Plot.plot({...barrasSaldo(brMes, {titulo: "Saldo"})})
+```
+
+```{ojs}
+//| output: false
+desoc    = pnadInd.filter(d => d.indicador === "tx_desocup")
+desocUlt = desoc.at(-1)
+desocVar = desocUlt.valor - desoc.at(-13).valor
+ocupUlt  = pnadInd.filter(d => d.indicador === "ocupados").at(-1)
+vbDesoc    = nf1.format(desocUlt.valor) + "%"
+vbDesocCap = `${triMovel(desocUlt.data)} · ${desocVar <= 0 ? "▼" : "▲"} ${nf1.format(Math.abs(desocVar))} p.p. em 12 meses`
+vbOcup     = nf1.format(ocupUlt.valor / 1000) + " mi"
+vbBrSaldo  = sinal(brMes.at(-1).saldo)
+vbBrMes    = "Novo CAGED · " + mes(brMes.at(-1).data)
+vbBrSaldo12 = sinal(brMes.at(-1).saldo12)
+vbBrAte    = "Novo CAGED · até " + mes(brMes.at(-1).data)
+brMes = movel12(d3.rollups(caged, v => ({
+    saldo: d3.sum(v, d => d.saldo), admissoes: d3.sum(v, d => d.admissoes),
+    desligamentos: d3.sum(v, d => d.desligamentos)}), d => +d.data)
+  .map(([t, o]) => ({data: new Date(t), ...o})).sort((a, b) => a.data - b.data), "saldo")
+```
+
+```{ojs}
+//| output: false
+// ---------------------------------------------------------------------------
+// Dados (gerados por dashboard/scripts/*.R com datacaged, datarais e SIDRA)
+// ---------------------------------------------------------------------------
+meta      = FileAttachment("data/meta.json").json()
+ufs       = FileAttachment("data/ufs.csv").csv({typed: true})
+pnadInd   = FileAttachment("data/pnadc_indicadores.csv").csv({typed: true})
+pnadPos   = FileAttachment("data/pnadc_posicao.csv").csv({typed: true})
+pnadAtiv  = FileAttachment("data/pnadc_atividade.csv").csv({typed: true})
+caged     = FileAttachment("data/caged_uf_secao.csv").csv({typed: true})
+cagedCont = FileAttachment("data/caged_contabil.csv").csv({typed: true})
+raisCont  = FileAttachment("data/rais_contabil.csv").csv({typed: true})
+raisGeral = FileAttachment("data/rais_geral.csv").csv({typed: true})
+```
+
+```{ojs}
+//| output: false
+// ---------------------------------------------------------------------------
+// Aparência: paleta validada (modo claro/escuro) e formatação pt-BR
+// ---------------------------------------------------------------------------
+escuro = Generators.observe(notify => {
+  const ver = () => notify(document.body.classList.contains("quarto-dark"));
+  ver();
+  const obs = new MutationObserver(ver);
+  obs.observe(document.body, {attributes: true, attributeFilter: ["class"]});
+  return () => obs.disconnect();
+})
+
+cor = escuro
+  ? {s1: "#3987e5", s2: "#d95926", s3: "#199e70", s4: "#c98500", neg: "#e66767",
+     tinta: "#E3E8EE", suave: "#A9B3BE", grade: "#22395A", base: "#3A4D63", fundo: "#0A1C31",
+     rampa: ["#184f95", "#256abf", "#3987e5", "#6da7ec"], apagado: "#3A4D63"}
+  : {s1: "#2a78d6", s2: "#eb6834", s3: "#1baf7a", s4: "#eda100", neg: "#e34948",
+     tinta: "#1E2935", suave: "#5A6470", grade: "#e6e9ee", base: "#c3c2b7", fundo: "#ffffff",
+     rampa: ["#86b6ef", "#3987e5", "#256abf", "#104281"], apagado: "#c9d3df"}
+
+estilo = Object.assign({}, {fontFamily: "Inter, system-ui, sans-serif", fontSize: "12px",
+  color: cor.tinta, background: "transparent", overflow: "visible"})
+
+nf   = new Intl.NumberFormat("pt-BR")
+nf1  = new Intl.NumberFormat("pt-BR", {minimumFractionDigits: 1, maximumFractionDigits: 1})
+brl  = new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL", maximumFractionDigits: 0})
+compacto = new Intl.NumberFormat("pt-BR", {notation: "compact", maximumFractionDigits: 1})
+sinal = v => (v > 0 ? "+" : v < 0 ? "−" : "") + nf.format(Math.abs(v))
+meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"]
+mes   = d => `${meses[d.getUTCMonth()]}/${d.getUTCFullYear()}`
+triMovel = d => {
+  const ini = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() - 2, 1));
+  return `${meses[ini.getUTCMonth()]}-${meses[d.getUTCMonth()]}/${d.getUTCFullYear()}`;
+}
+anoTick = d => String(d.getUTCFullYear())
+eixoAno = dados => {
+  const anos = d3.utcYear.count(d3.min(dados, d => d.data), d3.max(dados, d => d.data));
+  return {type: "utc", label: null, ticks: d3.utcYear.every(anos > 9 ? 2 : 1), tickFormat: anoTick};
+}
+
+secoes = new Map([
+  ["A", "Agropecuária"], ["B", "Indústrias extrativas"], ["C", "Indústria de transformação"],
+  ["D", "Eletricidade e gás"], ["E", "Água, esgoto e resíduos"], ["F", "Construção"],
+  ["G", "Comércio"], ["H", "Transporte e armazenagem"], ["I", "Alojamento e alimentação"],
+  ["J", "Informação e comunicação"], ["K", "Atividades financeiras"], ["L", "Atividades imobiliárias"],
+  ["M", "Atividades profissionais e técnicas"], ["N", "Atividades administrativas"],
+  ["O", "Administração pública"], ["P", "Educação"], ["Q", "Saúde e serviços sociais"],
+  ["R", "Artes, cultura e esporte"], ["S", "Outros serviços"], ["T", "Serviços domésticos"],
+  ["U", "Organismos internacionais"]
+])
+grupamento = s => s === "A" ? "Agropecuária" : "BCDE".includes(s) ? "Indústria"
+  : s === "F" ? "Construção" : s === "G" ? "Comércio" : "Serviços"
+siglaUF = new Map(ufs.map(d => [d.uf, d.sigla]))
+nomeUF  = new Map(ufs.map(d => [d.uf, d.nome_uf]))
+
+// soma móvel de 12 meses de uma série mensal ordenada [{data, v}]
+movel12 = (serie, campo) => serie.map((d, i) => ({...d,
+  [campo + "12"]: i >= 11 ? d3.sum(serie.slice(i - 11, i + 1), x => x[campo]) : null}))
+
+// barras de saldo (polaridade): positivo azul, negativo vermelho
+barrasSaldo = (dados, {altura = 300, y = "saldo", titulo = "Saldo"} = {}) => ({
+  style: estilo, height: altura, marginLeft: 56, marginRight: 12,
+  x: eixoAno(dados),
+  y: {label: null, grid: false, tickFormat: v => compacto.format(v)},
+  marks: [
+    Plot.gridY({stroke: cor.grade, strokeOpacity: 1}),
+    Plot.rectY(dados, {x1: d => d.data, x2: d => d3.utcMonth.offset(d.data, 1), y: y,
+      fill: d => d[y] >= 0 ? cor.s1 : cor.neg, insetLeft: 0.6, insetRight: 0.6, rx: 1.5}),
+    Plot.ruleY([0], {stroke: cor.base}),
+    Plot.tip(dados, Plot.pointerX({x: d => d3.utcDay.offset(d.data, 14), y: y,
+      title: d => `${mes(d.data)}\n${titulo}: ${sinal(d[y])}` +
+        (d.admissoes != null ? `\nAdmissões: ${nf.format(d.admissoes)}\nDesligamentos: ${nf.format(d.desligamentos)}` : "")}))
+  ]
+})
+
+// linha simples com rótulo no fim
+linha = (dados, {y = "valor", altura = 300, fmt = nf1.format, rotulo = d => fmt(d[y]),
+                 tituloTip = d => mes(d.data), zero = false, cor1 = cor.s1} = {}) => {
+  const ult = dados.at(-1);
+  return ({
+    style: estilo, height: altura, marginLeft: 52, marginRight: 64,
+    x: eixoAno(dados),
+    y: {label: null, zero, tickFormat: v => compacto.format(v)},
+    marks: [
+      Plot.gridY({stroke: cor.grade, strokeOpacity: 1}),
+      zero ? Plot.ruleY([0], {stroke: cor.base}) : null,
+      Plot.areaY(dados, {x: "data", y1: zero ? 0 : d3.min(dados, d => d[y]), y2: y, fill: cor1, fillOpacity: 0.08}),
+      Plot.lineY(dados, {x: "data", y, stroke: cor1, strokeWidth: 2}),
+      Plot.dot([ult], {x: "data", y, r: 4, fill: cor1, stroke: cor.fundo, strokeWidth: 2}),
+      Plot.text([ult], {x: "data", y, text: rotulo, dx: 8, textAnchor: "start", fill: cor.tinta, fontWeight: 600}),
+      Plot.ruleX(dados, Plot.pointerX({x: "data", stroke: cor.suave, strokeOpacity: 0.5})),
+      Plot.tip(dados, Plot.pointerX({x: "data", y, title: d => `${tituloTip(d)}\n${fmt(d[y])}`}))
+    ]
+  });
+}
+
+// rótulos de barras horizontais com sinal: positivos na ponta; negativos logo à direita do zero
+rotulosSinal = (dados, campo, eixo, texto, extra = {}) => [
+  Plot.text(dados.filter(d => d[campo] >= 0), {y: eixo, x: campo, text: texto, dx: 6, textAnchor: "start", fill: cor.tinta, ...extra}),
+  Plot.text(dados.filter(d => d[campo] < 0),  {y: eixo, x: () => 0, text: texto, dx: 6, textAnchor: "start", fill: cor.tinta, ...extra})
+]
+
+// domínio com folga para os rótulos de barras com sinal
+dominioSinal = (dados, campo) => {
+  const mn = Math.min(0, d3.min(dados, d => d[campo])), mx = Math.max(0, d3.max(dados, d => d[campo]));
+  const span = mx - mn;
+  return [mn, Math.max(mx + 0.16 * span, 0.22 * span)];
+}
+
+// legenda em HTML (identidade nunca só por cor no texto)
+legenda = itens => htl.html`<div class="painel-legenda">${itens.map(([nome, c]) =>
+  htl.html`<span><i style="background:${c}"></i>${nome}</span>`)}</div>`
+```
+
+## Row {height="70px"}
+
+::: {.painel-nota}
+Fontes: IBGE, PNAD Contínua (SIDRA); Ministério do Trabalho e Emprego, Novo CAGED (microdados via pacote
+[dataCAGED](../pacotes/datacaged.qmd)). Saldo com ajustes: movimentações declaradas no prazo, fora do prazo e exclusões.
+Atualizado em ${new Date(meta.atualizado_em + "T12:00").toLocaleDateString("pt-BR")}.
+:::
+
+# PNAD Contínua
+
+## {.sidebar}
+
+```{ojs}
+viewof inicioPnad = Inputs.range([2012, 2026], {label: "A partir de", step: 1, value: 2019})
+```
+
+::: {.painel-nota}
+Trimestres móveis da Pesquisa Nacional por Amostra de Domicílios Contínua (PNAD Contínua), IBGE.
+Pessoas de 14 anos ou mais. Rendimentos em valores reais do último trimestre.
+:::
+
+## Row
+
+```{ojs}
+//| output: false
+pnadFiltro = d => d.data.getUTCFullYear() >= inicioPnad
+miniInd = [
+  ["pia", "População em idade de trabalhar", "milhões de pessoas"],
+  ["forca", "Força de trabalho", "milhões de pessoas"],
+  ["ocupados", "Ocupados", "milhões de pessoas"],
+  ["desocupados", "Desocupados", "milhões de pessoas"],
+  ["fora", "Fora da força de trabalho", "milhões de pessoas"],
+  ["tx_desocup", "Taxa de desocupação", "%"],
+  ["nivel_ocup", "Nível da ocupação", "%"],
+  ["tx_partic", "Taxa de participação", "%"]
+]
+mini = (dados, titulo, unidade, fmt) => htl.html`<div class="painel-mini">
+  <div class="painel-mini-titulo">${titulo} <span>${unidade}</span></div>
+  ${Plot.plot({...linha(dados, {altura: 170, fmt, tituloTip: d => triMovel(d.data)}), width: 380})}</div>`
+```
+
+::: {.panel-tabset}
+
+### Principais indicadores
+
+```{ojs}
+htl.html`<div class="painel-grade">${miniInd.map(([id, t, u]) =>
+  mini(pnadInd.filter(d => d.indicador === id && pnadFiltro(d))
+         .map(d => u === "%" ? d : {...d, valor: d.valor / 1000}), t, u, nf1.format))}</div>`
+```
+
+### Posição na ocupação
+
+```{ojs}
+htl.html`<div class="painel-grade">${[...new Set(pnadPos.map(d => d.categoria))].map(c =>
+  mini(pnadPos.filter(d => d.categoria === c && pnadFiltro(d)).map(d => ({...d, valor: d.valor / 1000})),
+       c, "milhões de pessoas", nf1.format))}</div>`
+```
+
+### Grupamentos de atividade
+
+```{ojs}
+ativUlt = {
+  const ult = d3.max(pnadAtiv, d => d.data), ant = d3.utcMonth.offset(ult, -12);
+  const ant12 = new Map(pnadAtiv.filter(d => +d.data === +ant).map(d => [d.categoria, d.valor]));
+  return pnadAtiv.filter(d => +d.data === +ult)
+    .map(d => ({...d, nome: d.categoria.split(",")[0].replace(" e atividades financeiras", ""),
+                variacao: d.valor - ant12.get(d.categoria)}))
+    .sort((a, b) => b.valor - a.valor);
+}
+htl.html`<div class="painel-duas">
+<div><div class="painel-mini-titulo">Ocupados por grupamento <span>milhões de pessoas · ${triMovel(ativUlt[0].data)}</span></div>
+${Plot.plot({style: estilo, marginLeft: 230, marginRight: 70, height: 360, width: 560,
+  x: {label: null, grid: true, tickFormat: v => nf.format(v / 1000)}, y: {label: null},
+  marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+    Plot.barX(ativUlt, {y: "nome", x: "valor", fill: cor.s1, sort: {y: "-x"}, rx: 3, insetTop: 4, insetBottom: 4}),
+    Plot.text(ativUlt, {y: "nome", x: "valor", text: d => nf1.format(d.valor / 1000), dx: 6, textAnchor: "start", fill: cor.tinta}),
+    Plot.ruleX([0], {stroke: cor.base}),
+    Plot.tip(ativUlt, Plot.pointerY({y: "nome", x: "valor", title: d => `${d.categoria}\n${nf.format(Math.round(d.valor))} mil pessoas`}))]})}
+</div>
+<div><div class="painel-mini-titulo">Variação em 12 meses <span>mil pessoas</span></div>
+${Plot.plot({style: estilo, marginLeft: 230, marginRight: 50, height: 360, width: 560,
+  x: {label: null, grid: true, domain: dominioSinal(ativUlt, "variacao")}, y: {label: null, domain: ativUlt.map(d => d.nome)},
+  marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+    Plot.barX(ativUlt, {y: "nome", x: "variacao", fill: d => d.variacao >= 0 ? cor.s1 : cor.neg, rx: 3, insetTop: 4, insetBottom: 4}),
+    ...rotulosSinal(ativUlt, "variacao", "nome", d => sinal(Math.round(d.variacao))),
+    Plot.ruleX([0], {stroke: cor.base}),
+    Plot.tip(ativUlt, Plot.pointerY({y: "nome", x: "variacao", title: d => `${d.categoria}\n${sinal(Math.round(d.variacao))} mil em 12 meses`}))]})}
+</div></div>`
+```
+
+### Rendimentos
+
+```{ojs}
+htl.html`<div class="painel-duas">
+${mini(pnadInd.filter(d => d.indicador === "rend_medio" && pnadFiltro(d)), "Rendimento médio real habitual", "R$", v => brl.format(v))}
+${mini(pnadInd.filter(d => d.indicador === "massa_rend" && pnadFiltro(d)).map(d => ({...d, valor: d.valor / 1000})),
+       "Massa de rendimento real habitual", "R$ bilhões", nf1.format)}
+</div>`
+```
+
+:::
+
+# Novo CAGED
+
+## {.sidebar}
+
+```{ojs}
+viewof ufSel = Inputs.select(new Map([["Brasil", 0], ...ufs.map(d => [d.nome_uf, d.uf])]), {label: "Unidade da Federação", value: 0})
+viewof setorSel = Inputs.select(new Map([["Todos os setores", "*"],
+  ...["Agropecuária", "Indústria", "Construção", "Comércio", "Serviços"].map(g => [`${g} (grupamento)`, "g:" + g]),
+  ...[...secoes].map(([k, v]) => [`${k} · ${v}`, k])]), {label: "Setor de atividade", value: "*"})
+viewof inicioCaged = Inputs.range([2020, 2026], {label: "A partir de", step: 1, value: 2020})
+```
+
+::: {.painel-nota}
+Novo CAGED (MTE), a partir de janeiro de 2020. Saldo = admissões − desligamentos, com declarações fora
+do prazo e exclusões. Salário médio de admissão: média nominal, contratos com jornada e salário válidos.
+:::
+
+## Column
+
+### Row {height="180px"}
+
+::: {.valuebox icon="briefcase-fill" color="#133355"}
+Saldo no mês
+
+${vbSelSaldo}
+
+${vbSelCap}
+:::
+
+::: {.valuebox icon="calendar3" color="#1B4472"}
+Saldo em 12 meses
+
+${vbSelSaldo12}
+
+${vbSelAte}
+:::
+
+::: {.valuebox icon="arrow-left-right" color="#0F2A48"}
+Admissões em 12 meses
+
+${vbSelAdm}
+
+${vbSelDesl}
+:::
+
+::: {.valuebox icon="cash-coin" color="#E0A82E"}
+Salário médio de admissão
+
+${vbSelSal}
+
+média dos últimos 12 meses
+:::
+
+```{ojs}
+//| output: false
+filtroSetor = d => setorSel === "*" ? true : setorSel.startsWith("g:")
+  ? grupamento(d.secao) === setorSel.slice(2) : d.secao === setorSel
+rotuloSel = (ufSel === 0 ? "Brasil" : siglaUF.get(ufSel)) +
+  (setorSel === "*" ? "" : " · " + (setorSel.startsWith("g:") ? setorSel.slice(2) : secoes.get(setorSel)))
+selMes = movel12(d3.rollups(caged.filter(d => (ufSel === 0 || d.uf === ufSel) && filtroSetor(d)),
+    v => ({saldo: d3.sum(v, d => d.saldo), admissoes: d3.sum(v, d => d.admissoes),
+           desligamentos: d3.sum(v, d => d.desligamentos), sal_soma: d3.sum(v, d => d.sal_soma),
+           sal_n: d3.sum(v, d => d.sal_n)}), d => +d.data)
+  .map(([t, o]) => ({data: new Date(t), ...o})).sort((a, b) => a.data - b.data), "saldo")
+selPeriodo = selMes.filter(d => d.data.getUTCFullYear() >= inicioCaged)
+ult12 = d3.utcMonth.offset(d3.max(caged, d => d.data), -11)
+vbSelSaldo   = sinal(selMes.at(-1).saldo)
+vbSelCap     = rotuloSel + " · " + mes(selMes.at(-1).data)
+vbSelSaldo12 = sinal(selMes.at(-1).saldo12)
+vbSelAte     = "até " + mes(selMes.at(-1).data)
+vbSelAdm     = compacto.format(d3.sum(selMes.slice(-12), d => d.admissoes))
+vbSelDesl    = "desligamentos: " + compacto.format(d3.sum(selMes.slice(-12), d => d.desligamentos))
+vbSelSal     = brl.format(d3.sum(selMes.slice(-12), d => d.sal_soma) / d3.sum(selMes.slice(-12), d => d.sal_n))
+```
+
+### Row {height="380px"}
+
+```{ojs}
+//| title: "Saldo mensal"
+Plot.plot({...barrasSaldo(selPeriodo, {titulo: "Saldo", altura: 300})})
+```
+
+```{ojs}
+//| title: "Admissões e desligamentos"
+{
+  const longo = selPeriodo.flatMap(d => [
+    {data: d.data, serie: "Admissões", valor: d.admissoes},
+    {data: d.data, serie: "Desligamentos", valor: d.desligamentos}]);
+  const fim = longo.slice(-2);
+  return htl.html`${legenda([["Admissões", cor.s1], ["Desligamentos", cor.s2]])}
+  ${Plot.plot({style: estilo, height: 270, marginLeft: 56, marginRight: 16,
+    x: eixoAno(selPeriodo), y: {label: null, tickFormat: v => compacto.format(v)},
+    color: {domain: ["Admissões", "Desligamentos"], range: [cor.s1, cor.s2]},
+    marks: [Plot.gridY({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.lineY(longo, {x: "data", y: "valor", stroke: "serie", strokeWidth: 2}),
+      Plot.dot(fim, {x: "data", y: "valor", fill: "serie", r: 4, stroke: cor.fundo, strokeWidth: 2}),
+      Plot.ruleX(selPeriodo, Plot.pointerX({x: "data", stroke: cor.suave, strokeOpacity: 0.5})),
+      Plot.tip(selPeriodo, Plot.pointerX({x: "data", y: "admissoes",
+        title: d => `${mes(d.data)}\nAdmissões: ${nf.format(d.admissoes)}\nDesligamentos: ${nf.format(d.desligamentos)}`}))]})}`;
+}
+```
+
+### Row {height="660px"}
+
+```{ojs}
+//| title: "Saldo em 12 meses por Unidade da Federação"
+{
+  const dados = d3.rollups(caged.filter(d => d.data >= ult12 && filtroSetor(d)), v => d3.sum(v, d => d.saldo), d => d.uf)
+    .map(([uf, saldo]) => ({uf, sigla: siglaUF.get(uf), nome: nomeUF.get(uf), saldo}));
+  return Plot.plot({style: estilo, height: 590, marginLeft: 36, marginRight: 64, marginBottom: 32,
+    x: {label: null, tickFormat: v => compacto.format(v), domain: dominioSinal(dados, "saldo")}, y: {label: null},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barX(dados, {y: "sigla", x: "saldo", sort: {y: "-x"}, rx: 3, insetTop: 2, insetBottom: 2,
+        fill: d => ufSel === 0 || d.uf === ufSel ? (d.saldo >= 0 ? cor.s1 : cor.neg) : cor.apagado}),
+      ...rotulosSinal(dados, "saldo", "sigla", d => sinal(d.saldo), {fontSize: 10.5}),
+      Plot.ruleX([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointerY({y: "sigla", x: "saldo", title: d => `${d.nome}\nSaldo em 12 meses: ${sinal(d.saldo)}`}))]});
+}
+```
+
+```{ojs}
+//| title: "Saldo em 12 meses por setor (seção CNAE)"
+{
+  const dados = d3.rollups(caged.filter(d => d.data >= ult12 && (ufSel === 0 || d.uf === ufSel) && d.secao !== "U"),
+      v => d3.sum(v, d => d.saldo), d => d.secao)
+    .map(([s, saldo]) => ({secao: s, nome: secoes.get(s), saldo}));
+  return Plot.plot({style: estilo, height: 590, marginLeft: 230, marginRight: 64, marginBottom: 32,
+    x: {label: null, tickFormat: v => compacto.format(v), domain: dominioSinal(dados, "saldo")}, y: {label: null},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barX(dados, {y: "nome", x: "saldo", sort: {y: "-x"}, rx: 3, insetTop: 2, insetBottom: 2,
+        fill: d => filtroSetor(d) ? (d.saldo >= 0 ? cor.s1 : cor.neg) : cor.apagado}),
+      ...rotulosSinal(dados, "saldo", "nome", d => sinal(d.saldo), {fontSize: 10.5}),
+      Plot.ruleX([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointerY({y: "nome", x: "saldo", title: d => `${d.nome}\nSaldo em 12 meses: ${sinal(d.saldo)}`}))]});
+}
+```
+
+### Row {height="420px"}
+
+```{ojs}
+//| title: "Tabela: série mensal da seleção"
+Inputs.table(selPeriodo.slice().reverse().map(d => ({
+  "Competência": mes(d.data), "Admissões": d.admissoes, "Desligamentos": d.desligamentos,
+  "Saldo": d.saldo, "Saldo em 12 meses": d.saldo12,
+  "Salário médio de admissão (R$)": d.sal_n ? Math.round(d.sal_soma / d.sal_n) : null})),
+  {format: {"Admissões": nf.format, "Desligamentos": nf.format, "Saldo": sinal,
+            "Saldo em 12 meses": v => v == null ? "" : sinal(v), "Salário médio de admissão (R$)": nf.format},
+   layout: "auto", rows: 14})
+```
+
+# Profissionais contábeis
+
+## {.sidebar}
+
+```{ojs}
+viewof grupoSel = Inputs.select(new Map([["Todos os profissionais contábeis", "*"],
+  ["Contadores e auditores (CBO 2522)", "Contadores e auditores"],
+  ["Técnicos em contabilidade (CBO 3511)", "Técnicos em contabilidade"]]), {label: "Ocupação", value: "*"})
+viewof ufCont = Inputs.select(new Map([["Brasil", 0], ...ufs.map(d => [d.nome_uf, d.uf])]), {label: "Unidade da Federação", value: 0})
+```
+
+::: {.painel-nota}
+Ocupações da Classificação Brasileira de Ocupações (CBO 2002): família 2522 (contadores e afins) e
+família 3511 (técnicos em contabilidade). Estoque e remuneração: RAIS ${meta.rais_ano}, vínculos ativos em
+31/12. Fluxos: Novo CAGED.
+:::
+
+```{ojs}
+//| output: false
+fGrupo = d => grupoSel === "*" || d.grupo === grupoSel
+fUF    = d => ufCont === 0 || d.uf === ufCont
+contMes = movel12(d3.rollups(cagedCont.filter(d => fGrupo(d) && fUF(d)),
+    v => ({saldo: d3.sum(v, d => d.saldo), admissoes: d3.sum(v, d => d.admissoes),
+           desligamentos: d3.sum(v, d => d.desligamentos)}), d => +d.data)
+  .map(([t, o]) => ({data: new Date(t), ...o})).sort((a, b) => a.data - b.data), "saldo")
+raisSel = raisCont.filter(d => fGrupo(d) && fUF(d))
+raisVinc = d3.sum(raisSel, d => d.vinculos)
+raisRem  = d3.sum(raisSel, d => d.rem_soma) / d3.sum(raisSel, d => d.rem_n)
+pctMulher = d3.sum(raisSel.filter(d => d.sexo === "Mulheres"), d => d.vinculos) / raisVinc
+contSal12 = {
+  const v = cagedCont.filter(d => fGrupo(d) && fUF(d) && d.data >= ult12);
+  return d3.sum(v, d => d.sal_soma) / d3.sum(v, d => d.sal_n);
+}
+rotuloCont = (grupoSel === "*" ? "Profissionais contábeis" : grupoSel) + " · " + (ufCont === 0 ? "Brasil" : siglaUF.get(ufCont))
+vbContVinc    = nf.format(raisVinc)
+vbContVincCap = `RAIS ${meta.rais_ano} · ${rotuloCont}`
+vbContRem     = brl.format(raisRem)
+vbContRemCap  = `dezembro de ${meta.rais_ano} (RAIS)`
+vbContFem     = nf1.format(100 * pctMulher) + "%"
+vbContFemCap  = `dos vínculos ativos (RAIS ${meta.rais_ano})`
+vbContSaldo12 = sinal(contMes.at(-1).saldo12)
+vbContAte     = "Novo CAGED · até " + mes(contMes.at(-1).data)
+```
+
+## Column
+
+### Row {height="180px"}
+
+::: {.valuebox icon="person-badge" color="#133355"}
+Vínculos ativos
+
+${vbContVinc}
+
+${vbContVincCap}
+:::
+
+::: {.valuebox icon="cash-stack" color="#1B4472"}
+Remuneração média
+
+${vbContRem}
+
+${vbContRemCap}
+:::
+
+::: {.valuebox icon="gender-female" color="#0F2A48"}
+Participação feminina
+
+${vbContFem}
+
+${vbContFemCap}
+:::
+
+::: {.valuebox icon="calendar3" color="#E0A82E"}
+Saldo em 12 meses
+
+${vbContSaldo12}
+
+${vbContAte}
+:::
+
+### Row {height="420px"}
+
+```{ojs}
+//| title: "Saldo mensal de empregos formais (Novo CAGED)"
+Plot.plot({...barrasSaldo(contMes, {titulo: "Saldo", altura: 300})})
+```
+
+```{ojs}
+//| title: "Salário médio de admissão por sexo (média móvel de 12 meses, R$)"
+{
+  const porSexo = ["Homens", "Mulheres"].flatMap(sx => {
+    const serie = d3.rollups(cagedCont.filter(d => fGrupo(d) && fUF(d) && d.sexo === (sx === "Homens" ? 1 : 3)),
+        v => ({sal_soma: d3.sum(v, d => d.sal_soma), sal_n: d3.sum(v, d => d.sal_n)}), d => +d.data)
+      .map(([t, o]) => ({data: new Date(t), ...o})).sort((a, b) => a.data - b.data);
+    return serie.map((d, i) => i < 11 ? null : ({data: d.data, sexo: sx,
+      valor: d3.sum(serie.slice(i - 11, i + 1), x => x.sal_soma) / d3.sum(serie.slice(i - 11, i + 1), x => x.sal_n)}))
+      .filter(Boolean);
+  });
+  const fim = ["Homens", "Mulheres"].map(sx => porSexo.filter(d => d.sexo === sx).at(-1)).filter(Boolean);
+  const largo = d3.rollups(porSexo, v => Object.fromEntries(v.map(d => [d.sexo, d.valor])), d => +d.data)
+    .map(([t, o]) => ({data: new Date(t), ...o}));
+  return htl.html`${legenda([["Homens", cor.s1], ["Mulheres", cor.s2]])}
+  ${Plot.plot({style: estilo, height: 290, marginLeft: 56, marginRight: 80, marginBottom: 28,
+    x: eixoAno(porSexo), y: {label: null, tickFormat: v => nf.format(v)},
+    color: {domain: ["Homens", "Mulheres"], range: [cor.s1, cor.s2]},
+    marks: [Plot.gridY({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.lineY(porSexo, {x: "data", y: "valor", stroke: "sexo", strokeWidth: 2}),
+      Plot.dot(fim, {x: "data", y: "valor", fill: "sexo", r: 4, stroke: cor.fundo, strokeWidth: 2}),
+      Plot.text(fim, {x: "data", y: "valor", text: d => brl.format(d.valor), dx: 8, textAnchor: "start", fill: cor.tinta}),
+      Plot.ruleX(largo, Plot.pointerX({x: "data", stroke: cor.suave, strokeOpacity: 0.5})),
+      Plot.tip(largo, Plot.pointerX({x: "data", y: "Homens",
+        title: d => `12 meses até ${mes(d.data)}\nHomens: ${brl.format(d.Homens)}\nMulheres: ${brl.format(d.Mulheres)}`}))]})}`;
+}
+```
+
+### Row {height="660px"}
+
+```{ojs}
+//| title: "Vínculos ativos por Unidade da Federação (RAIS)"
+{
+  const dados = d3.rollups(raisCont.filter(fGrupo), v => d3.sum(v, d => d.vinculos), d => d.uf)
+    .map(([uf, n]) => ({uf, sigla: siglaUF.get(uf), nome: nomeUF.get(uf), n}));
+  return Plot.plot({style: estilo, height: 590, marginLeft: 36, marginRight: 64, marginBottom: 32,
+    x: {label: null, tickFormat: v => compacto.format(v)}, y: {label: null},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barX(dados, {y: "sigla", x: "n", sort: {y: "-x"}, rx: 3, insetTop: 2, insetBottom: 2,
+        fill: d => ufCont === 0 || d.uf === ufCont ? cor.s1 : cor.apagado}),
+      Plot.text(dados, {y: "sigla", x: "n", text: d => nf.format(d.n), dx: 6, textAnchor: "start", fill: cor.tinta, fontSize: 10.5}),
+      Plot.ruleX([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointerY({y: "sigla", x: "n", title: d => `${d.nome}\n${nf.format(d.n)} vínculos ativos`}))]});
+}
+```
+
+```{ojs}
+//| title: "Remuneração média por raça/cor e sexo (RAIS, dezembro, R$)"
+{
+  const ordem = ["Branca", "Parda", "Preta", "Outras"];
+  const dados = d3.rollups(raisSel.filter(d => d.raca !== "Não informada"),
+      v => ({rem: d3.sum(v, d => d.rem_soma) / d3.sum(v, d => d.rem_n), n: d3.sum(v, d => d.vinculos)}),
+      d => d.raca, d => d.sexo)
+    .flatMap(([raca, xs]) => xs.map(([sexo, o]) => ({raca, sexo, ...o})))
+    .filter(d => d.n >= 30);
+  return htl.html`${legenda([["Homens", cor.s1], ["Mulheres", cor.s2]])}
+  ${Plot.plot({style: estilo, height: 440, marginLeft: 60, marginRight: 20, marginBottom: 36,
+    fx: {domain: ordem, label: null, padding: 0.18}, x: {domain: ["Homens", "Mulheres"], axis: null},
+    y: {label: null, tickFormat: v => compacto.format(v), grid: false},
+    color: {domain: ["Homens", "Mulheres"], range: [cor.s1, cor.s2]},
+    marks: [Plot.gridY({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barY(dados, {fx: "raca", x: "sexo", y: "rem", fill: "sexo", rx: 3, insetLeft: 14, insetRight: 14}),
+      Plot.text(dados, {fx: "raca", x: "sexo", y: "rem", text: d => compacto.format(d.rem), dy: -8, fill: cor.tinta, fontSize: 10.5}),
+      Plot.ruleY([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointer({fx: "raca", x: "sexo", y: "rem",
+        title: d => `${d.raca} · ${d.sexo}\nRemuneração média: ${brl.format(d.rem)}\nVínculos: ${nf.format(d.n)}`}))]})}`;
+}
+```
+
+### Row {height="380px"}
+
+```{ojs}
+//| title: "Vínculos ativos por escolaridade (RAIS)"
+{
+  const ordem = ["Até médio completo", "Superior incompleto", "Superior completo", "Pós-graduação"];
+  const dados = ordem.map((e, i) => ({e, n: d3.sum(raisSel.filter(d => d.escolaridade === e), d => d.vinculos), c: cor.rampa[i]}));
+  const tot = d3.sum(dados, d => d.n);
+  return Plot.plot({style: estilo, height: 300, marginLeft: 150, marginRight: 90,
+    x: {label: null, tickFormat: v => compacto.format(v)}, y: {domain: ordem, label: null},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barX(dados, {y: "e", x: "n", fill: "c", rx: 3, insetTop: 18, insetBottom: 18}),
+      Plot.text(dados, {y: "e", x: "n", text: d => `${nf.format(d.n)} (${nf1.format(100 * d.n / tot)}%)`, dx: 6, textAnchor: "start", fill: cor.tinta}),
+      Plot.ruleX([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointerY({y: "e", x: "n", title: d => `${d.e}\n${nf.format(d.n)} vínculos (${nf1.format(100 * d.n / tot)}%)`}))]});
+}
+```
+
+```{ojs}
+//| title: "Vínculos ativos por faixa etária (RAIS)"
+{
+  const ordem = ["Até 24 anos", "25 a 34 anos", "35 a 44 anos", "45 a 54 anos", "55 anos ou mais"];
+  const rampa5 = escuro ? ["#184f95", "#256abf", "#3987e5", "#6da7ec", "#9ec5f4"] : ["#86b6ef", "#3987e5", "#256abf", "#1c5cab", "#104281"];
+  const dados = ordem.map((e, i) => ({e, n: d3.sum(raisSel.filter(d => d.faixa_etaria === e), d => d.vinculos), c: rampa5[i]}));
+  const tot = d3.sum(dados, d => d.n);
+  return Plot.plot({style: estilo, height: 300, marginLeft: 120, marginRight: 90,
+    x: {label: null, tickFormat: v => compacto.format(v)}, y: {domain: ordem, label: null},
+    marks: [Plot.gridX({stroke: cor.grade, strokeOpacity: 1}),
+      Plot.barX(dados, {y: "e", x: "n", fill: "c", rx: 3, insetTop: 12, insetBottom: 12}),
+      Plot.text(dados, {y: "e", x: "n", text: d => `${nf.format(d.n)} (${nf1.format(100 * d.n / tot)}%)`, dx: 6, textAnchor: "start", fill: cor.tinta}),
+      Plot.ruleX([0], {stroke: cor.base}),
+      Plot.tip(dados, Plot.pointerY({y: "e", x: "n", title: d => `${d.e}\n${nf.format(d.n)} vínculos (${nf1.format(100 * d.n / tot)}%)`}))]});
+}
+```
+
+# Sobre
+
+## Row
+
+::: {.card title="Sobre o painel"}
+
+O **Painel do Mercado de Trabalho** do Grupo de Estudos sobre Contabilidade e Mercado de Trabalho (GECOMT/UFERSA)
+reúne indicadores do mercado de trabalho brasileiro e um recorte dedicado aos profissionais contábeis. O painel
+substitui a versão anterior, publicada no shinyapps.io, e passa a ser gerado como página estática a partir de
+scripts reprodutíveis, o que dispensa servidor e facilita a atualização.
+
+**Fontes de dados**
+
+- **PNAD Contínua (IBGE)**: indicadores de força de trabalho, ocupação e rendimentos em trimestres móveis,
+  obtidos pela API do Sistema IBGE de Recuperação Automática (SIDRA), tabelas 6318, 6320, 6323, 6379, 6381,
+  6390 e 6392. A taxa de participação é calculada como a razão entre a força de trabalho e a população de
+  14 anos ou mais (tabela 6318).
+- **Novo CAGED (MTE)**: microdados de movimentações, declarações fora do prazo e exclusões, a partir de janeiro
+  de 2020, obtidos com o pacote R [dataCAGED](../pacotes/datacaged.qmd).
+- **RAIS (MTE)**: microdados de vínculos do ano mais recente disponível, obtidos com o pacote R
+  [dataRAIS](../pacotes/datarais.qmd).
+
+**Notas metodológicas**
+
+- **Saldo do CAGED**: admissões menos desligamentos por competência, somando as declarações fora do prazo e
+  descontando as exclusões, como nas estatísticas oficiais com ajustes. Os totais podem diferir ligeiramente da
+  divulgação do MTE em função de revisões posteriores dos arquivos.
+- **Salário médio de admissão**: média nominal dos salários de admissão, considerando contratos com jornada
+  informada e salário entre R$ 300 e R$ 100 mil.
+- **Profissionais contábeis**: famílias 2522 (contadores e afins) e 3511 (técnicos em contabilidade) da CBO 2002.
+- **RAIS**: vínculos ativos em 31 de dezembro (sem desligamento no ano) e remuneração nominal de dezembro,
+  considerando remunerações positivas.
+
+**Atualização**
+
+Os dados são gerados pelos scripts da pasta
+[`dashboard/scripts`](https://github.com/gecomt/gecomt.github.io/tree/main/dashboard/scripts):
+`01_caged.R`, `02_pnadc.R`, `03_rais.R` e `04_exportar.R`. Após executá-los, basta renderizar o site
+com `quarto render` e publicar.
+
+:::

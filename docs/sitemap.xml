@@ -2,62 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gecomt.github.io/producao.html</loc>
-    <lastmod>2026-11-13T19:19:30.000Z</lastmod>
+    <lastmod>2026-11-19T12:50:37.982Z</lastmod>
   </url>
   <url>
-    <loc>https://gecomt.github.io/pacotes/datarais.html</loc>
-    <lastmod>2026-11-13T19:20:50.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/index.html</loc>
-    <lastmod>2026-11-13T19:12:11.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/index.html</loc>
-    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/index.html</loc>
-    <lastmod>2026-11-13T19:19:30.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/index.html</loc>
-    <lastmod>2026-11-13T21:21:35.022Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/index.html</loc>
-    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/equipe.html</loc>
-    <lastmod>2026-11-13T19:12:11.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/index.html</loc>
-    <lastmod>2026-11-13T19:19:30.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/index.html</loc>
-    <lastmod>2026-11-13T19:18:34.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html</loc>
-    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/index.html</loc>
-    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
-  </url>
-  <url>
-    <loc>https://gecomt.github.io/sobre.html</loc>
-    <lastmod>2026-11-13T21:21:25.169Z</lastmod>
+    <loc>https://gecomt.github.io/index.html</loc>
+    <lastmod>2026-11-13T21:21:25.168Z</lastmod>
   </url>
   <url>
     <loc>https://gecomt.github.io/pacotes/datacaged.html</loc>
     <lastmod>2026-11-13T19:20:50.000Z</lastmod>
   </url>
   <url>
-    <loc>https://gecomt.github.io/index.html</loc>
-    <lastmod>2026-11-13T21:21:25.168Z</lastmod>
+    <loc>https://gecomt.github.io/sobre.html</loc>
+    <lastmod>2026-11-13T21:21:25.169Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2024-08-14-treinamento-r-rstudio/index.html</loc>
+    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2024-08-11-instalacao-r-rstudio-rtools/index.html</loc>
+    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2026-11-13-microdados-novo-caged/index.html</loc>
+    <lastmod>2026-11-13T19:18:34.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datarais/index.html</loc>
+    <lastmod>2026-11-13T19:19:30.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/equipe.html</loc>
+    <lastmod>2026-11-13T19:12:11.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2024-08-11-boas-praticas-r/index.html</loc>
+    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2026-11-13-boas-vindas/index.html</loc>
+    <lastmod>2026-11-13T21:21:35.022Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2026-11-13-conheca-o-datacaged/index.html</loc>
+    <lastmod>2026-11-13T19:19:30.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/posts/2024-08-11-contador-mercado-trabalho/index.html</loc>
+    <lastmod>2026-11-13T19:25:36.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/blog/index.html</loc>
+    <lastmod>2026-11-13T19:12:11.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/pacotes/datarais.html</loc>
+    <lastmod>2026-11-13T19:20:50.000Z</lastmod>
+  </url>
+  <url>
+    <loc>https://gecomt.github.io/dashboard/index.html</loc>
+    <lastmod>2026-11-19T13:59:12.155Z</lastmod>
   </url>
 </urlset>
