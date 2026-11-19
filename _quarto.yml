@@ -25,28 +25,31 @@ website:
         href: sobre.qmd
       - text: "Equipe"
         href: equipe.qmd
-      - text: "Pacotes"
+      - text: "Produção"
         menu:
+          - text: "Pacotes R"
           - text: "dataCAGED"
             href: pacotes/datacaged.qmd
           - text: "dataRAIS"
             href: pacotes/datarais.qmd
-      - text: "Produção"
-        href: producao.qmd
-      - text: "Blog"
-        href: blog/index.qmd
-      - text: "Painel"
-        href: dashboard/index.qmd
-      - text: "Projetos"
-        menu:
-          - text: "Painel do Mercado de Trabalho"
-            href: dashboard/index.qmd
+          - text: "---"
+          - text: "Dados abertos (CAGED e RAIS)"
+            href: producao.qmd#dados-abertos
+          - text: "---"
+          - text: "Projetos parceiros"
           - text: "contabiliDados"
             href: https://contabilidados.com.br/
             target: _blank
           - text: "Regulariza"
             href: https://regulariza.shinyapps.io/dashboard/
             target: _blank
+          - text: "---"
+          - text: "Ver toda a produção"
+            href: producao.qmd
+      - text: "Painel"
+        href: dashboard/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
     tools:
       - icon: github
         href: https://github.com/gecomt
