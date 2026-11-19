@@ -36,14 +36,6 @@ website:
           - text: "Dados abertos (CAGED e RAIS)"
             href: producao.qmd#dados-abertos
           - text: "---"
-          - text: "Projetos parceiros"
-          - text: "contabiliDados"
-            href: https://contabilidados.com.br/
-            target: _blank
-          - text: "Regulariza"
-            href: https://regulariza.shinyapps.io/dashboard/
-            target: _blank
-          - text: "---"
           - text: "Ver toda a produção"
             href: producao.qmd
       - text: "Painel"

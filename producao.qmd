@@ -77,35 +77,6 @@ Microdados da RAIS (vínculos, estabelecimentos e trabalho doméstico), organiza
 :::
 :::
 
-## Projetos parceiros
-
-::: {.grid .gap-4}
-::: {.g-col-12 .g-col-md-6}
-::: {.gecomt-card}
-[`<i class="bi bi-bar-chart-line-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
-
-### contabiliDados
-
-Grupo dedicado à contabilidade e ciência de dados, com materiais, eventos e aplicativos sobre
-informações contábeis de companhias abertas.
-
-[contabilidados.com.br](https://contabilidados.com.br/)
-:::
-:::
-
-::: {.g-col-12 .g-col-md-6}
-::: {.gecomt-card}
-[`<i class="bi bi-clipboard-data-fill" aria-hidden="true"></i>`{=html}]{.gecomt-icon}
-
-### Regulariza
-
-Painel interativo do projeto Regulariza.
-
-[Abrir o painel](https://regulariza.shinyapps.io/dashboard/)
-:::
-:::
-:::
-
 ::: {.callout-note appearance="simple"}
 Esta página é atualizada continuamente. Artigos, capítulos, trabalhos em eventos e trabalhos
 orientados podem ser incluídos em novas seções, no formato de lista.

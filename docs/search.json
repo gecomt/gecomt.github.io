@@ -25,14 +25,7 @@
     "href": "producao.html#dados-abertos",
     "title": "Produção",
     "section": "Dados abertos",
-    "text": "Dados abertos\n\n\n\n\n\nEspelho do CAGED\nMicrodados do CAGED disponibilizados pelo Ministério do Trabalho e Emprego, organizados no Hugging Face.\nHugging Face\n\n\n\n\n\n\n\nEspelho da RAIS\nMicrodados da RAIS (vínculos, estabelecimentos e trabalho doméstico), organizados no Hugging Face.\nHugging Face"
-  },
-  {
-    "objectID": "producao.html#projetos-parceiros",
-    "href": "producao.html#projetos-parceiros",
-    "title": "Produção",
-    "section": "Projetos parceiros",
-    "text": "Projetos parceiros\n\n\n\n\n\ncontabiliDados\nGrupo dedicado à contabilidade e ciência de dados, com materiais, eventos e aplicativos sobre informações contábeis de companhias abertas.\ncontabilidados.com.br\n\n\n\n\n\n\n\nRegulariza\nPainel interativo do projeto Regulariza.\nAbrir o painel\n\n\n\n\n\n\n\n\n\n\nEsta página é atualizada continuamente. Artigos, capítulos, trabalhos em eventos e trabalhos orientados podem ser incluídos em novas seções, no formato de lista."
+    "text": "Dados abertos\n\n\n\n\n\nEspelho do CAGED\nMicrodados do CAGED disponibilizados pelo Ministério do Trabalho e Emprego, organizados no Hugging Face.\nHugging Face\n\n\n\n\n\n\n\nEspelho da RAIS\nMicrodados da RAIS (vínculos, estabelecimentos e trabalho doméstico), organizados no Hugging Face.\nHugging Face\n\n\n\n\n\n\n\n\n\n\nEsta página é atualizada continuamente. Artigos, capítulos, trabalhos em eventos e trabalhos orientados podem ser incluídos em novas seções, no formato de lista."
   },
   {
     "objectID": "pacotes/datacaged.html",
